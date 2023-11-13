@@ -18,7 +18,7 @@ function AboutUs() {
     });
     const [imgStyle, setImgStyle] = useState({
         marginLeft:'0%',
-    //    marginTop:'7%'
+    //    marginTop:'-7%'
      });
      const [img2Style, setImg2Style] = useState( {
         width:'70%',
@@ -30,8 +30,9 @@ function AboutUs() {
         position:'relative'});
     useEffect(() => {
 
-        if(windowDimensions.width > 2000){  setTitleStyle({
-            marginTop: "-6%",
+        if(windowDimensions.width > 2000){  
+            setTitleStyle({
+            marginTop: "-8%",
             fontSize: '45px'
         });
         setTextStyle({
@@ -41,40 +42,9 @@ function AboutUs() {
         setImgStyle({
           width:'230%',
           height:'230%',
+          marginTop:'-20%'
         });
-        setImg2Style({
-            width:'70%',
-            height:'100%',         
-            border:' 5px solid white',
-            boxShadow:' 0 5px 10px #505050', 
-            marginLeft:'180%', 
-            marginTop:'-40%', 
-            position:'relative'
-        })
-    } else if (windowDimensions.width > 1200 && windowDimensions.width < 1300) {
-        setTitleStyle({
-            marginTop: "-6%",
-            fontSize: '45px'
-        });
-        setTextStyle({
-            marginLeft:'38%',
-            marginTop: "-25%",
-        });
-        setImgStyle({
-          width:'230%',
-          height:'230%',
-        //   boxShadow:' 0 20px 30px #505050'
-        //   borderShadow:'5px 10px rgb(52, 152, 219,0.5)'
-        });
-        setImg2Style({
-            width:'70%',
-            height:'70%',        
-            border:' 5px solid white',
-            boxShadow:' 0 5px 10px #505050', 
-            marginLeft:'180%', 
-            marginTop:'-40%', 
-            position:'relative'
-        })
+
     } else if (windowDimensions.width > 2100 && windowDimensions.width < 2200) {
   setTitleStyle({
             marginTop: "-6%",
@@ -97,31 +67,7 @@ function AboutUs() {
             marginTop:'-40%', 
             position:'relative'
         })
-    } else if (windowDimensions.width > 1200 && windowDimensions.width < 1300) {
-        setTitleStyle({
-            marginTop: "-6%",
-            fontSize: '45px'
-        });
-        setTextStyle({
-            marginLeft:'38%',
-            marginTop: "-25%",
-        });
-        setImgStyle({
-          width:'230%',
-          height:'230%',
-        //   boxShadow:' 0 20px 30px #505050'
-        //   borderShadow:'5px 10px rgb(52, 152, 219,0.5)'
-        });
-        setImg2Style({
-            width:'70%',
-            height:'70%',        
-            border:' 5px solid white',
-            boxShadow:' 0 5px 10px #505050',  
-            marginLeft:'180%', 
-            marginTop:'-40%', 
-            position:'relative'
-        })
-      } else if (windowDimensions.width > 2000 && windowDimensions.width < 2100) {
+    }  else if (windowDimensions.width > 2000 && windowDimensions.width < 2100) {
   setTitleStyle({
             marginTop: "-6%",
             fontSize: '45px'
@@ -143,31 +89,7 @@ function AboutUs() {
             marginTop:'-40%', 
             position:'relative'
         })
-    } else if (windowDimensions.width > 1200 && windowDimensions.width < 1300) {
-        setTitleStyle({
-            marginTop: "-6%",
-            fontSize: '45px'
-        });
-        setTextStyle({
-            marginLeft:'38%',
-            marginTop: "-25%",
-        });
-        setImgStyle({
-          width:'230%',
-          height:'230%',
-        //   boxShadow:' 0 20px 30px #505050'
-        //   borderShadow:'5px 10px rgb(52, 152, 219,0.5)'
-        });
-        setImg2Style({
-            width:'70%',
-            height:'70%',        
-            border:' 5px solid white',
-            boxShadow:' 0 5px 10px #505050', 
-            marginLeft:'180%', 
-            marginTop:'-40%', 
-            position:'relative'
-        })
-      } else if (windowDimensions.width > 1900 && windowDimensions.width < 2000) {
+    } else if (windowDimensions.width > 1900 && windowDimensions.width < 2000) {
   setTitleStyle({
             marginTop: "-6%",
             fontSize: '45px'
@@ -189,31 +111,7 @@ function AboutUs() {
             marginTop:'-40%', 
             position:'relative'
         })
-    } else if (windowDimensions.width > 1200 && windowDimensions.width < 1300) {
-        setTitleStyle({
-            marginTop: "-6%",
-            fontSize: '45px'
-        });
-        setTextStyle({
-            marginLeft:'38%',
-            marginTop: "-25%",
-        });
-        setImgStyle({
-          width:'230%',
-          height:'230%',
-        //   boxShadow:' 0 20px 30px #505050'
-        //   borderShadow:'5px 10px rgb(52, 152, 219,0.5)'
-        });
-        setImg2Style({
-            width:'70%',
-            height:'70%',        
-            border:' 5px solid white',
-            boxShadow:' 0 5px 10px #505050', 
-            marginLeft:'180%', 
-            marginTop:'-40%', 
-            position:'relative'
-        })
-      } else if (windowDimensions.width > 1800 && windowDimensions.width < 1900) {
+    }  else if (windowDimensions.width > 1800 && windowDimensions.width < 1900) {
   setTitleStyle({
             marginTop: "-6%",
             fontSize: '45px'
@@ -235,31 +133,7 @@ function AboutUs() {
             marginTop:'-40%', 
             position:'relative'
         })
-    } else if (windowDimensions.width > 1200 && windowDimensions.width < 1300) {
-        setTitleStyle({
-            marginTop: "-6%",
-            fontSize: '45px'
-        });
-        setTextStyle({
-            marginLeft:'38%',
-            marginTop: "-25%",
-        });
-        setImgStyle({
-          width:'230%',
-          height:'230%',
-        //   boxShadow:' 0 20px 30px #505050'
-        //   borderShadow:'5px 10px rgb(52, 152, 219,0.5)'
-        });
-        setImg2Style({
-            width:'70%',
-            height:'70%',        
-            border:' 5px solid white',
-            boxShadow:' 0 5px 10px #505050',  
-            marginLeft:'180%', 
-            marginTop:'-40%', 
-            position:'relative'
-        })
-      } else if (windowDimensions.width > 1700 && windowDimensions.width < 1800) {
+    }  else if (windowDimensions.width > 1700 && windowDimensions.width < 1800) {
   setTitleStyle({
             marginTop: "-6%",
             fontSize: '45px'
@@ -281,31 +155,7 @@ function AboutUs() {
             marginTop:'-40%', 
             position:'relative'
         })
-    } else if (windowDimensions.width > 1200 && windowDimensions.width < 1300) {
-        setTitleStyle({
-            marginTop: "-6%",
-            fontSize: '45px'
-        });
-        setTextStyle({
-            marginLeft:'38%',
-            marginTop: "-25%",
-        });
-        setImgStyle({
-          width:'230%',
-          height:'230%',
-        //   boxShadow:' 0 20px 30px #505050'
-        //   borderShadow:'5px 10px rgb(52, 152, 219,0.5)'
-        });
-        setImg2Style({
-            width:'70%',
-            height:'70%',        
-            border:' 5px solid white',
-            boxShadow:' 0 5px 10px #505050', 
-            marginLeft:'180%', 
-            marginTop:'-40%', 
-            position:'relative'
-        })
-      } else if (windowDimensions.width > 1600 && windowDimensions.width < 1700) {
+    }  else if (windowDimensions.width > 1600 && windowDimensions.width < 1700) {
   setTitleStyle({
             marginTop: "-6%",
             fontSize: '45px'
@@ -327,42 +177,65 @@ function AboutUs() {
             marginTop:'-40%', 
             position:'relative'
         })
-    } else if (windowDimensions.width > 1200 && windowDimensions.width < 1300) {
+    }  else if (windowDimensions.width > 1500 && windowDimensions.width < 1600) {
         setTitleStyle({
-            marginTop: "-6%",
+            marginTop: "-8%",
             fontSize: '45px'
         });
         setTextStyle({
-            marginLeft:'38%',
+            marginLeft:'43%',
             marginTop: "-25%",
         });
         setImgStyle({
           width:'230%',
           height:'230%',
-        //   boxShadow:' 0 20px 30px #505050'
-        //   borderShadow:'5px 10px rgb(52, 152, 219,0.5)'
+          marginTop: "-15%",
         });
         setImg2Style({
             width:'70%',
-            height:'70%',        
+            height:'100%',         
             border:' 5px solid white',
             boxShadow:' 0 5px 10px #505050', 
             marginLeft:'180%', 
             marginTop:'-40%', 
             position:'relative'
         })
-      } else if (windowDimensions.width > 1500 && windowDimensions.width < 1600) {
+    }  else if (windowDimensions.width > 1400 && windowDimensions.width < 1500) {
         setTitleStyle({
-            marginTop: "-6%",
+            marginTop: "-8%",
             fontSize: '45px'
         });
         setTextStyle({
-            marginLeft:'38%',
+            marginLeft:'43%',
             marginTop: "-25%",
         });
         setImgStyle({
           width:'230%',
           height:'230%',
+          marginTop: "-15%",
+        });
+        setImg2Style({
+            width:'70%',
+            height:'100%',         
+            border:' 5px solid white',
+            boxShadow:' 0 5px 10px #505050', 
+            marginLeft:'180%', 
+            marginTop:'-40%', 
+            position:'relative'
+        })
+    } if ((windowDimensions.width > 1300 && windowDimensions.width < 1400)) {
+        setTitleStyle({
+            marginTop: "-8%",
+            fontSize: '45px'
+        });
+        setTextStyle({
+            marginLeft:'43%',
+            marginTop: "-25%",
+        });
+        setImgStyle({
+          width:'230%',
+          height:'230%',
+          marginTop: "-15%",
         });
         setImg2Style({
             width:'70%',
@@ -379,14 +252,12 @@ function AboutUs() {
             fontSize: '45px'
         });
         setTextStyle({
-            marginLeft:'38%',
+            marginLeft:'43%',
             marginTop: "-25%",
         });
         setImgStyle({
           width:'230%',
           height:'230%',
-        //   boxShadow:' 0 20px 30px #505050'
-        //   borderShadow:'5px 10px rgb(52, 152, 219,0.5)'
         });
         setImg2Style({
             width:'70%',
@@ -396,99 +267,7 @@ function AboutUs() {
             marginLeft:'180%', 
             marginTop:'-40%', 
             position:'relative'
-        })
-      } else if (windowDimensions.width > 1400 && windowDimensions.width < 1500) {
-        setTitleStyle({
-            marginTop: "-6%",
-            fontSize: '45px'
         });
-        setTextStyle({
-            marginLeft:'38%',
-            marginTop: "-25%",
-        });
-        setImgStyle({
-          width:'230%',
-          height:'230%',
-        });
-        setImg2Style({
-            width:'70%',
-            height:'100%',         
-            border:' 5px solid white',
-            boxShadow:' 0 5px 10px #505050', 
-            marginLeft:'180%', 
-            marginTop:'-40%', 
-            position:'relative'
-        })
-    } else if (windowDimensions.width > 1200 && windowDimensions.width < 1300) {
-        setTitleStyle({
-            marginTop: "-6%",
-            fontSize: '45px'
-        });
-        setTextStyle({
-            marginLeft:'38%',
-            marginTop: "-25%",
-        });
-        setImgStyle({
-          width:'230%',
-          height:'230%',
-        //   boxShadow:' 0 20px 30px #505050'
-        //   borderShadow:'5px 10px rgb(52, 152, 219,0.5)'
-        });
-        setImg2Style({
-            width:'70%',
-            height:'70%',        
-            border:' 5px solid white',
-            boxShadow:' 0 5px 10px #505050', 
-            marginLeft:'180%', 
-            marginTop:'-40%', 
-            position:'relative'
-        })
-      } if ((windowDimensions.width > 1300 && windowDimensions.width < 1400)) {
-        setTitleStyle({
-            marginTop: "-6%",
-            fontSize: '45px'
-        });
-        setTextStyle({
-            marginLeft:'38%',
-            marginTop: "-25%",
-        });
-        setImgStyle({
-          width:'230%',
-          height:'230%',
-        });
-        setImg2Style({
-            width:'70%',
-            height:'100%',         
-            border:' 5px solid white',
-            boxShadow:' 0 5px 10px #505050', 
-            marginLeft:'180%', 
-            marginTop:'-40%', 
-            position:'relative'
-        })
-    } else if (windowDimensions.width > 1200 && windowDimensions.width < 1300) {
-        setTitleStyle({
-            marginTop: "-6%",
-            fontSize: '45px'
-        });
-        setTextStyle({
-            marginLeft:'38%',
-            marginTop: "-25%",
-        });
-        setImgStyle({
-          width:'230%',
-          height:'230%',
-        //   boxShadow:' 0 20px 30px #505050'
-        //   borderShadow:'5px 10px rgb(52, 152, 219,0.5)'
-        });
-        setImg2Style({
-            width:'70%',
-            height:'70%',        
-            border:' 5px solid white',
-            boxShadow:' 0 5px 10px #505050', 
-            marginLeft:'180%', 
-            marginTop:'-40%', 
-            position:'relative'
-        })
 
       } else if (windowDimensions.width > 1100 && windowDimensions.width < 1200) {
         setTitleStyle({
@@ -496,15 +275,12 @@ function AboutUs() {
             fontSize: '45px'
         });
         setTextStyle({
-            marginLeft:'38%',
+            marginLeft:'43%',
             marginTop: "-30%",
         });
         setImgStyle({
           width:'230%',
           height:'230%',
-        //   border:' 5px solid white',
-        //   boxShadow:' 0 20px 30px #505050'
-        //   borderShadow:'5px 10px rgb(52, 152, 219,0.5)'
         });
         setImg2Style({
             width:'70%',
@@ -522,15 +298,12 @@ function AboutUs() {
             fontSize: '45px'
         });
         setTextStyle({
-            marginLeft:'38%',
+            marginLeft:'40%',
             marginTop: "-30%",
         });
         setImgStyle({
           width:'230%',
           height:'230%',
-        //   border:' 5px solid white',
-        //   boxShadow:' 0 20px 30px #505050'
-        //   borderShadow:'5px 10px rgb(52, 152, 219,0.5)'
         })
 ;
         setImg2Style({
@@ -543,34 +316,56 @@ function AboutUs() {
             position:'relative'
         })
       }
-     else if (windowDimensions.width > 900 && windowDimensions.width < 1000) {
+    
+      else if (windowDimensions.width >= 992 && windowDimensions.width <= 999) {
         setTitleStyle({
             marginTop: "-6%",
             fontSize: '45px'
         });
         setTextStyle({
-            marginTop: "-50%",
-            width:'55%',
-            marginLeft:'55%',
+            marginLeft:'50%',
+            marginTop: "-35%",
+            width:'50%'
         });
         setImgStyle({
-          width:'55%',
-          height:'55%',
-          marginLeft:'-10%',
-        //   border:' 5px solid white',
-        //   boxShadow:' 0 20px 30px #505050'
-        //   borderShadow:'5px 10px rgb(52, 152, 219,0.5)'
-        });
+          width:'300%',
+          height:'100%',
+        })
+;
         setImg2Style({
-            width:'20%',
-            height:'20%',        
+            width:'70%',
+            height:'70%',        
             border:' 5px solid white',
             boxShadow:' 0 5px 10px #505050', 
-            marginLeft:'-15%', 
-            marginTop:'40%', 
+            marginLeft:'180%', 
+            marginTop:'-40%', 
             position:'relative'
         })
-
+      }
+      else if (windowDimensions.width > 900 && windowDimensions.width <= 991) {
+        setTitleStyle({
+            marginTop: "-6%",
+            fontSize: '45px'
+        });
+        setTextStyle({
+            marginLeft:'50%',
+            marginTop: "-40%",
+            width:'60%'
+        });
+        setImgStyle({
+          width:'50%',
+          height:'100%',
+        })
+;
+        setImg2Style({
+            width:'70%',
+            height:'70%',        
+            border:' 5px solid white',
+            boxShadow:' 0 5px 10px #505050', 
+            marginLeft:'180%', 
+            marginTop:'-40%', 
+            position:'relative'
+        })
       }
        else if (windowDimensions.width > 700 && windowDimensions.width < 900) {
         setTitleStyle({
@@ -586,9 +381,6 @@ function AboutUs() {
           width:'70%',
           height:'70%',
           marginLeft:'15%',
-        //   border:' 5px solid white',
-        //   boxShadow:' 0 20px 30px #505050'
-        //   borderShadow:'5px 10px rgb(52, 152, 219,0.5)'
         });
         setImg2Style({
             width:'25%',
@@ -614,9 +406,6 @@ function AboutUs() {
           width:'70%',
           height:'70%',
           marginLeft:'15%',
-        //   border:' 5px solid white',
-        //   boxShadow:' 0 20px 30px #505050'
-        //   borderShadow:'5px 10px rgb(52, 152, 219,0.5)'
         })
         setImg2Style({
             width:'25%',
@@ -644,9 +433,6 @@ function AboutUs() {
           width:'100%',
           height:'100%',
           marginLeft:'0%',
-        //   border:' 5px solid white',
-        //   boxShadow:' 0 20px 30px #505050'
-        //   borderShadow:'5px 10px rgb(52, 152, 219,0.5)'
         });
         setImg2Style({
             width:'25%',
@@ -674,9 +460,6 @@ function AboutUs() {
           height:'100%',
           marginTop: "-10%",
           marginLeft:'0%',
-        //   border:' 5px solid white',
-        //   boxShadow:' 0 20px 30px #505050'
-        //   borderShadow:'5px 10px rgb(52, 152, 219,0.5)'
         });
         setImg2Style({
             width:'25%',
@@ -716,13 +499,13 @@ function AboutUs() {
                     <div className='col-md-2 col-ms-2'>
                         <img src={img} style={imgStyle}/>
                     </div>
-                    <div  className='col-md-7 col-ms-7'style={textStyle}>
+                    <div  className='col-md-6 col-ms-7'style={textStyle}>
                 <motion.p
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.8}}
-                    style={{ textAlign: "justify", marginTop: "10%" }}
+                    style={{ textAlign: "justify", marginTop: "7%" }}
                 >
                        <a style={{color:'rgb(52, 152, 219)', textDecoration:'none', fontSize:'25px'}}> Mediwave</a>{t("about-us-text1")}<br />
                     {t("about-us-text2")}<br />

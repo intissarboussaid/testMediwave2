@@ -30,7 +30,8 @@ function AboutUs() {
         position:'relative'});
     useEffect(() => {
 
-        if(windowDimensions.width > 2000){  setTitleStyle({
+        if(windowDimensions.width > 2000){  
+            setTitleStyle({
             marginTop: "-6%",
             fontSize: '45px'
         });
@@ -45,30 +46,6 @@ function AboutUs() {
         setImg2Style({
             width:'70%',
             height:'100%',         
-            border:' 5px solid white',
-            boxShadow:' 0 5px 10px #505050', 
-            marginLeft:'180%', 
-            marginTop:'-40%', 
-            position:'relative'
-        })
-    } else if (windowDimensions.width > 1200 && windowDimensions.width < 1300) {
-        setTitleStyle({
-            marginTop: "-6%",
-            fontSize: '45px'
-        });
-        setTextStyle({
-            marginLeft:'38%',
-            marginTop: "-25%",
-        });
-        setImgStyle({
-          width:'230%',
-          height:'230%',
-        //   boxShadow:' 0 20px 30px #505050'
-        //   borderShadow:'5px 10px rgb(52, 152, 219,0.5)'
-        });
-        setImg2Style({
-            width:'70%',
-            height:'70%',        
             border:' 5px solid white',
             boxShadow:' 0 5px 10px #505050', 
             marginLeft:'180%', 
@@ -97,31 +74,7 @@ function AboutUs() {
             marginTop:'-40%', 
             position:'relative'
         })
-    } else if (windowDimensions.width > 1200 && windowDimensions.width < 1300) {
-        setTitleStyle({
-            marginTop: "-6%",
-            fontSize: '45px'
-        });
-        setTextStyle({
-            marginLeft:'38%',
-            marginTop: "-25%",
-        });
-        setImgStyle({
-          width:'230%',
-          height:'230%',
-        //   boxShadow:' 0 20px 30px #505050'
-        //   borderShadow:'5px 10px rgb(52, 152, 219,0.5)'
-        });
-        setImg2Style({
-            width:'70%',
-            height:'70%',        
-            border:' 5px solid white',
-            boxShadow:' 0 5px 10px #505050',  
-            marginLeft:'180%', 
-            marginTop:'-40%', 
-            position:'relative'
-        })
-      } else if (windowDimensions.width > 2000 && windowDimensions.width < 2100) {
+    }  else if (windowDimensions.width > 2000 && windowDimensions.width < 2100) {
   setTitleStyle({
             marginTop: "-6%",
             fontSize: '45px'
@@ -143,31 +96,7 @@ function AboutUs() {
             marginTop:'-40%', 
             position:'relative'
         })
-    } else if (windowDimensions.width > 1200 && windowDimensions.width < 1300) {
-        setTitleStyle({
-            marginTop: "-6%",
-            fontSize: '45px'
-        });
-        setTextStyle({
-            marginLeft:'38%',
-            marginTop: "-25%",
-        });
-        setImgStyle({
-          width:'230%',
-          height:'230%',
-        //   boxShadow:' 0 20px 30px #505050'
-        //   borderShadow:'5px 10px rgb(52, 152, 219,0.5)'
-        });
-        setImg2Style({
-            width:'70%',
-            height:'70%',        
-            border:' 5px solid white',
-            boxShadow:' 0 5px 10px #505050', 
-            marginLeft:'180%', 
-            marginTop:'-40%', 
-            position:'relative'
-        })
-      } else if (windowDimensions.width > 1900 && windowDimensions.width < 2000) {
+    } else if (windowDimensions.width > 1900 && windowDimensions.width < 2000) {
   setTitleStyle({
             marginTop: "-6%",
             fontSize: '45px'
@@ -189,31 +118,7 @@ function AboutUs() {
             marginTop:'-40%', 
             position:'relative'
         })
-    } else if (windowDimensions.width > 1200 && windowDimensions.width < 1300) {
-        setTitleStyle({
-            marginTop: "-6%",
-            fontSize: '45px'
-        });
-        setTextStyle({
-            marginLeft:'38%',
-            marginTop: "-25%",
-        });
-        setImgStyle({
-          width:'230%',
-          height:'230%',
-        //   boxShadow:' 0 20px 30px #505050'
-        //   borderShadow:'5px 10px rgb(52, 152, 219,0.5)'
-        });
-        setImg2Style({
-            width:'70%',
-            height:'70%',        
-            border:' 5px solid white',
-            boxShadow:' 0 5px 10px #505050', 
-            marginLeft:'180%', 
-            marginTop:'-40%', 
-            position:'relative'
-        })
-      } else if (windowDimensions.width > 1800 && windowDimensions.width < 1900) {
+    }  else if (windowDimensions.width > 1800 && windowDimensions.width < 1900) {
   setTitleStyle({
             marginTop: "-6%",
             fontSize: '45px'
@@ -235,31 +140,7 @@ function AboutUs() {
             marginTop:'-40%', 
             position:'relative'
         })
-    } else if (windowDimensions.width > 1200 && windowDimensions.width < 1300) {
-        setTitleStyle({
-            marginTop: "-6%",
-            fontSize: '45px'
-        });
-        setTextStyle({
-            marginLeft:'38%',
-            marginTop: "-25%",
-        });
-        setImgStyle({
-          width:'230%',
-          height:'230%',
-        //   boxShadow:' 0 20px 30px #505050'
-        //   borderShadow:'5px 10px rgb(52, 152, 219,0.5)'
-        });
-        setImg2Style({
-            width:'70%',
-            height:'70%',        
-            border:' 5px solid white',
-            boxShadow:' 0 5px 10px #505050',  
-            marginLeft:'180%', 
-            marginTop:'-40%', 
-            position:'relative'
-        })
-      } else if (windowDimensions.width > 1700 && windowDimensions.width < 1800) {
+    }  else if (windowDimensions.width > 1700 && windowDimensions.width < 1800) {
   setTitleStyle({
             marginTop: "-6%",
             fontSize: '45px'
@@ -281,31 +162,7 @@ function AboutUs() {
             marginTop:'-40%', 
             position:'relative'
         })
-    } else if (windowDimensions.width > 1200 && windowDimensions.width < 1300) {
-        setTitleStyle({
-            marginTop: "-6%",
-            fontSize: '45px'
-        });
-        setTextStyle({
-            marginLeft:'38%',
-            marginTop: "-25%",
-        });
-        setImgStyle({
-          width:'230%',
-          height:'230%',
-        //   boxShadow:' 0 20px 30px #505050'
-        //   borderShadow:'5px 10px rgb(52, 152, 219,0.5)'
-        });
-        setImg2Style({
-            width:'70%',
-            height:'70%',        
-            border:' 5px solid white',
-            boxShadow:' 0 5px 10px #505050', 
-            marginLeft:'180%', 
-            marginTop:'-40%', 
-            position:'relative'
-        })
-      } else if (windowDimensions.width > 1600 && windowDimensions.width < 1700) {
+    } else if (windowDimensions.width > 1600 && windowDimensions.width < 1700) {
   setTitleStyle({
             marginTop: "-6%",
             fontSize: '45px'
@@ -327,31 +184,7 @@ function AboutUs() {
             marginTop:'-40%', 
             position:'relative'
         })
-    } else if (windowDimensions.width > 1200 && windowDimensions.width < 1300) {
-        setTitleStyle({
-            marginTop: "-6%",
-            fontSize: '45px'
-        });
-        setTextStyle({
-            marginLeft:'38%',
-            marginTop: "-25%",
-        });
-        setImgStyle({
-          width:'230%',
-          height:'230%',
-        //   boxShadow:' 0 20px 30px #505050'
-        //   borderShadow:'5px 10px rgb(52, 152, 219,0.5)'
-        });
-        setImg2Style({
-            width:'70%',
-            height:'70%',        
-            border:' 5px solid white',
-            boxShadow:' 0 5px 10px #505050', 
-            marginLeft:'180%', 
-            marginTop:'-40%', 
-            position:'relative'
-        })
-      } else if (windowDimensions.width > 1500 && windowDimensions.width < 1600) {
+    }  else if (windowDimensions.width > 1500 && windowDimensions.width < 1600) {
         setTitleStyle({
             marginTop: "-6%",
             fontSize: '45px'
@@ -373,31 +206,7 @@ function AboutUs() {
             marginTop:'-40%', 
             position:'relative'
         })
-    } else if (windowDimensions.width > 1200 && windowDimensions.width < 1300) {
-        setTitleStyle({
-            marginTop: "-6%",
-            fontSize: '45px'
-        });
-        setTextStyle({
-            marginLeft:'38%',
-            marginTop: "-25%",
-        });
-        setImgStyle({
-          width:'230%',
-          height:'230%',
-        //   boxShadow:' 0 20px 30px #505050'
-        //   borderShadow:'5px 10px rgb(52, 152, 219,0.5)'
-        });
-        setImg2Style({
-            width:'70%',
-            height:'70%',        
-            border:' 5px solid white',
-            boxShadow:' 0 5px 10px #505050', 
-            marginLeft:'180%', 
-            marginTop:'-40%', 
-            position:'relative'
-        })
-      } else if (windowDimensions.width > 1400 && windowDimensions.width < 1500) {
+    } else if (windowDimensions.width > 1400 && windowDimensions.width < 1500) {
         setTitleStyle({
             marginTop: "-6%",
             fontSize: '45px'
@@ -419,9 +228,9 @@ function AboutUs() {
             marginTop:'-40%', 
             position:'relative'
         })
-    } else if (windowDimensions.width > 1200 && windowDimensions.width < 1300) {
+    }  if ((windowDimensions.width > 1300 && windowDimensions.width < 1400)) {
         setTitleStyle({
-            marginTop: "-6%",
+            marginTop: "-10%",
             fontSize: '45px'
         });
         setTextStyle({
@@ -429,31 +238,7 @@ function AboutUs() {
             marginTop: "-25%",
         });
         setImgStyle({
-          width:'230%',
-          height:'230%',
-        //   boxShadow:' 0 20px 30px #505050'
-        //   borderShadow:'5px 10px rgb(52, 152, 219,0.5)'
-        });
-        setImg2Style({
-            width:'70%',
-            height:'70%',        
-            border:' 5px solid white',
-            boxShadow:' 0 5px 10px #505050', 
-            marginLeft:'180%', 
-            marginTop:'-40%', 
-            position:'relative'
-        })
-      } if ((windowDimensions.width > 1300 && windowDimensions.width < 1400)) {
-        setTitleStyle({
-            marginTop: "-6%",
-            fontSize: '45px'
-        });
-        setTextStyle({
-            marginLeft:'38%',
-            marginTop: "-25%",
-        });
-        setImgStyle({
-          width:'230%',
+          width:'200%',
           height:'230%',
         });
         setImg2Style({
@@ -467,7 +252,7 @@ function AboutUs() {
         })
     } else if (windowDimensions.width > 1200 && windowDimensions.width < 1300) {
         setTitleStyle({
-            marginTop: "-6%",
+            marginTop: "-10%",
             fontSize: '45px'
         });
         setTextStyle({
@@ -477,8 +262,6 @@ function AboutUs() {
         setImgStyle({
           width:'230%',
           height:'230%',
-        //   boxShadow:' 0 20px 30px #505050'
-        //   borderShadow:'5px 10px rgb(52, 152, 219,0.5)'
         });
         setImg2Style({
             width:'70%',
@@ -492,7 +275,7 @@ function AboutUs() {
 
       } else if (windowDimensions.width > 1100 && windowDimensions.width < 1200) {
         setTitleStyle({
-            marginTop: "-6%",
+            marginTop: "-10%",
             fontSize: '45px'
         });
         setTextStyle({
@@ -502,9 +285,6 @@ function AboutUs() {
         setImgStyle({
           width:'230%',
           height:'230%',
-        //   border:' 5px solid white',
-        //   boxShadow:' 0 20px 30px #505050'
-        //   borderShadow:'5px 10px rgb(52, 152, 219,0.5)'
         });
         setImg2Style({
             width:'70%',
@@ -516,21 +296,19 @@ function AboutUs() {
             position:'relative'
         })
 
-      } else if (windowDimensions.width > 1000 && windowDimensions.width < 1100) {
+      } 
+     else if (windowDimensions.width > 1000 && windowDimensions.width < 1100) {
         setTitleStyle({
             marginTop: "-6%",
             fontSize: '45px'
         });
         setTextStyle({
-            marginLeft:'38%',
+            marginLeft:'40%',
             marginTop: "-30%",
         });
         setImgStyle({
           width:'230%',
           height:'230%',
-        //   border:' 5px solid white',
-        //   boxShadow:' 0 20px 30px #505050'
-        //   borderShadow:'5px 10px rgb(52, 152, 219,0.5)'
         })
 ;
         setImg2Style({
@@ -543,38 +321,60 @@ function AboutUs() {
             position:'relative'
         })
       }
-     else if (windowDimensions.width > 900 && windowDimensions.width < 1000) {
+    
+      else if (windowDimensions.width >= 992 && windowDimensions.width <= 999) {
         setTitleStyle({
             marginTop: "-6%",
             fontSize: '45px'
         });
         setTextStyle({
-            marginTop: "-50%",
-            width:'55%',
-            marginLeft:'55%',
+            marginLeft:'50%',
+            marginTop: "-35%",
+            width:'50%'
         });
         setImgStyle({
-          width:'55%',
-          height:'55%',
-          marginLeft:'-10%',
-        //   border:' 5px solid white',
-        //   boxShadow:' 0 20px 30px #505050'
-        //   borderShadow:'5px 10px rgb(52, 152, 219,0.5)'
-        });
+          width:'300%',
+          height:'100%',
+        })
+;
         setImg2Style({
-            width:'20%',
-            height:'20%',        
+            width:'70%',
+            height:'70%',        
             border:' 5px solid white',
             boxShadow:' 0 5px 10px #505050', 
-            marginLeft:'-15%', 
-            marginTop:'40%', 
+            marginLeft:'180%', 
+            marginTop:'-40%', 
             position:'relative'
         })
-
+      }
+      else if (windowDimensions.width > 900 && windowDimensions.width <= 991) {
+        setTitleStyle({
+            marginTop: "-6%",
+            fontSize: '45px'
+        });
+        setTextStyle({
+            marginLeft:'50%',
+            marginTop: "-40%",
+            width:'60%'
+        });
+        setImgStyle({
+          width:'50%',
+          height:'100%',
+        })
+;
+        setImg2Style({
+            width:'70%',
+            height:'70%',        
+            border:' 5px solid white',
+            boxShadow:' 0 5px 10px #505050', 
+            marginLeft:'180%', 
+            marginTop:'-40%', 
+            position:'relative'
+        })
       }
        else if (windowDimensions.width > 700 && windowDimensions.width < 900) {
         setTitleStyle({
-            marginTop: "-6%",
+            marginTop: "-11%",
             fontSize: '45px'
         });
         setTextStyle({
@@ -601,7 +401,7 @@ function AboutUs() {
         })
       } else if (windowDimensions.width > 500 && windowDimensions.width < 700) {
         setTitleStyle({
-            marginTop: "-6%",
+            marginTop: "-15%",
             fontSize: '35px'
         });
         setTextStyle({
@@ -631,7 +431,7 @@ function AboutUs() {
 
       } else if (windowDimensions.width > 300 && windowDimensions.width < 500) {
         setTitleStyle({
-            marginTop: "-6%",
+            marginTop: "-15%",
             fontSize: '30px'
         });
         setTextStyle({
@@ -660,7 +460,7 @@ function AboutUs() {
 
       } else if (windowDimensions.width > 100 && windowDimensions.width < 300) {
         setTitleStyle({
-            marginTop: "-6%",
+            marginTop: "-15%",
             fontSize: '22px'
         });
         setTextStyle({

@@ -5,7 +5,7 @@ const Footer = () => {
   const { t } = useTranslation();
 
   return (
-    <div id="footer" style={{ marginTop: "5%" }}>
+    <div id="footer">
       <footer className="footer">
         <div class="container-fluid">
           <div class="row">

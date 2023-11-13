@@ -44,7 +44,8 @@
   "THERAPISTS": "Nos thérapeutes",
   "THERAPISTS_1": "Nos clients sont des psychiatres, neurologues, psychothérapeutes, psychologues, thérapeutes, conseillers, médecins de famille",
   "THERAPISTS_2": "L’application aidera le clinicien à réaliser l’exposition avec succès et à adapter les interventions aux besoins de chaque patient, quel que soit le diagnostic.",
-  "PRICING": "DEVENIR PARTENAIRE",
+  "PRICING1": "DEVENIR ",
+  "PRICING2": "PARTENAIRE",
   "Including": "Incluant",
   "prix": "à déterminer",
   "Applications": "Applications",
@@ -172,8 +173,13 @@
   "about-medilink-text1":" est une application révolutionnaire qui transforme la manière dont vous gérez vos analyses médicales. ",
   "about-medilink-text2":"Cette plateforme innovante offre aux patients la possibilité de recevoir leurs résultats d'analyses directement sur leur smartphone, éliminant ainsi la nécessité de se rendre physiquement dans un laboratoire.",
   "about-medilink-text3":"De plus, les médecins peuvent accéder facilement aux analyses de leurs patients tout en obtenant des informations cruciales sur les procédures d'analyse.",
-  "about-medilink-text4":"Nous mettons à votre disposition un outil puissant pour simplifier votre expérience médicale, en offrant un accès rapide et transparent à vos données de santé. Avec Medilink, vous avez un partenaire de confiance pour une gestion médicale plus efficace et pratique."
-
+  "about-medilink-text4":"Nous mettons à votre disposition un outil puissant pour simplifier votre expérience médicale, en offrant un accès rapide et transparent à vos données de santé. Avec Medilink, vous avez un partenaire de confiance pour une gestion médicale plus efficace et pratique.",
+  "Syringe_Pump":"Pompe à seringue",
+  "t_Syringe_Pump":" Définissant la perfusion médicale, notre pousse-seringue de pointe assure une administration précise des médicaments. Une solution innovante pour une prise en charge médicale sûre et efficace.",
+  "Heart_Artificial":"Coeur artificiel",
+  "t_Heart_Artificial":" L'avenir de la santé cardiaque est en cours de création! Notre solution révolutionnaire est là pour offrir une assistance cardiovasculaire inégalée. Redécouvrez la vitalité avec une technologie qui promet de redéfinir votre bien-être et votre style de vie.",
+ "Ventilator":"Ventilateur",
+  "t_Ventilator":"Un souffle d'innovation dans le domaine de la climatisation. Notre ventilateur promet une expérience utilisateur révolutionnaire, alliant efficacité, intelligence et design sophistiqué pour transformer votre environnement de vie."
 
 
 

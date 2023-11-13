@@ -8,6 +8,8 @@ import AboutUs from '../aboutUs/AboutUs';
 import Information from "../information/InformationSection";
 import DiscoverUs from '../ourSolution/DiscoverUs';
 import '../AppMediwave/AppMediwave.css';
+import ResearchAndDevelopment from '../r&d/ResearchAndDevelopment';
+import OurPartenaires from '../ourPartenaires/OurPartenaires';
 
 
 function Home() {
@@ -18,7 +20,9 @@ function Home() {
 
       <AboutUs />
       <DiscoverUs />
-      <Information/>
+      <ResearchAndDevelopment/>
+      <Information/>  
+      <OurPartenaires/> 
       <Contact />
       <div className='footeer'>
       <Footer />

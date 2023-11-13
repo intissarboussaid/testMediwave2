@@ -5,10 +5,31 @@ import { useTranslation } from "react-i18next";
 import i18next from "i18next";
 import cookies from "js-cookie";
 import "./Navbar.css";
+import flagFR from "../../../assets/images/flagFR.png";
+import flagUS from "../../../assets/images/flagUS.png";
+
 
 const Header = () => {
+
+  const [isDropdownVisible, setIsDropdownVisible] = useState(false);
+  const [ccurrentLanguageCode, setCcurrentLanguageCode] = useState(cookies.get("i18next"));
+
+  const handleLanguageChange = (code) => {
+    setCcurrentLanguageCode(cookies.get("i18next"));
+    i18next.changeLanguage(code);
+  }
+
+  const [selectedOption, setSelectedOption] = useState('EN');
+
+  const handleOptionChange = (changeEvent) => {
+    setSelectedOption(changeEvent.target.value);
+  };
+
+
+
   const [selectedItem, setSelectedItem] = useState(null);
-  const [selectedOption, setSelectedOption] = useState('');
+  const [visible, setVisible] = useState(false);
+
 
 
   const handleDropdownChange = (onClick) => {
@@ -23,24 +44,18 @@ const Header = () => {
   const { width, height } = useResizeScreen();
   const [widthImage, setWidthImage] = useState(150);
   const [dropDown, setDropDown] = useState({
-    background:'rgba(130, 188, 228, 0.9)',
-    border:'rgba(130, 188, 228, 0.9)',
-    marginLeft:'none',
+    background: 'rgba(130, 188, 228, 0.9)',
+    border: 'rgba(130, 188, 228, 0.9)',
+    marginLeft: 'none',
   });
   const [styleImage, setStyleImage] = useState({ margin: "7%" });
- 
+
   const IconlanguageStyle = {
     fontSize: '22px',
     color: 'white',
     cursor: 'pointer',
     background: 'transparent',
 
-
-  };
-  const StyleFrEn = {
-    color: 'white',
-    cursor: 'pointer',
-    marginLeft:'7vh'
 
   };
 
@@ -59,9 +74,9 @@ const Header = () => {
 
   ];
 
-  const Ic_fr = () => <a style={StyleFrEn}>FR</a>;
+  const Ic_fr = () => <a style={{color:'white', textDecoration:'none' ,cursor:'pointer' }}> <img src={flagFR} style={{width:'20px'}}/> FR</a>;
 
-  const Ic_gb = () => <a style={StyleFrEn}>EN</a>;
+  const Ic_gb = () => <a style={{color:'white', textDecoration:'none',cursor:'pointer' }} > <img src={flagUS} style={{width:'20px'}}/> US</a>;
 
   const currentLanguageCode = cookies.get("i18next");
   const { t } = useTranslation();
@@ -70,86 +85,87 @@ const Header = () => {
   }, []);
 
   useEffect(() => {
-    if (width >1200) {
+    if (width > 1200) {
       console.log("i sup between 1200");
       setWidthImage(100);
       setStyleImage({ margin: "15%" });
       setDropDown({
-        background:'rgba(130, 188, 228, 0.9)',
-        border:'rgba(130, 188, 228, 0.9)',
-        marginLeft:'none',
+        background: 'rgba(130, 188, 228, 0.9)',
+        border: 'rgba(130, 188, 228, 0.9)',
+        marginLeft: 'none',
       })
     }
-   else if (width < 1200 && width > 1000) {
+    else if (width < 1200 && width > 1000) {
       console.log("i am between 1200 and 1000");
       setWidthImage(100);
       setStyleImage({ margin: "15%" });
       setDropDown({
-        background:'rgba(130, 188, 228, 0.9)',
-        border:'rgba(130, 188, 228, 0.9)',
-        marginLeft:'none',
+        background: 'rgba(130, 188, 228, 0.9)',
+        border: 'rgba(130, 188, 228, 0.9)',
+        marginLeft: 'none',
       })
     } else if (width > 1200) {
       setWidthImage(150);
       setStyleImage({ margin: "7%" });
-         setDropDown({
-        background:'rgba(130, 188, 228, 0.9)',
-        border:'rgba(130, 188, 228, 0.9)',
-        marginLeft:'none',
+      setDropDown({
+        background: 'rgba(130, 188, 228, 0.9)',
+        border: 'rgba(130, 188, 228, 0.9)',
+        marginLeft: 'none',
       })
-    } else if (width < 769 && width >563)  {
+    } else if (width < 769 && width > 563) {
       setWidthImage(90);
       setStyleImage({ top: "9%" });
       setDropDown({
-        background:'rgba(130, 188, 228, 0.9)',
-        border:'rgba(130, 188, 228, 0.9)',
-        marginLeft:'37%',
-        marginTop:'-5%',
+        background: 'rgba(130, 188, 228, 0.9)',
+        border: 'rgba(130, 188, 228, 0.9)',
+        marginLeft: '37%',
+        marginTop: '-5%',
       })
     }
-    else if (width < 562 && width> 444) {
-      setWidthImage(90);
-      setStyleImage({ marginTop: "1%"});
-      setDropDown({
-        background:'rgba(130, 188, 228, 0.9)',
-        border:'rgba(130, 188, 228, 0.9)',
-        marginLeft:'37%',
-        marginTop:'-5%',
-    })
-  }
-    else if (width <  443 && width>228) {
+    else if (width < 562 && width > 444) {
       setWidthImage(90);
       setStyleImage({ marginTop: "1%" });
       setDropDown({
-        background:'rgba(130, 188, 228, 0.9)',
-        border:'rgba(130, 188, 228, 0.9)',
-        marginLeft:'28%',
-        marginTop:'-5%',
-    })    
- }
- 
- else if (width <228 && width >200) {
-  setWidthImage(90);
-  setStyleImage({ marginTop: "6%" });
-  setDropDown({
-    background:'rgba(130, 188, 228, 0.9)',
-    border:'rgba(130, 188, 228, 0.9)',
-    marginLeft:'20%',
-    marginTop:'-5%',
-    width:'10px',
-})}else if (width <=200) {
-  setWidthImage(90);
-  setStyleImage({ marginTop: "-50%" });
-  setDropDown({
-    background:'rgba(130, 188, 228, 0.9)',
-    border:'rgba(130, 188, 228, 0.9)',
-    marginLeft:'20%',
-    marginTop:'-5%',
-    width:'10px',
-})
+        background: 'rgba(130, 188, 228, 0.9)',
+        border: 'rgba(130, 188, 228, 0.9)',
+        marginLeft: '37%',
+        marginTop: '-5%',
+      })
+    }
+    else if (width < 443 && width > 228) {
+      setWidthImage(90);
+      setStyleImage({ marginTop: "1%" });
+      setDropDown({
+        background: 'rgba(130, 188, 228, 0.9)',
+        border: 'rgba(130, 188, 228, 0.9)',
+        marginLeft: '28%',
+        marginTop: '-5%',
+      })
+    }
 
-}
- 
+    else if (width < 228 && width > 200) {
+      setWidthImage(90);
+      setStyleImage({ marginTop: "6%" });
+      setDropDown({
+        background: 'rgba(130, 188, 228, 0.9)',
+        border: 'rgba(130, 188, 228, 0.9)',
+        marginLeft: '20%',
+        marginTop: '-5%',
+        width: '10px',
+      })
+    } else if (width <= 200) {
+      setWidthImage(90);
+      setStyleImage({ marginTop: "-50%" });
+      setDropDown({
+        background: 'rgba(130, 188, 228, 0.9)',
+        border: 'rgba(130, 188, 228, 0.9)',
+        marginLeft: '20%',
+        marginTop: '-5%',
+        width: '10px',
+      })
+
+    }
+
     console.log("i am");
     console.log(width);
     console.log(widthImage);
@@ -170,9 +186,9 @@ const Header = () => {
                   data-target="#bs-example-navbar-collapse-1"
                 >
                   <span class="sr-only">Toggle navigation</span>
-                  <span class="icon-bar" style={{background:'white'}}></span>
-                  <span class="icon-bar"style={{background:'white'}}></span>
-                  <span class="icon-bar"style={{background:'white'}}></span>
+                  <span class="icon-bar" style={{ background: 'white' }}></span>
+                  <span class="icon-bar" style={{ background: 'white' }}></span>
+                  <span class="icon-bar" style={{ background: 'white' }}></span>
                 </button>
                 <a class="navbar-br/and" href="/">
                   <img
@@ -188,9 +204,9 @@ const Header = () => {
                 <ul class="nav navbar-nav navbar-right ">
                   <li>
                     <a
-                    href="/#Mediwave-section"                
-                    >     
-                            {t("h_1")}
+                      href="/#Mediwave-section"
+                    >
+                      {t("h_1")}
                     </a>
                   </li>
                   <li>
@@ -218,41 +234,76 @@ const Header = () => {
                   </li>
                   <li>
                     <a
-                       href="#contact-section">
+                      href="#ResearchAndDevelopment">
+                     R & D
+                    </a>
+
+                  </li>
+                  <li>
+                    <a
+                      href="#contact-section">
                       Contact
                     </a>
 
                   </li>
                   <li >
-                    <a style={IconlanguageStyle} data-toggle="dropdown" onChange={handleDropdownChange} >
-                    <i class="fa fa-globe"></i>
+                    <a style={{cursor:'pointer'}} onClick={() => setIsDropdownVisible(!isDropdownVisible)}>
+                      {currentLanguageCode === "fr" ? <Ic_fr /> : <Ic_gb />}  &#x2193;
+                     
                     </a>
-                    <div className="dropdown-menu" style={dropDown}   >
-                    
-                       {languages.map(({ code, name, country_code }) => (
-                    <tr
-                      disabled={code === currentLanguageCode}
-                      key={country_code}
-                      onClick={() => i18next.changeLanguage(code)}
-                      class="navItemStyle"
-                      style={{
-                        opacity: code === currentLanguageCode ? 0.3 : 1,
-                      }}
-                    >
-                      {country_code === "fr" ? <Ic_fr /> : <Ic_gb />}
-                      
-                    </tr>
-                  ))}
-                      <div>
+                    {isDropdownVisible && (
+                      <div style={{marginLeft:'20%'}}>
+                        {languages.map(({ code, name, country_code }) => (
+                          <div
+                            disabled={code === currentLanguageCode}
+                            key={country_code}
+                            onClick={() => {
+                              handleLanguageChange(code);
+                              setIsDropdownVisible(false);
+                            }}
+                            class="navItemStyle"
+                            style={{
+                              opacity: code === currentLanguageCode ? 0.3 : 1,
+                            }}
+                          >
+                            {country_code === "fr" ? <Ic_fr /> : <Ic_gb />}
+                          </div>
+                        ))}
                       </div>
-                    </div>
-                  </li> 
+                    )}                 
+                   
+                  </li>
+                  {/* <div className="dropdown-menu" style={dropDown}   >
+                      <li>
+                        <a >
+                          {languages.map(({ code, name, country_code }) => (
+                            <tr
+                              disabled={code === currentLanguageCode}
+                              key={country_code}
+                              onClick={() => i18next.changeLanguage(code)}
+                              class="navItemStyle"
+                              style={{
+                                opacity: code === currentLanguageCode ? 0.3 : 1,
+                              }}
+                            >
+                              {country_code === "fr" ? <Ic_fr /> : <Ic_gb />}
+
+                            </tr>
+                          ))}
+                        </a>
+                      </li>
+                      <div>
+
+                      </div>
+                    </div> */}
                 </ul>
               </div>
             </div>
           </div>
+          
         </nav>
       </header>
+      
     </div>
   );
 };

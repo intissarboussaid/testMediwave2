@@ -35,10 +35,10 @@ const Tarification = () => {
           style={{ paddingRight: "0px", paddingLeft: "0px" }}
         >
            <div class="title-section">
-                    <h1 style={{ marginTop: "10%" }}>
-                      {t('PRICING')}
-                    </h1>
-                  </div>
+
+                    <h1 > {t('PRICING1')}
+                    <a style={{color:'rgb(52, 152, 219)', textDecoration:'none'}}>  {t('PRICING2')}</a>
+                   </h1>                   </div>
           <div class="services-box">
             <div class="row">
               <div class="col-lg-7">

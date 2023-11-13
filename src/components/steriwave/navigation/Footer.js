@@ -52,7 +52,7 @@ const Footer = () => {
   }, [windowDimensions.width,]);
 
   return (
-    <div id="footer" style={{ marginTop: '5%',  backgroundImage: `url(${img})`, backgroundSize:'cover'}}>
+    <div id="footer" style={{  backgroundImage: `url(${img})`, backgroundSize:'cover'}}>
       
       <footer className="footerSteriwave ">
         <div class="container-fluid">

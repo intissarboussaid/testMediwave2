@@ -131,6 +131,10 @@ tr a.open-search:before {
   padding: 30px 15px;
   position: relative;
 }
+header nav .container ul li  select {
+  background: transparent;
+  border: none;
+}
 
 .navbar-nav>li>a:before {
   content: "";
@@ -1223,10 +1227,10 @@ color: white !important;
   font-size: 12px;
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
-  background: rgba(163, 163, 163, 0.5);
+  background: transparent;
   padding: 10px 35px;
   text-transform: uppercase;
-  border: 1px solid rgba(163, 163, 163, 0.5);
+  border: 2px solid white;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   -o-border-radius: 4px;
@@ -1285,9 +1289,9 @@ color: white !important;
   border: 1px solid rgb(0, 155, 244);
 }
 .center-button-mediwave a:hover {
-  color: white;
-  background: rgb(0, 155, 244);
-  border: 1px solid rgb(0, 155, 244);
+  color:  rgb(0, 155, 244);
+  background: white;
+  border: 1px solid white;
 
 }
 /* .center-button-mediwave a:hover {
@@ -2391,7 +2395,7 @@ footer  .barr {
 /* navbar Mediwave */
 
   header .navbarMedi{
-    height: 70px; 
+    max-height: 70px; 
     background:rgba(130, 188, 228, 0.9)!important; 
    }
   header.active .navbarMedi{

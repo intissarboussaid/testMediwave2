@@ -204,7 +204,7 @@ const Header = () => {
                 <ul class="nav navbar-nav navbar-right ">
                   <li>
                     <a
-                      href="/#Mediwave-section"
+                      href="/#homeMediwave-section"
                     >
                       {t("h_1")}
                     </a>
@@ -233,8 +233,7 @@ const Header = () => {
 
                   </li>
                   <li>
-                    <a
-                      href="#ResearchAndDevelopment">
+                    <a  href="#ResearchAndDevelopment">
                      R & D
                     </a>
 

@@ -7,6 +7,7 @@ import Informations from '../discoverUS/Informations';
 import Video from '../videoSteriwave/video';
 import Tarification from '../../vrme/tarification/Tarification';
 import Avis from '../avis/Avis';
+import Docs from '../docs/Docs';
 
 function SteriwaveHome() {
   return (
@@ -15,6 +16,7 @@ function SteriwaveHome() {
       <Header />
       <Informations/>  
       <Video/>
+      <Docs/>
       <Tarification />
       <Contact />
       {/* <Avis/> */}

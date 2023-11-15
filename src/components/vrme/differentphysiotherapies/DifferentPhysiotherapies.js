@@ -4,7 +4,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
 
 import { motion } from "framer-motion";
-import vid from "../../../assets/video/vid-mediwave.mp4";
 import { useTranslation } from "react-i18next";
 import "./PhysioTherapist.css";
 // import Modal from "react-modal";
@@ -174,7 +173,7 @@ function DifferentPhysiotherapies(props) {
                               {t("Our-Solution")} :
                             </Typography>
                             <Typography id="modal-modal-description" sx={{ mt: -2 }}>
-                              <video
+                              {/* <video
                                 autoPlay
                                 loop
                                 muted
@@ -182,8 +181,8 @@ function DifferentPhysiotherapies(props) {
                                 class="videoStyle"
                                 style={{ width: "100%", position: "absolute", right:'0%',marginTop:'-20%'}}
                               >
-                                <source src={vid} type="video/mp4" />
-                              </video>
+                                <source  type="video/mp4" />
+                              </video> */}
                             </Typography>
                           </Box>
                         </Modal>

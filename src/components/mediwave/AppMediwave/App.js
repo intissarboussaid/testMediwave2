@@ -24,9 +24,7 @@ function Home() {
       <Information/>  
       <OurPartenaires/> 
       <Contact />
-      <div className='footeer'>
       <Footer />
-      </div>
     </>
   )
 }

@@ -13,6 +13,7 @@
   "CLAUSTROPHOBIA_1": "The irrational fear of confined spaces. Avoiding these places may reinforce the fear.",
   "CLAUSTROPHOBIA_2": "Some people with claustrophobia experience mild anxiety when in a confined space, while others have severe anxiety or a panic attack. The most common experience is a feeling or fear of losing control.",
   "soll": "Our solution",
+  "our":"Our",
   "ACROPHOBIA": "ACROPHOBIA",
   "ACROPHOBIA_1": "Mental health condition in which the individual experiences an intense fear of heights.",
   "ACROPHOBIA_2": "A person with acrophobia experiences intense fear and anxiety when they think of tall heights or are positioned at a significant height.",
@@ -180,8 +181,15 @@
   "Heart_Artificial":"Heart Artificial",
   "t_Heart_Artificial":"The future of heart health is in the making! Our revolutionary solution is here to provide unparalleled cardiovascular support. Rediscover vitality with technology that promises to redefine your well-being and lifestyle.",
   "Ventilator":"Ventilator",
-  "t_Ventilator":"A breath of innovation in the field of air conditioning. Our fan promises a revolutionary user experience, combining efficiency, intelligence, and sophisticated design to transform your living environment."
-
+  "t_Ventilator":"A breath of innovation in the field of air conditioning. Our fan promises a revolutionary user experience, combining efficiency, intelligence, and sophisticated design to transform your living environment.", 
+  "t-Analyses1":"In-Depth ",
+  "t-Analyses2":"Analyses",
+  "Swab":"Swab Analysis",
+  "A-After-Cleaning":"Analysis After Cleaning",
+  "A-before-Cleaning":"Analysis Before Cleaning",
+  "A-After-Disinfection":"Analysis After Disinfection",
+  "A-before-Disinfection":"Analysis Before Disinfection",
+  "t-Rapport":"Bacterial Inactivation Kinetics Study"
 
 }
 

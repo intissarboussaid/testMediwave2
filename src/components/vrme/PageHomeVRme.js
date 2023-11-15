@@ -1,6 +1,6 @@
 import React from 'react';
 import "../vrme/HomeVRme.css";
-
+import ReactDOM from "https://esm.sh/react-dom@18";
 import useResizeScreen from "../../utils/useResizeScreen";
 import "primereact/resources/themes/lara-light-indigo/theme.css";
 import "primereact/resources/primereact.min.css";
@@ -19,36 +19,35 @@ import Blog from "../../components/vrme/blog/Blog";
 import Contact from '../mediwave/contact/Contact';
 import Advantage from "../../components/vrme/advantage/Advantage";
 import DifferentPhysiotherapies from "../../components/vrme/differentphysiotherapies/DifferentPhysiotherapies.js";
+
 import SymbolMedive from "../vrme/symboleMediwave/SymboleMediwave";
+import Apptest from './differentTherapies/Apptest.js';
 
 
 
 function PageHomeVRme() {
   return (
     <>
-    <div id="VRme-section">
-    {/* <SymbolMedive/> */}
-      <Header />
-      <VideoHeader />
-     
-     
-      <DifferentTherapies />
-      <DoctorLocalisation />
-      <DifferentPhysiotherapies/>
-      <PhysiotherapistLocalisation />
-      <Tarification />
-      <Advantage />
-      <Partenaire />
-      <Blog />      
-      <InformationSection />
-    
+      <div id="VRme-section">
+        {/* <SymbolMedive/> */}
+        <Header />
+        <VideoHeader />
+        <DifferentTherapies />
+        <DoctorLocalisation />
+        <DifferentPhysiotherapies />
+        <PhysiotherapistLocalisation />
+        <Tarification />
+        <Advantage />
+        <Partenaire />
+        <Blog />
+        <InformationSection />
         <Contact />
         <div className='contact-footer'>
-        <Footer />
+          <Footer />
+        </div>
       </div>
-      </div>   
 
-      </>
+    </>
   )
 }
 

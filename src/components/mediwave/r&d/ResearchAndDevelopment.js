@@ -197,8 +197,8 @@ useEffect(() => {
 
 
 return (
-    <div id='DiscoverOurSolution' >
-        <section class="about-section" style={{ marginTop: "-2%" }}>
+    <div id='ResearchAndDevelopment' >
+        <section class="about-section" style={{ marginTop: "-8%" }}>
             <div class="container">
             <div class="title-section">
              <h1 >R <a style={{ color: 'rgb(52, 152, 219)', textDecoration: 'none' }}>&</a>  D</h1>

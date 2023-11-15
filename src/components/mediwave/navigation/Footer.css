@@ -1,6 +1,27 @@
-#footer footer .container-fluid ul{
+#footer footer .container-fluid ul {
     text-decoration: none;
+ 
 }
-#footer footer .container-fluid ul li{
+.footerMediwave h2{
+font-size: 30px;
+margin-left: 55%;
+margin-top: 2%;
+}
+
+#footer footer .container-fluid ul li {
     list-style: none;
+}
+.footerMediwave .projets a {
+    color: white;
+    font-size: 120%;
+}
+
+.footerMediwave .projets a:hover {
+    color: #3498db;
+    cursor: pointer;
+    text-decoration: underline ;
+}
+.footerMediwave .nosService{
+margin-left: 60%;
+margin-top: 2%;
 }

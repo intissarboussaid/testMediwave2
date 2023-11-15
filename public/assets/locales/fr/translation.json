@@ -134,6 +134,7 @@
   "t-Solution":"Découvrez ",
   "about":"À PROPRS",
   "us":" DE NOUS",
+  "our":"Nos",
   "about-us-text1":" se distingue par son rôle d'innovateur dans le domaine des solutions médicales. Notre offre comprend trois solutions phares : ",
   "about-us-text2":"VRme, une thérapie par exposition à la réalité virtuelle dédiée à la santé ",
   "about-us-text3":"Medilink, une application révolutionnaire pour une gestion simplifiée des analyses médicales, permettant aux patients de consulter leurs résultats en ligne",
@@ -179,8 +180,15 @@
   "Heart_Artificial":"Coeur artificiel",
   "t_Heart_Artificial":" L'avenir de la santé cardiaque est en cours de création! Notre solution révolutionnaire est là pour offrir une assistance cardiovasculaire inégalée. Redécouvrez la vitalité avec une technologie qui promet de redéfinir votre bien-être et votre style de vie.",
  "Ventilator":"Ventilateur",
-  "t_Ventilator":"Un souffle d'innovation dans le domaine de la climatisation. Notre ventilateur promet une expérience utilisateur révolutionnaire, alliant efficacité, intelligence et design sophistiqué pour transformer votre environnement de vie."
-
+  "t_Ventilator":"Un souffle d'innovation dans le domaine de la climatisation. Notre ventilateur promet une expérience utilisateur révolutionnaire, alliant efficacité, intelligence et design sophistiqué pour transformer votre environnement de vie.",
+  "t-Analyses1":"Analyses ",
+  "t-Analyses2":"Approfondies",
+  "Swab":"Analyse d'écouvillonnage",
+  "A-After-Cleaning":"Analyse Après Bionettoyage",
+  "A-before-Cleaning":"Analyse Avant Bionettoyage",
+  "A-After-Disinfection":"Analyse Après Désinfection",
+  "A-before-Disinfection":"Analyse Avant Désinfection",
+  "t-Rapport":"Étude de la cinétique d'inactivation bactérienne"
 
 
 

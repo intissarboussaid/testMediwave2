@@ -137,6 +137,7 @@ const OurPartenaires = () => {
     backgroundImage: `url(${bgPartner})`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
+    height:'70vh'
   };
   const { t } = useTranslation();
   return (

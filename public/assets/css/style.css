@@ -413,10 +413,10 @@ h2 {
   border-radius: 2px;
 }
 
-#home-section a.button-one:hover {
+/* #home-section a.button-one:hover {
   background: #3498db;
   border-color: #3498db;
-}
+} */
 
 /*-------------------------------------------------*/
 /* =  About section
@@ -1198,18 +1198,19 @@ section#blog-section .blog-box .blog-post span {
   font-weight: 600;
   padding: 10px 35px;
   text-transform: uppercase;
-  border: 1px solid #3498db;
+  border: 3px solid white;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   -o-border-radius: 4px;
   border-radius: 4px;  
-  color: #3498db !important;
-  background: #ffffff !important;
+  color: white!important;
+  background: transparent !important;
   
 }
 .center-button a:hover {
-  background: #3498db !important;
-color: white !important;
+  background: white !important;
+color: #3498db !important;
+border: 3px solid white;
 }
 .center-button-mediwave {
   text-align: center;

@@ -198,7 +198,7 @@ const VideoHeader = () => {
       });
       setTextSize({ fontSize: "23px" });
     } else if (windowDimensions.width > 1400 && windowDimensions.width < 1500) {
-      // setHeight(window.innerHeight);
+    
       setTitleStyle({
         marginTop: "-25%",
         left: "55%",
@@ -396,13 +396,13 @@ const VideoHeader = () => {
         fontWeight: "18%",
       });
       setSubTitleStyle({
-        marginTop: "-17%",
+        marginTop: "-14%",
         marginLeft: "10%",
         fontSize: "7px",
         fontWeight: "10%",
       });
       setButtonStyle({
-        marginTop: "-24%",
+        marginTop: "-14%",
         marginLeft: "50%",
         fontSize: "7px",
         fontWeight: "600",

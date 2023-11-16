@@ -2,18 +2,63 @@
 import React, { useRef, useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
-
+import ninjaCandy from "../../../assets/images/NinjaVR.jpg";
+import KineCOu from "../../../assets/images/KneCou.jpg";
+import KineSoignies from "../../../assets/images/KineSoignies.jpg";
+import kineSpear from "../../../assets/images/kineSpear.jpg";
+import KineSquat from "../../../assets/images/kineSquat.jpg";
+import AppleOfEden from "../../../assets/images/AppleOfEden.jpg";
+import Carousell from '../carouselStyle/Carousell.js';
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
-import "./PhysioTherapist.css";
-// import Modal from "react-modal";
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
+
+
+
+
+
 function DifferentPhysiotherapies(props) {
   const { t } = useTranslation();
   const slideRef = useRef(null);
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+  const Card = ({ src, title, content, content1, content2, button, subContent1, subContent2, subContent3, subContent4,subContent5 }) => (
+    <div className='card'>
+      <div>{src}</div>
+      <h2>{title}</h2>
+      <p>{content}</p>
+      <p>{content1}</p>
+      <p>{content2}</p>
+      <div>{button}</div>
+  
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box className="itemm">
+          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+            {(
+              <>
+                <div>{subContent1}</div>
+                <div>{subContent2}</div>
+                <div>{subContent3}</div>
+                <div>{subContent4}</div>
+                <div>{subContent5}</div>
+              </>
+            )}
+          </Typography>
+          <button onClose={handleClose}> x</button>
+        </Box>
+      </Modal>
+  
+    </div>
+  );
   const [loadingProgress, setLoadingProgress] = useState(0);
   const { imgUrl, setImgUrl } = useState('');
   const handleClickNext = () => {
@@ -45,7 +90,7 @@ function DifferentPhysiotherapies(props) {
   const data = [
     {
       id: 1,
-      imgUrl: "/static/media/shootPutVR.ba62578c9e82b3b50375.jpg",
+      imgUrl: <img src={ninjaCandy} style={{width:'100%'}}/>,
       text1: t("CANDY_NINJA_TEXT1"),
       text2: "",
       text3: "  ",
@@ -53,57 +98,46 @@ function DifferentPhysiotherapies(props) {
     },
     {
       id: 2,
-      imgUrl: "/static/media/kineCou.a077e8c02b9a51f67012.jpg",
-      text1: "",
-      //  t("Brick_Breaker_text1"),
+      imgUrl: <img src={KineCOu} style={{width:'100%'}}/>,
+      text1: t("Brick_Breaker_text1"),
       text2: " ",
       text3: "  ",
       name: t("Brick_Breaker"),
     },
     {
       id: 3,
-      imgUrl: "/static/media/kineMain.13c024e1f91e632c45a4.jpg",
-      text1: "",
-      // t("Shot_Put_text1"),
-      text2: "",
-      //  t("Shot_Put_text2"),
+      imgUrl: <img src={KineSoignies} style={{width:'100%'}}/>,
+      text1:t("Shot_Put_text1"),
+      text2: t("Shot_Put_text2"),
       text3: "  ",
       name: t("Shot_Put"),
     },
-    // "/static/media/kineSide.508582e1dc74690aba37.jpg"
 
     {
       id: 4,
-      imgUrl: "/static/media/kineSide.508582e1dc74690aba37.jpg",
-      text1: "",
-      // t("Spear_text1"),
-      text2: "",
-      // t("Spear_text2"),
+      imgUrl: <img src={kineSpear} style={{width:'100%'}}/>,
+      text1: t("Spear_text1"),
+      text2: t("Spear_text2"),
       text3: "  ",
       name: t("Spear "),
     },
-    // {
-    //   id: 5,
-    //   imgUrl: "/static/media/SquatVr.28fd62ed0550d472e1ba.jpg"
-    //   ,
-    //   text1:"",
-    //   //  t("kineSquat_text1"),
-    //   text2:"", 
-    //   // t("kineSquat_text2"),
-    //   text3: "  ",
-    //   name: t("kineSquat"),
-    // },
+    {
+      id: 5,
+      imgUrl: <img src={KineSquat} style={{width:'100%'}}/>,
+      text1:t("kineSquat_text1"),
+      text2:t("kineSquat_text2"), 
+      text3: "  ",
+      name: t("kineSquat"),
+    },
 
-    // {
-    //   id: 7,
-    //   imgUrl:"/static/media/SquatVr.28fd62ed0550d472e1ba.jpg",
-    //   text1:"", 
-    //   // t("APPLE_EDEN_text1"),
-    //   text2:"", 
-    //   // t("APPLE_EDEN_text2"),
-    //   text3: "  ",
-    //   name: t("APPLE_EDEN"),
-    // },
+    {
+      id: 7,
+      imgUrl:  <img src={AppleOfEden} style={{width:'100%'}}/>,
+      text1:t("APPLE_EDEN_text1"),  
+      text2:t("APPLE_EDEN_text2"),   
+      text3: "  ",
+      name: t("APPLE_EDEN"),
+    },
 
 
   ];
@@ -119,15 +153,16 @@ function DifferentPhysiotherapies(props) {
     boxShadow: 24,
     p: 4,
   };
-  const [open, setOpen] = React.useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+
   return (
     <>
       <div
         class="container-fluid"
         style={{ marginLeft: "5%", marginTop: "5%", marginBottom: "5%" }}
         id="physiotherapies-section">
+
+
+
         <section class="about-section" style={{ marginTop: "5%" }}>
           <div class="container-fluid">
             <div class="title-section">
@@ -145,7 +180,31 @@ function DifferentPhysiotherapies(props) {
                 {t("PHYSIOTHERAPY_text_2")}
               </motion.p>
             </div>
-            <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 all1">
+
+
+
+            <div className='col-lg-12 col-md-12 col-sm-12 col-xs-12  contenttt'>
+              <Carousell>
+                {data.map((i) => (
+                  <>
+                    <Card
+                      src={i.imgUrl}
+                      title={i.name}
+                      content={i.text1}
+                      content1={i.text2}
+                      content2={i.text3}
+                      button={i.button}
+                    subContent={i.img}
+                    subContent2={i.name}
+                    subContent3={i.text1}
+                    subContent4={i.text2}
+                    subContent5={i.text3}
+/>
+                  </>
+                ))}
+              </Carousell>
+            </div>
+            {/* <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 all1">
               <div className="container containerSlide" style={style.width}>
                 <div className="loadbar" style={{ width: `${loadingProgress}%` }}></div>
                 <div id="slide" ref={slideRef}>
@@ -157,12 +216,12 @@ function DifferentPhysiotherapies(props) {
                       >
                       <div className="content">
                         <div className="name">{item.name}</div>
-                        {/* model */}
+                         model 
                         <Button onClick={handleOpen} style={{borderRadius: 'none', backgroundColor: 'none',width:'100%', marginLeft:'-30%', fontSize:'16px',color:'white'}}
                          >     
                           {t("Our-Solution")}
                           </Button>
-                        <Modal
+                       <Modal
                           open={open}
                           onClose={handleClose}
                           aria-labelledby="modal-modal-title"
@@ -173,19 +232,10 @@ function DifferentPhysiotherapies(props) {
                               {t("Our-Solution")} :
                             </Typography>
                             <Typography id="modal-modal-description" sx={{ mt: -2 }}>
-                              {/* <video
-                                autoPlay
-                                loop
-                                muted
-                                playsInline
-                                class="videoStyle"
-                                style={{ width: "100%", position: "absolute", right:'0%',marginTop:'-20%'}}
-                              >
-                                <source  type="video/mp4" />
-                              </video> */}
+                              
                             </Typography>
                           </Box>
-                        </Modal>
+                        </Modal> 
                       </div>
                     </div>
                   ))}
@@ -203,7 +253,7 @@ function DifferentPhysiotherapies(props) {
 
               </div>
 
-            </div>
+            </div> */}
 
           </div>
         </section>

@@ -13,11 +13,11 @@ function AppMedilink() {
     <Header />
 
     <AboutUs/>
-    <Tarification />
+    {/* <Tarification /> */}
     <Contact />
     <Footer />
     </>
-  )
+  );
 }
 
 export default AppMedilink

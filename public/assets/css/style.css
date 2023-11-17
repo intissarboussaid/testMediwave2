@@ -1186,7 +1186,7 @@ section#blog-section .blog-box .blog-post span {
   padding-top: 20px;
 }
 
-.center-button a {
+.center-button .vrme a {
   display: inline-block;
   text-decoration: none;
   transition: all 0.2s ease-in-out;
@@ -1207,9 +1207,35 @@ section#blog-section .blog-box .blog-post span {
   background: transparent !important;
   
 }
-.center-button a:hover {
+.center-button  a {
+  display: inline-block;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  font-size: 12px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  padding: 10px 35px;
+  text-transform: uppercase;
+  border: 2px solid #3498db;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;  
+  color: #3498db!important;
+  background: transparent !important;
+  
+}
+.center-button .vrme a:hover {
   background: white !important;
 color: #3498db !important;
+border: 3px solid white;
+}
+.center-button a:hover {
+  background: #3498db!important;
+color: white !important;
 border: 3px solid white;
 }
 .center-button-mediwave {
@@ -1256,31 +1282,6 @@ border: 3px solid white;
   -o-border-radius: 4px;
   border-radius: 4px;
 } */
-
-.center-button-steriwave {
-  text-align: center;
-  padding-top: 20px;
-}
-.center-button-steriwave a {
-  display: inline-block;
-  text-decoration: none;
-  transition: all 0.2s ease-in-out;
-  -moz-transition: all 0.2s ease-in-out;
-  -webkit-transition: all 0.2s ease-in-out;
-  -o-transition: all 0.2s ease-in-out;
-  font-size: 12px;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 600;
-  padding: 10px 35px;
-  text-transform: uppercase;
-  border: 1px solid rgb(0, 155, 244,0.1);
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  -o-border-radius: 4px;
-  border-radius: 4px;
-  background:rgb(219, 219, 219);
-  color:rgb(0, 155, 244);
-}
 
 
 .center-button-steriwave a:hover{
@@ -2126,11 +2127,9 @@ section#blog-section.blog-page .blog-box iframe {
   backdrop-filter: blur(10px);
 }
 .footerSteriwave {
-  text-align: center;
-  padding-top: 5px;
-  /* background: rgba(195, 145, 202, 0.8); */
-  background: rgba(114, 192, 238, 0.4);
-  backdrop-filter: blur(10px);
+  /* text-align: center; */
+  /* padding-top: 5px; */
+  background: rgba(130, 188, 228);
 }
 .footerMediwave {
   text-align: center;

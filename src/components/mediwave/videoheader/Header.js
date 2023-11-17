@@ -486,16 +486,17 @@ const VideoHeader = () => {
         fontWeight: "600",
       });
       setStyleFrontImg1({
-        height: '75%',
-        width: '25%',
-        top: '25%',
+        height: '65%',
+        width: '30%',
+        top: '35%',
         position: 'absolute',
-        zIndex: '1'
+        zIndex: '1',
+
       });
       setStyleFrontImg2({
-        height: '75%',
-        width: '30%',
-        top: '25%',
+        height: '65%',
+        width: '35%',
+        top: '35%',
         left: '15%',
         position: 'relative'
       })
@@ -521,15 +522,15 @@ const VideoHeader = () => {
         fontWeight: "600",
       });
       setStyleFrontImg1({
-        height: '69%',
+        height: '55%',
         width: '25%',
-        top: '31%',
+        top: '45%',
         position: 'absolute'
       });
       setStyleFrontImg2({
-        height: '80%',
+        height: '55%',
         width: '30%',
-        top: '20%',
+        top: '45%',
         left: '15%',
         position: 'relative'
 
@@ -556,16 +557,17 @@ const VideoHeader = () => {
         fontWeight: "600",
       });
       setStyleFrontImg1({
-        height: '69%',
-        width: '25%',
-        top: '31%',
-        position: 'absolute'
+        height: '60%',
+        width: '40%',
+        top: '40%',
+        position: 'absolute',
+        display:'none'
       });
       setStyleFrontImg2({
-        height: '80%',
-        width: '30%',
-        top: '20%',
-        left: '15%',
+        height: '60%',
+        width: '55%',
+        top: '40%',
+        left: '-10%',
         position: 'relative'
 
       });
@@ -591,15 +593,15 @@ const VideoHeader = () => {
         fontWeight: "600",
       });
       setStyleFrontImg1({
-        height: '69%',
-        width: '25%',
+        height: '60%',
+        width: '30%',
         top: '31%',
         position: 'absolute',
         zIndex: '11',
         display:'none'
       });
       setStyleFrontImg2({
-        height: '80%',
+        height: '60%',
         width: '30%',
         top: '20%',
         left: '150000000000000000000000000000000000000%',

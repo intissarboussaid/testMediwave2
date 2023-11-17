@@ -30,6 +30,7 @@ const Carousell = ({children}) => {
          
         }}>
           {child}
+          
         
         </div>
         

@@ -120,12 +120,6 @@ const OurPartenaires = () => {
       });
     }
   };
-
-  const handleDotClick = (idx) => {
-    if (idx < activeIdx) prevClick(activeIdx - idx);
-    if (idx > activeIdx) nextClick(idx - activeIdx);
-  };
-
   React.useEffect(() => {
     if (isTicking) sleep(300).then(() => setIsTicking(false));
   }, [isTicking]);
@@ -149,9 +143,9 @@ const OurPartenaires = () => {
           <div class="title-section">
             <h1>{t("our")}<a style={{ color: 'rgb(52, 152, 219)', textDecoration: 'none' }}> Partenaires</a></h1>
           </div>
-
-          <div className="col-lg-12 col-md-12 col-ls-12 " style={bgPartenaire}>
-           
+          <div className="col-lg-12 col-md-12 col-ls-12 " 
+          style={bgPartenaire}
+          >           
             <div className="carousel" >
               <div className="carousel__wrap" >
                 <div className="carousel__inner">

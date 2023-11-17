@@ -15,6 +15,10 @@ import glossophobie from "../../../assets/images/glossophobie.jpg";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import useResizeScreen from "../../../utils/useResizeScreen";
+import ReactDOM from 'https://esm.sh/react-dom@18.2.0'
+import Modal from "https://cdn.skypack.dev/react-modal@3.16.1";
+
+
 
 
 
@@ -25,18 +29,61 @@ const DifferentTherapies = (props) => {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-  const Card = ({ src, title, content, content1, content2, button, subContent1}) => (
+  const customStyles = {
+    content: {
+      top: '50%',
+      left: '50%',
+      right: 'auto',
+      bottom: 'auto',
+      width: '80%',
+      marginRight: '-50%',
+      transform: 'translate(-50%, -50%)',
+      boxShadow: '1px 2px #888888',
+    },
+  }
+
+
+  let subtitle;
+  const [modalIsOpen, setIsOpen] = React.useState(false);
+
+  function openModal1() {
+    setIsOpen(true);
+  }
+
+  function closeModal1() {
+    setIsOpen(false);
+  }
+  const Card = ({ src, title, content, content1, content2, subName, SubImg,
+    subText1,
+    subText2,
+    subText3 }) => (
     <div className='card'>
       <div>{src}</div>
       <h2>{title}</h2>
       <p>{content}</p>
       <p>{content1}</p>
       <p>{content2}</p>
-      <div >{button}</div>
-      {subContent1}
+      <p>
+      <button
+                          type="button"
+                          class="btn btn-primary"
+                          data-toggle="modal"
+                          data-target="#exampleModalCenter"
+                          style={{
+                            marginTop: "2%",
+                            alignItems: "end",
+                            width:'40%',
+                            right:'30%'
+                          }}
+                        >
+                          {t('Buy_Now')}
+                        </button>
+                        {/* Modal */}
+     
+      </p>
+  
     </div>
   );
-
   const slideRef = useRef(null);
   const windowDimensions = useResizeScreen();
   const [imageStyle1, setImageStyle1] = useState({
@@ -45,46 +92,10 @@ const DifferentTherapies = (props) => {
     marginTop: '0%',
     marginLeft: '-5%'
   });
-
-  // const handleClickNext = () => {
-  //   let items = slideRef.current.querySelectorAll(".item0");
-  //   slideRef.current.appendChild(items[0]);
-  // };
-  
   const [imgSolution, setImgSolution] = useState({
     width: '50%',
     height: '40%',
-
   });
-
-  // const [contentCarousel, setContentCarousel] = useState({
-  //   width: '100%',
-  //   marginLeft: '',
-  //   marginTop: '140%',
-  //   zIndex: '2',
-  //   background: 'white'
-  // })
-  // const style = {
-  //   width:
-  //   {
-  //     width: '50%',
-  //     height: '100vh',
-  //     marginLeft: '0px',
-  //   },
-  // }
-  // const style1 = {
-  //   position: 'absolute',
-  //   width: '50%',
-  //   border: '2px solid #000',
-  //   boxShadow: 24,
-  //   alignItems: 'center',
-  //   p: 4,
-  // };
-
-  // const handleClickPrev = () => {
-  //   let items = slideRef.current.querySelectorAll(".item0");
-  //   slideRef.current.prepend(items[items.length - 1]);
-  // };
   const data = [
     {
       id: 1,
@@ -185,53 +196,18 @@ const DifferentTherapies = (props) => {
       text2: "",
       text3: t("CLAUSTROPHOBIA_2"),
       name: t("CLAUSTROPHOBIA"),
-      button: <button  onClick={() => { setOpenModal(true) }} >
+      SubImg: <img src={assenseur} style={{ width: '20%' }} />,
+      subText1: t("APPLICATIONS_1"),
+      subText2: " ",
+      subText3: "  ",
+      SubName: t("soll"),
+      button: <button onClick={openModal1} >
         <div class="center-button">
           <a class="button-one">
             {t("Our-Solution")}
           </a>
         </div>
       </button>,
-      // img: <img src={assenseur} style={{ width: '20%' }} />,
-      // textt1: t("APPLICATIONS_1"),
-      // textt2: " ",
-      // textt3: "  ",
-      // namet: t("soll"),
-      modal: <div>
-      {openModal && <div className="modalBackground" >
-        <div className="modalContainer">
-          <div className="titleCloseBtn">
-            <button
-              onClick={() => {
-                setOpenModal(false);
-              }}
-            >
-              X
-            </button>
-          </div>
-          <div className="title">
-            <img src={assenseur} style={{ width: '20%' }} />,
-            </div>
-          <div className="body">
-            {t("soll")}
-            {t("APPLICATIONS_1")}              
-          </div>     
-          <div className="footer">
-            <button
-              onClick={() => {
-                setOpenModal(false);
-              }}
-              id="cancelBtn"
-            >
-              Cancel
-            </button>
-            <button>Continue</button>
-          </div>
-        </div>
-      </div>
-      }
-    </div>
-
     },
     {
       id: 2,
@@ -240,57 +216,57 @@ const DifferentTherapies = (props) => {
       text2: t("ACROPHOBIA_2"),
       text3: "  ",
       name: t("AGORAPHOBIA"),
-      button: <button onClick={() => { setOpenModal(true) }} >
+      button: <button onClick={openModal1} >
         <div class="center-button">
           <a class="button-one">
             {t("Our-Solution")}
           </a>
         </div>
       </button>,
-      img: <img src={acrophobieSolution} style={{ width: '20%' }} />,
-      text1: t("APPLICATIONS_2"),
-      textt2: "  ",
-      textt3: "  ",
-      namet: t("soll"),
+      subImg: <img src={acrophobieSolution} style={{ width: '20%' }} />,
+      subText1: t("APPLICATIONS_2"),
+      subText2: "  ",
+      subText3: "  ",
+      subName: t("soll"),
 
-      modal: <div>
-        {openModal && <div className="modalBackground" >
-          <div className="modalContainer">
-            <div className="titleCloseBtn">
-              <button
-                onClick={() => {
-                  setOpenModal(false);
-                }}
-              >
-                X
-              </button>
-            </div>
-        
+      // modal: <div>
+      //   {openModal && <div className="modalBackground" >
+      //     <div className="modalContainer">
+      //       <div className="titleCloseBtn">
+      //         <button
+      //           onClick={() => {
+      //             setOpenModal(false);
+      //           }}
+      //         >
+      //           X
+      //         </button>
+      //       </div>
 
-              <div className="title">
-              <img src={acrophobieSolution} style={{ width: '20%' }} />
-              </div>
-              <div className="body">
-              {t("soll")}
-                {t("APPLICATIONS_2")}
-                
-              </div>
-       
-            <div className="footer">
-              <button
-                onClick={() => {
-                  setOpenModal(false);
-                }}
-                id="cancelBtn"
-              >
-                Cancel
-              </button>
-              <button>Continue</button>
-            </div>
-          </div>
-        </div>
-        }
-      </div>
+
+      //       <div className="title">
+      //         <img src={acrophobieSolution} style={{ width: '20%' }} />
+      //       </div>
+      //       <div className="body">
+      //         {t("soll")}
+      //         {t("APPLICATIONS_2")}
+
+      //       </div>
+
+      //       <div className="footer">
+      //         <button
+      //           onClick={() => {
+      //             setOpenModal(false);
+      //           }}
+      //           id="cancelBtn"
+      //         >
+      //           Cancel
+      //         </button>
+      //         <button>Continue</button>
+      //       </div>
+      //     </div>
+      //   </div>
+      //   }
+      // </div>
 
 
     },
@@ -301,54 +277,54 @@ const DifferentTherapies = (props) => {
       text2: t("ARACHNOPHOBIA_2"),
       text3: "  ",
       name: t("ARACHNOPHOBIA"),
-      button: <button >
+      button: <button onClick={openModal1} >
         <div class="center-button">
           <a class="button-one">
             {t("Our-Solution")}
           </a>
         </div>
       </button>,
-      img: <img src={arachrophobieSolution} style={{ width: '20%' }} />,
-      textt1: t("APPLICATIONS_3"),
-      textt2: "",
-      textt3: "  ",
-      namet: t("soll"),
+      subImg: <img src={arachrophobieSolution} style={{ width: '20%' }} />,
+      subText1: t("APPLICATIONS_3"),
+      subText2: "",
+      subText3: "  ",
+      subName: t("soll"),
 
-      modal: <div>
-        {openModal && <div className="modalBackground" >
-          <div className="modalContainer">
-            <div className="titleCloseBtn">
-              <button
-                onClick={() => {
-                  setOpenModal(false);
-                }}
-              >
-                X
-              </button>
-            </div>
-            <div className="title">
-            <img src={arachrophobieSolution} style={{ width: '20%' }} />
-            </div>
-            <div className="body">
-              
-              {t("APPLICATIONS_3")}
-              {t("soll")}
-            </div>
-            <div className="footer">
-              <button
-                onClick={() => {
-                  setOpenModal(false);
-                }}
-                id="cancelBtn"
-              >
-                Cancel
-              </button>
-              <button>Continue</button>
-            </div>
-          </div>
-        </div>
-        }
-      </div>
+      // modal: <div>
+      //   {openModal && <div className="modalBackground" >
+      //     <div className="modalContainer">
+      //       <div className="titleCloseBtn">
+      //         <button
+      //           onClick={() => {
+      //             setOpenModal(false);
+      //           }}
+      //         >
+      //           X
+      //         </button>
+      //       </div>
+      //       <div className="title">
+      //         <img src={arachrophobieSolution} style={{ width: '20%' }} />
+      //       </div>
+      //       <div className="body">
+
+      //         {t("APPLICATIONS_3")}
+      //         {t("soll")}
+      //       </div>
+      //       <div className="footer">
+      //         <button
+      //           onClick={() => {
+      //             setOpenModal(false);
+      //           }}
+      //           id="cancelBtn"
+      //         >
+      //           Cancel
+      //         </button>
+      //         <button>Continue</button>
+      //       </div>
+      //     </div>
+      //   </div>
+      //   }
+      // </div>
 
     },
     {
@@ -358,7 +334,7 @@ const DifferentTherapies = (props) => {
       text2: t("AGORAPHOBIA_2"),
       text3: "  ",
       name: t("AGORAPHOBIA"),
-      button: <button>
+      button: <button onClick={openModal1} >
         <div class="center-button">
           <a class="button-one">
             {t("Our-Solution")}
@@ -366,44 +342,48 @@ const DifferentTherapies = (props) => {
         </div>
       </button>,
 
+      subImg: <img src={agoraSol} style={{ width: '20%' }} />,
+      subText1: t("APPLICATIONS_4_1"),
+      subText2: t("APPLICATIONS_4_2"),
+      subText3: "  ",
+      subName: t("soll"),
+      // modal: <div>
+      //   {openModal && <div className="modalBackground" >
+      //     <div className="modalContainer">
+      //       <div className="titleCloseBtn">
+      //         <button
+      //           onClick={() => {
+      //             setOpenModal(false);
+      //           }}
+      //         >
+      //           X
+      //         </button>
+      //       </div>
+      //       <div className="title">
+      //         <img src={agoraSol} style={{ width: '20%' }} />
+      //       </div>
+      //       <div className="body">
 
-      modal: <div>
-        {openModal && <div className="modalBackground" >
-          <div className="modalContainer">
-            <div className="titleCloseBtn">
-              <button
-                onClick={() => {
-                  setOpenModal(false);
-                }}
-              >
-                X
-              </button>
-            </div>
-            <div className="title">
-            <img src={agoraSol} style={{ width: '20%' }} />
-            </div>
-            <div className="body">
-             
-              {t("APPLICATIONS_4_1")},
-              {t("APPLICATIONS_4_2")},
+      //         {t("APPLICATIONS_4_1")},
+      //         {t("APPLICATIONS_4_2")},
 
-              {t("soll")},
-            </div>
-            <div className="footer">
-              <button
-                onClick={() => {
-                  setOpenModal(false);
-                }}
-                id="cancelBtn"
-              >
-                Cancel
-              </button>
-              <button>Continue</button>
-            </div>
-          </div>
-        </div>
-        }
-      </div>
+      //         {t("soll")},
+      //       </div>
+      //       <div className="footer">
+      //         <button
+      //           onClick={() => {
+      //             setOpenModal(false);
+      //           }}
+      //           id="cancelBtn"
+      //         >
+      //           Cancel
+      //         </button>
+      //         <button>Continue</button>
+      //       </div>
+      //     </div>
+      //   </div>
+      //   }
+      // </div>
 
 
     },
@@ -414,55 +394,17 @@ const DifferentTherapies = (props) => {
       text2: t("SOCIAL_PHOBIA_2"),
       text3: "  ",
       name: t("SOCIAL_PHOBIA"),
-      button: <button>
+      button: <button onClick={openModal1} >
         <div class="center-button">
           <a class="button-one">
             {t("Our-Solution")}
           </a>
         </div>
       </button>,
-
-      textt1: t('SOCIAL_PHOBIA_Soll_1'),
-      textt2: t('SOCIAL_PHOBIA_Soll_2'),
-      textt3: t('SOCIAL_PHOBIA_Soll_3'),
-
-
-      modal: <div>
-        {openModal && <div className="modalBackground" >
-          <div className="modalContainer">
-            <div className="titleCloseBtn">
-              <button
-                onClick={() => {
-                  setOpenModal(false);
-                }}
-              >
-                X
-              </button>
-            </div>
-            <div className="title">
-            <img src={glossophobie} style={{ width: '20%' }} />
-            </div>
-            <div className="body">
-             
-              {t('SOCIAL_PHOBIA_Soll_1')}
-              {t('SOCIAL_PHOBIA_Soll_2')}
-              {t('SOCIAL_PHOBIA_Soll_3')}
-            </div>
-            <div className="footer">
-              <button
-                onClick={() => {
-                  setOpenModal(false);
-                }}
-                id="cancelBtn"
-              >
-                Cancel
-              </button>
-              <button>Continue</button>
-            </div>
-          </div>
-        </div>
-        }
-      </div>
+      subImg: <img src={glossophobie} style={{ width: '20%' }} />,
+      subText1: t('SOCIAL_PHOBIA_Soll_1'),
+      subText2: t('SOCIAL_PHOBIA_Soll_2'),
+      subText3: t('SOCIAL_PHOBIA_Soll_3'),
 
 
     },
@@ -570,10 +512,50 @@ const DifferentTherapies = (props) => {
                       content={i.text1}
                       content1={i.text2}
                       content2={i.text3}
-                      button={i.button} 
-                      subContent1={i.modal}  
-                 
+                      subName={i.subName}
+                      SubImg={i.SubImg}
+                      subText1={i.subText1}
+                      subText2={i.subText2}
+                      subText3={i.subText3}
+
                     />
+                   <div
+        class="modal fade"
+        id="exampleModalCenter"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <h5 class="modal-title" id="exampleModalLongTitle">
+              test
+              </h5>
+              <p>test</p>
+            </div>
+            <section className="">
+              <div class="">
+                <div class="row" style={{marginLeft:"2%",marginRight:"2%"}}>
+                  <div class="col-md-12 col-sm-8">
+                    test
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+
 
                   </>
                 ))}
@@ -582,9 +564,6 @@ const DifferentTherapies = (props) => {
             </div>
           </div>
         </section>
-
-
-
       </div>
 
 

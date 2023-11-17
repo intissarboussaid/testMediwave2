@@ -253,7 +253,7 @@ function DiscoverUs() {
 
                                 <div class="center-button">
                                     <a
-                                        href="/VRme"
+                                        href="/VRme#therapies-section"
                                         class="button-one"
                                         style={ButtonLeftStyle}
                                     >
@@ -262,34 +262,6 @@ function DiscoverUs() {
                                 </div>
                             </div>
                         </div>
-                        {/* <div className='col-lg-12 col-md-12 col-ms-12 col-s-12 '  style={ContanierRight}>
-                            <div className='col-lg-4 col-md-4 col-ms-4 col-s-4'>
-                                <img src={solKine} style={RightImg} />
-                                <img src={kine} style={SubRightImg} />
-                            </div>
-                            <div className='col-lg-6 col-md-7 col-ms-8 col-s-12 ' style={{ marginTop: top }} >
-                                <motion.p
-                                    initial={{ opacity: 0 }}
-                                    animate={{ opacity: 1 }}
-                                    whileHover={{ scale: 1.1 }}
-                                    whileTap={{ scale: 0.8 }}
-                                    style={teftText}
-                                >
-                                    <p>  <a style={{ fontSize: '25px', color: 'rgb(52, 152, 219)', textDecoration: 'none' }}> {t("h_5")}</a>,{t("t-kine-vr-1")}<br />{t("t-kine-vr-2")}</p>
-                                </motion.p>
-                                <div class="center-button">
-                                    <a
-                                        href="/VRme"
-                                        class="button-one"
-                                        style={buttonStyle}
-                                    >
-                                        {t("t-Solution")}{t("t-Our")}
-                                    </a>
-                                </div>
-                            </div>
-
-
-                        </div> */}
                         <div className='col-lg-12 col-md-12 col-ms-12 col-s-12 ' style={{marginTop:'15%'}}>
                             <div className='col-lg-4 col-md-4 col-ms-4 col-s-4' >
                             <img src={solKine} style={RightImg} />
@@ -308,7 +280,7 @@ function DiscoverUs() {
                                 </motion.p>
                                 <div class="center-button">
                                     <a
-                                        href="/VRme"
+                                        href="/VRme#physiotherapies-section"
                                         class="button-one"
                                         style={buttonStyle}
                                     >

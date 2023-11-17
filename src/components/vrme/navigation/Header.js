@@ -5,64 +5,41 @@ import { useTranslation } from "react-i18next";
 import i18next from "i18next";
 import cookies from "js-cookie";
 import "./Header.css";
+import flagFR from "../../../assets/images/flagFR.png";
+import flagUS from "../../../assets/images/flagUS.png";
 
 const Header = () => {
-  const [selectedOption, setSelectedOption] = useState('');
 
-
-  const handleDropdownChange=(onClick)=>{
-   if(onClick.DropDownMenu.Ic_fr){
-    setSelectedOption('FR');
-   }else if(onClick.DropDownMenu.Ic_gb){
-    setSelectedOption('En');
-   }else{setSelectedOption('');}
-   console.log('selectedOption',selectedOption);
+  const [isDropdownVisible, setIsDropdownVisible] = useState(false);
+  const [ccurrentLanguageCode, setCcurrentLanguageCode] = useState(cookies.get("i18next"));
+  const handleLanguageChange = (code) => {
+    setCcurrentLanguageCode(cookies.get("i18next"));
+    i18next.changeLanguage(code);
   }
 
-  const handleOptionSelect = (option) => {
-    setSelectedOption(option);
-    console.log('option' , );
-  };
   const { width, height } = useResizeScreen();
   const [widthImage, setWidthImage] = useState(150);
   const [styleImage, setStyleImage] = useState({ margin: "7%" });
   const [active, setActive] = useState({
-    home: "active", 
+    home: "active",
     therapies: "",
     doctors: "",
-    physiotherapyVR:"",
+    physiotherapyVR: "",
     physiotherapist: "",
     pricing: "",
     blog: "",
     contact: "",
   });
-  const IconlanguageStyle = {
-    fontSize: '22px',
-    color: 'black',
-    cursor: 'pointer',
-    background: 'transparent',
 
-  };
-  const StyleFrEn = {
-    color: 'white',
-    fontSize:'18px',
-    textAlign:'center',
-    paddingLeft: '50px',
-    paddingRight: '100px',
-    cursor:'pointer'
-    
+  const [navbarInder, setNavbarInder] = useState('');
 
-  };
-
-  const [navbarInder, setNavbarInder]= useState('');
-
-  const ChangeInderline=()=>{
-    if(window.scrollY <= 200) {
+  const ChangeInderline = () => {
+    if (window.scrollY <= 200) {
       setActive({
         home: "active",
         therapies: "",
         doctors: "",
-        physiotherapies:"",
+        physiotherapies: "",
         physiotherapist: "",
         pricing: "",
         blog: "",
@@ -70,41 +47,41 @@ const Header = () => {
       })
       setNavbarInder('active.home + " " + "navItemStyle"');
       console.log('home ')
-    }else if(window.scrollY >= 250  &&  window.scrollY <=1300 ){
-    
+    } else if (window.scrollY >= 250 && window.scrollY <= 1300) {
+
       setActive({
         home: "",
         therapies: "active",
         doctors: "",
-        physiotherapies:"",
+        physiotherapies: "",
         physiotherapist: "",
         pricing: "",
         blog: "",
         contact: "",
       })
       setNavbarInder('active.therapies + " " + "navItemStyle"');
-      console.log('therapies' )
+      console.log('therapies')
     }
-    else if(window.scrollY >= 1350 && window.scrollY <= 2299  ){
+    else if (window.scrollY >= 1350 && window.scrollY <= 2299) {
       setActive({
         home: "",
         therapies: "",
         doctors: "active",
-        physiotherapies:"",
+        physiotherapies: "",
         physiotherapist: "",
         pricing: "",
         blog: "",
         contact: "",
       })
       setNavbarInder('active.doctors + " " + "navItemStyle"');
-      console.log('doctors' )
+      console.log('doctors')
     }
-    else if(window.scrollY >=2300 && window.scrollY <= 3450   ){
+    else if (window.scrollY >= 2300 && window.scrollY <= 3450) {
       setActive({
         home: "",
         therapies: "",
         doctors: "",
-        physiotherapies:"active",
+        physiotherapies: "active",
         physiotherapist: "",
         pricing: "",
         blog: "",
@@ -112,68 +89,68 @@ const Header = () => {
 
       })
       setNavbarInder('active.physiotherapyVR + " " + "navItemStyle"');
-      console.log('physiotherapyVR' )
-      
+      console.log('physiotherapyVR')
+
     }
-    else if(window.scrollY >= 3451  && window.scrollY <= 4500  ){
+    else if (window.scrollY >= 3451 && window.scrollY <= 4500) {
       setActive({
         home: "",
         therapies: "",
         doctors: "",
-        physiotherapies:"",
+        physiotherapies: "",
         physiotherapist: "active",
         pricing: "",
         blog: "",
         contact: "",
       })
       setNavbarInder('active.physiotherapist + " " + "navItemStyle"');
-      console.log('physiotherapist' )
+      console.log('physiotherapist')
     }
-    else if(window.scrollY >= 4500 && window.scrollY <= 5000  ){
+    else if (window.scrollY >= 4500 && window.scrollY <= 5000) {
       setActive({
         home: "",
         therapies: "",
         doctors: "",
-        physiotherapies:"",
+        physiotherapies: "",
         physiotherapist: "",
         pricing: "active",
         blog: "",
         contact: "",
       })
       setNavbarInder('active.pricing + " " + "navItemStyle"');
-      console.log('pricing' )
+      console.log('pricing')
     }
-    else if( window.scrollY >= 5000 && window.scrollY <= 7000  ){
+    else if (window.scrollY >= 5000 && window.scrollY <= 7000) {
       setActive({
         home: "",
         therapies: "",
         doctors: "",
-        physiotherapies:"",
+        physiotherapies: "",
         physiotherapist: "",
         pricing: "",
         blog: "active",
         contact: "",
       })
       setNavbarInder('active.active + " " + "navItemStyle"');
-      console.log('active' )
+      console.log('active')
     }
-    else if(window.scrollY >= 7000 ){
+    else if (window.scrollY >= 7000) {
       setActive({
         home: "",
         therapies: "",
         doctors: "",
-        physiotherapies:"",
+        physiotherapies: "",
         physiotherapist: "",
         pricing: "",
         blog: "",
         contact: "active",
       })
       setNavbarInder('active.contact + " " + "navItemStyle"');
-      console.log('contact' )
+      console.log('contact')
     }
   };
-  window.addEventListener('scroll',ChangeInderline)
-  
+  window.addEventListener('scroll', ChangeInderline)
+
   // langages
   const languages = [
     {
@@ -186,11 +163,12 @@ const Header = () => {
       name: "English",
       country_code: "gb",
     },
-    
-  ];
-  const Ic_fr = () => <a style={StyleFrEn}>FR</a>;
 
-  const Ic_gb = () => <a style={StyleFrEn}>EN</a>;
+  ];
+  const Ic_fr = () => <a style={{ color: 'white', textDecoration: 'none', cursor: 'pointer' }}> <img src={flagFR} style={{ width: '20px' }} /> FR</a>;
+
+  const Ic_gb = () => <a style={{ color: 'white', textDecoration: 'none', cursor: 'pointer' }} > <img src={flagUS} style={{ width: '20px' }} /> US</a>;
+
 
   const currentLanguageCode = cookies.get("i18next");
   const { t } = useTranslation();
@@ -206,13 +184,13 @@ const Header = () => {
     } else if (width > 1200) {
       setWidthImage(150);
       setStyleImage({ margin: "7%" });
-    } else if (width < 770 && width > 443 ) {
+    } else if (width < 770 && width > 443) {
       setWidthImage(90);
       setStyleImage({ margin: "2%" });
     }
-    else if (width <443 ) {
+    else if (width < 443) {
       setWidthImage(90);
-      setStyleImage({display:'none' });
+      setStyleImage({ display: 'none' });
     }
 
     console.log("i am");
@@ -260,7 +238,7 @@ const Header = () => {
                         home: "active",
                         therapies: "",
                         doctors: "",
-                        physiotherapies:"",
+                        physiotherapies: "",
                         physiotherapist: "",
                         pricing: "",
                         blog: "",
@@ -278,10 +256,10 @@ const Header = () => {
                   <li
                     onClick={() =>
                       setActive({
-                        home:"",
+                        home: "",
                         therapies: "active",
                         doctors: "",
-                        physiotherapies:"",
+                        physiotherapies: "",
                         physiotherapist: "",
                         pricing: "",
                         blog: "",
@@ -296,14 +274,14 @@ const Header = () => {
                       {t("h_2")}
                     </a>
                   </li>
-                 
+
                   <li
                     onClick={() =>
                       setActive({
                         home: "",
                         therapies: "",
                         doctors: "active",
-                        physiotherapies:"",
+                        physiotherapies: "",
                         physiotherapist: "",
                         pricing: "",
                         blog: "",
@@ -318,7 +296,7 @@ const Header = () => {
                       Doctors
                     </a>
                   </li>
-                   {/* <li
+                  {/* <li
                     onClick={() =>
                       setActive({
                         home: "",
@@ -345,7 +323,7 @@ const Header = () => {
                         home: "",
                         therapies: "",
                         doctors: "",
-                        physiotherapies:"active",
+                        physiotherapies: "active",
                         physiotherapist: "",
                         pricing: "",
                         blog: "",
@@ -367,7 +345,7 @@ const Header = () => {
                         home: "",
                         therapies: "",
                         doctors: "",
-                        physiotherapies:"",
+                        physiotherapies: "",
                         physiotherapist: "active",
                         pricing: "",
                         blog: "",
@@ -390,7 +368,7 @@ const Header = () => {
                         home: "",
                         therapies: "",
                         doctors: "",
-                        physiotherapies:"",
+                        physiotherapies: "",
                         physiotherapist: "",
                         pricing: "active",
                         blog: "",
@@ -405,14 +383,14 @@ const Header = () => {
                       {t("f_3")}
                     </a>
                   </li>
-               
+
                   <li
                     onClick={() =>
                       setActive({
                         home: "",
                         therapies: "",
                         doctors: "",
-                        physiotherapies:"",
+                        physiotherapies: "",
                         physiotherapist: "",
                         pricing: "",
                         blog: "active",
@@ -433,7 +411,7 @@ const Header = () => {
                         home: "",
                         therapies: "",
                         doctors: "",
-                        physiotherapies:"",
+                        physiotherapies: "",
                         physiotherapist: "",
                         pricing: "",
                         blog: "",
@@ -441,81 +419,43 @@ const Header = () => {
                       })
                     }
                   >
-                   
-                    <a 
+
+                    <a
                       href="#contact-section"
                       class={active.contact + " " + "navItemStyle"}
-                    > 
+                    >
                       Contact
                     </a>
                   </li>
 
                   <li></li>
                   <li></li>
-                  {/*<li>                
-                     <a style={IconlanguageStyle}>
-                      <i class='fa fa-language '></i>
-                      <button type="button"></button>
-                    </a> 
-                    
-                      {languages.map(({ code, name, country_code }) => (
-                    <tr
-                      disabled={code === currentLanguageCode}
-                      key={country_code}
-                      onClick={() => i18next.changeLanguage(code)}
-                      class="navItemStyle"
-                      style={{
-                        opacity: code === currentLanguageCode ? 0.3 : 1,
-                      }}
-                    >
-                      {country_code === "fr" ? <Ic_fr /> : <Ic_gb />}
-                    </tr>
-                  ))}
-                    </li>*/}
-
                   <li >
-                    <a   style={IconlanguageStyle} data-toggle="dropdown" onChange={handleDropdownChange} >
-                    <i class="fa fa-globe"></i>
+                    <a style={{ cursor: 'pointer' }} onClick={() => setIsDropdownVisible(!isDropdownVisible)}>
+                      {currentLanguageCode === "fr" ? <Ic_fr /> : <Ic_gb />}  &#x2193;
+
                     </a>
-                    <div className="dropdown-menu "   >
-                      {/* {languages.map((option, index) => (
-                        <a key={index} onClick={() => handleOptionSelect(option)}>
-                          {languages.map(({ code, name, country_code }) => (
-                            <tr
-                              disabled={code === currentLanguageCode}
-                              key={country_code}
-                              onClick={() => i18next.changeLanguage(code)}
-                              class="navItemStyle"
-                              style={{
-                                opacity: code === currentLanguageCode ? 0.3 : 1,
-                              }}
-                            >
-                              <a>
-                                {country_code === "fr" ? <Ic_fr /> : <Ic_gb />}
-                              </a>
-                            </tr>
-                          ))}
-                        </a>
-                      ))
-                      } */}
-                       {languages.map(({ code, name, country_code }) => (
-                    <tr
-                      disabled={code === currentLanguageCode}
-                      key={country_code}
-                      onClick={() => i18next.changeLanguage(code)}
-                      class="navItemStyle"
-                      style={{
-                        opacity: code === currentLanguageCode ? 0.3 : 1,
-                      }}
-                    >
-                      
-                      { country_code === "fr" ? <Ic_fr /> : <Ic_gb />}
-                     
-                    </tr>
-                  ))}
-                      <div>
+                    {isDropdownVisible && (
+                      <div style={{ marginLeft: '20%' }}>
+                        {languages.map(({ code, name, country_code }) => (
+                          <div
+                            disabled={code === currentLanguageCode}
+                            key={country_code}
+                            onClick={() => {
+                              handleLanguageChange(code);
+                              setIsDropdownVisible(false);
+                            }}
+                            class="navItemStyle"
+                            style={{
+                              opacity: code === currentLanguageCode ? 0.3 : 1,
+                            }}
+                          >
+                            {country_code === "fr" ? <Ic_fr /> : <Ic_gb />}
+                          </div>
+                        ))}
                       </div>
-                    </div>
+                    )}
+
                   </li>
                   {/*  */}
                 </ul>

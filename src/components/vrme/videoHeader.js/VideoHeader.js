@@ -456,13 +456,15 @@ const VideoHeader = () => {
                   style={buttonStyle}
                 >
                   <div class="center-button">
-                    <a
+                    <div class="vrme">
+                    <a              
                       href="#doctor-section"
-                      class="button-one"
+                      class="vrme button-one"
                       style={textSize}
                     >
                       {t("Find")}{" "}
                     </a>
+                    </div>
                   </div>
                   {/* <button type="btn">Trouver un thérapeute</button> */}
                 </div>

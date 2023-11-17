@@ -68,10 +68,70 @@ button {
   border: unset;
 }
 .left {
-  transform:  translateX(-450%) translatey(-50%); 
+  transform:  translateX(-580%) translatey(-50%); 
   }
   
 .right {
     z-index: 10;
-    transform: translateX(60%) translatey(-50%);
+    transform: translateX(150%) translatey(-50%);
   } 
+
+/*-------------------------------------------------*/
+/* =  Responsive Part
+/*-------------------------------------------------*/
+
+@media (max-width: 1000px) {
+  .card{
+  width:150%;
+  margin-left: 0%;
+  height: 100%;
+  }
+  button {
+    margin-left: -2%;
+  }
+  .left {
+    z-index: 10;
+    transform:  translateX(-300%) translatey(-50%); 
+    /* margin-left:-90%; */
+    }
+    .right {
+      z-index: 10;
+      /* transform: translateX(250%) translatey(-50%); */
+      margin-left:5%;
+    }
+}
+@media (max-width: 500px) {
+  .card{
+  width:300%;
+  margin-left: -50%;
+  height: 100%;
+  }
+  .left {
+    z-index: 10;
+    transform:  translateX(-300%) translatey(-50%); 
+    /* margin-left:-90%; */
+    }
+    .right {
+      z-index: 10;
+      /* transform: translateX(250%) translatey(-50%); */
+      margin-left:5%;
+    }
+}
+
+@media (max-width: 400px) {
+  .card{
+  width:350%;
+  margin-left: -70%;
+  height: 100%;
+  }
+  .left {
+    z-index: 10;
+    transform:  translateX(-300%) translatey(-50%); 
+    /* margin-left:-90%; */
+    }
+    .right {
+      z-index: 10;
+      /* transform: translateX(250%) translatey(-50%); */
+      margin-left:5%;
+    }
+}

@@ -19,16 +19,11 @@ a {
 }
 
 .carousel__wrap {
-    margin-top: 10%;
-    align-items: center;
-    display: flex;
-    flex: 1;
-    justify-content: center;
-    position: relative;
-    width: 380%;
-    left: 280%;
-height: 50rem;
-    transform: translateX(-50%);
+    margin-top: 300%;
+    position: absolute;
+    width: 700%;
+    margin-left: 700%;
+    height: 50rem;
 }
 
 .carousel__inner {
@@ -151,7 +146,7 @@ height: 50rem;
     padding: 3px;
     width: 6rem;
     z-index: 10;
-    margin-top: -90%; 
+    margin-top: 20%; 
 }
 .carousel__btn-arrow--left {
     transform: rotate(135deg);

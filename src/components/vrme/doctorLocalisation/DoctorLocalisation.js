@@ -215,11 +215,10 @@ const DoctorLocalisation = () => {
         <div class="container">
           <div class="title-section">
             <h1>{t("Find")}</h1>
-            {/* <p>Sed arcu. Cras consequat.</p> */}
           </div>
         </div>
         <div class="row">
-          <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+          <div class="col-lg-4 col-md-5 col-sm-6 col-xs-6">
             <div className="card flex justify-content-center">
               <Card
                 title={t("All_Doctors")}
@@ -360,6 +359,7 @@ const DoctorLocalisation = () => {
               </Card>
             </div>
           </div>
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
           {selectedMap.map1 ? (
             <div class={`${mapAdjust}`}>
               <iframe
@@ -452,6 +452,8 @@ const DoctorLocalisation = () => {
               {/* <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d51792.26018942601!2d10.578497617784596!3d35.77497688642883!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13020aed8ec4bbbb%3A0xbc3f31e38b7f743b!2sSousse%20Riad!5e0!3m2!1sen!2stn!4v1677838951208!5m2!1sen!2stn" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> */}
             </div>
           ) : null}
+</div>
+
           {showDoctor ? (
             <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
               <div class="card">

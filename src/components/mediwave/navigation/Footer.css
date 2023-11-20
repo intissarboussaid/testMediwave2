@@ -25,3 +25,13 @@ margin-top: 2%;
 margin-left: 60%;
 margin-top: 2%;
 }
+  
+@media (max-width: 991px) {
+   .footerMediwave  .container-fluid .row .ourServices{
+margin-left: -100%;
+    }
+    .footerMediwave  .container-fluid .row .ourServices ul{
+        margin-left: -10%;
+        font-size: 16px;
+            }
+}

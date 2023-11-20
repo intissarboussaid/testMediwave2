@@ -421,7 +421,7 @@ const VideoHeader = () => {
         class="slider1"
       >
         <div class="tp-banner-container">
-          <div class="tp-banner"  style={{ height: viewportHeight+"px" }}>
+          <div class="tp-banner"  >
             <video
               autoPlay
               loop

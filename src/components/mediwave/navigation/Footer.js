@@ -30,10 +30,10 @@ const Footer = () => {
                   </li>
                 </ul>
               </div>
-              <div>
+              <div className=" col-lg-4 col-md-4 col-s-12 ourServices">
               <h2>{t("t-Our")}</h2>
               <div className="nosService">
-              <div className="col-lg-4 col-md-4 col-s-12 projets" >
+              <div className=" projets" >
                <ul><a href="/Medilink">MediLink</a></ul> 
                <ul><a href="/Steriwave">Steriwave</a></ul>  
                 <ul><a href="/VRme">VRme</a></ul> 

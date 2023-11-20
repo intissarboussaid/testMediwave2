@@ -432,7 +432,7 @@ const Header = () => {
                   <li></li>
                   <li >
                     <a style={{ cursor: 'pointer' }} onClick={() => setIsDropdownVisible(!isDropdownVisible)}>
-                      {currentLanguageCode === "fr" ? <Ic_fr /> : <Ic_gb />}  &#x2193;
+                      {currentLanguageCode === "en" ?<Ic_gb />  :<Ic_fr /> }  &#x2193;
 
                     </a>
                     {isDropdownVisible && (

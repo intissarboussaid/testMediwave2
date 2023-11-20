@@ -17,7 +17,7 @@ const [ContanierRight, setContanierRight] = useState({
     height: '200%',
     marginTop: '30%'
 });
-
+const [fontSizeP, setFontSizeP] = useState('16px');
 
 const [teftText, setLeftTextt] = useState({
     marginLeft: '20%',
@@ -110,8 +110,7 @@ useEffect(() => {
             width: '100%',
             height: '100%',
         });
-     
-
+        setFontSizeP('16px')     
     }
 
     if (windowDimensions.width < 992) {
@@ -190,8 +189,20 @@ useEffect(() => {
             marginLeft: '0%',
             display: 'none'
         });
-        setTop('5%')
+        setTop('5%');     
 
+    }
+    if (windowDimensions.width > 700){
+        setFontSizeP('16px');
+    };
+    if (windowDimensions.width < 700 && windowDimensions.width > 400 ){
+        setFontSizeP('14px');
+    };
+    if (windowDimensions.width < 400 && windowDimensions.width > 225 ){
+        setFontSizeP('12px');
+    }
+    if (windowDimensions.width < 225 ){
+        setFontSizeP('10px');
     }
 }, [windowDimensions.width,]);
 
@@ -216,7 +227,7 @@ return (
                                 whileTap={{ scale: 0.8 }}
                                 style={rightText}
                             >
-                                <p><a style={{ fontSize: '25px', color: 'rgb(52, 152, 219)', textDecoration: 'none' }}>  {t("Syringe_Pump")}</a> ,{t("t_Syringe_Pump")}</p>
+                                <p style={{fontSize:fontSizeP}}><a style={{ fontSize: '25px', color: 'rgb(52, 152, 219)', textDecoration: 'none' }}>  {t("Syringe_Pump")}</a> ,{t("t_Syringe_Pump")}</p>
                             </motion.p>
 
                            
@@ -235,7 +246,7 @@ return (
                                 whileTap={{ scale: 0.8 }}
                                 style={teftText}
                             >
-                                <p>  <a style={{ fontSize: '25px', color: 'rgb(52, 152, 219)', textDecoration: 'none' }}> {t("Heart_Artificial")}</a>,{t("t_Heart_Artificial")}</p>
+                                <p style={{fontSize:fontSizeP}}>  <a style={{ fontSize: '25px', color: 'rgb(52, 152, 219)', textDecoration: 'none' }}> {t("Heart_Artificial")}</a>,{t("t_Heart_Artificial")}</p>
                             </motion.p>
                             
                         </div>
@@ -253,7 +264,7 @@ return (
                                 whileTap={{ scale: 0.8 }}
                                 style={rightText}
                             >
-                                <p > <a style={{ fontSize: '25px', color: 'rgb(52, 152, 219)', textDecoration: 'none' }}> {t("Ventilator")} </a>, {t("t_Ventilator")} </p>
+                                <p style={{fontSize:fontSizeP}} > <a style={{ fontSize: '25px', color: 'rgb(52, 152, 219)', textDecoration: 'none' }}> {t("Ventilator")} </a>, {t("t_Ventilator")} </p>
                             </motion.p>                            
                         </div>
                     </div>

@@ -19,28 +19,6 @@ const Header = () => {
     i18next.changeLanguage(code);
   }
 
-  const [selectedOption, setSelectedOption] = useState('EN');
-
-  const handleOptionChange = (changeEvent) => {
-    setSelectedOption(changeEvent.target.value);
-  };
-
-
-
-  const [selectedItem, setSelectedItem] = useState(null);
-  const [visible, setVisible] = useState(false);
-
-
-
-  const handleDropdownChange = (onClick) => {
-    if (onClick.DropDownMenu.Ic_fr) {
-      setSelectedOption('FR');
-    } else if (onClick.DropDownMenu.Ic_gb) {
-      setSelectedOption('En');
-    } else { setSelectedOption(''); }
-    console.log('selectedOption', selectedOption);
-  }
-
   const { width, height } = useResizeScreen();
   const [widthImage, setWidthImage] = useState(150);
   const [dropDown, setDropDown] = useState({
@@ -55,8 +33,6 @@ const Header = () => {
     color: 'white',
     cursor: 'pointer',
     background: 'transparent',
-
-
   };
 
   // langages
@@ -247,7 +223,7 @@ const Header = () => {
                   </li>
                   <li >
                     <a style={{cursor:'pointer'}} onClick={() => setIsDropdownVisible(!isDropdownVisible)}>
-                      {currentLanguageCode === "fr" ? <Ic_fr /> : <Ic_gb />}  &#x2193;
+                      {currentLanguageCode === "en" ? <Ic_gb /> : <Ic_fr />}  &#x2193;
                      
                     </a>
                     {isDropdownVisible && (

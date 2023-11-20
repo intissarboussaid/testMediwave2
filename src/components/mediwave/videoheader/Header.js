@@ -6,6 +6,7 @@ import { useTranslation } from "react-i18next";
 import "./Header.css";
 
 const VideoHeader = () => {
+
   const [height, setHeight] = useState(window.innerHeight);
   const [topT2, setTopT2] =useState('3%')
   const [styleFrontImg1, setStyleFrontImg1] = useState({
@@ -572,7 +573,7 @@ const VideoHeader = () => {
 
       });
       setTextSize({ fontSize: "13px" });
-    } else if (windowDimensions.width >= 500 && windowDimensions.width < 700) {
+    } else if (windowDimensions.width >= 600 && windowDimensions.width < 700) {
       setHeight(window.innerHeight);
       setTitleStyle({
         marginTop: "25%",
@@ -610,23 +611,23 @@ const VideoHeader = () => {
 
       });
       setTextSize({ fontSize: "9px" });
-    } else if (windowDimensions.width > 400 && windowDimensions.width < 500) {
+    } else if (windowDimensions.width > 500 && windowDimensions.width < 600) {
       setHeight(window.innerHeight);
 
       setTitleStyle({
-        marginTop: "20%",
+        marginTop: "-15%",
         left: "15%",
         fontSize: "13px",
         fontWeight: "18%",
       });
       setSubTitleStyle({
-        marginTop: "30%",
+        marginTop: "-5%",
         marginLeft: "15%",
         fontSize: "11px",
         fontWeight: "10%",
       });
       setButtonStyle({
-        marginTop: "35%",
+        marginTop: "0%",
         marginLeft: "30%",
         fontSize: "7px",
         fontWeight: "600",
@@ -649,23 +650,23 @@ const VideoHeader = () => {
       });
       setTextSize({ fontSize: "7px" });
     } 
-    else if (windowDimensions.width >= 222 && windowDimensions.width < 400) {
+    else if (windowDimensions.width >= 450 && windowDimensions.width < 500) {
       setHeight(window.innerHeight);
 
       setTitleStyle({
-        marginTop: "5%",
+        marginTop: "-35%",
         left: "6%",
         fontSize: "13px",
         fontWeight: "18%",
       });
       setSubTitleStyle({
-        marginTop: "20%",
+        marginTop: "-20%",
         marginLeft: "6%",
         fontSize: "10px",
         fontWeight: "10%",
       });
       setButtonStyle({
-        marginTop: "27%",
+        marginTop: "-15%",
         marginLeft: "8%",
         fontSize: "7px",
         fontWeight: "600",
@@ -687,24 +688,28 @@ const VideoHeader = () => {
 
       });
       setTextSize({ fontSize: "7px" });
-    }else if (windowDimensions.width <222) {
-     setTopT2('2%')
+    }
+    
+    else if (windowDimensions.width >= 350 && windowDimensions.width < 450) {
       setHeight(window.innerHeight);
+
       setTitleStyle({
-        marginTop: "5%",
-        left: "3%",
-        fontSize: "10px",
+        marginTop: "-35%",
+        left: "6%",
+        fontSize: "11px",
         fontWeight: "18%",
       });
       setSubTitleStyle({
-        marginTop: "15%",
-        marginLeft: "3%",
-        fontSize: "6px",
+        marginTop: "-20%",
+        marginLeft: "6%",
+        fontSize: "9px",
         fontWeight: "10%",
-        display:'none'
       });
       setButtonStyle({
-        marginTop: "10%",
+        marginTop: "-7%",
+        marginLeft: "8%",
+        fontSize: "7px",
+        fontWeight: "600",
       });
       setStyleFrontImg1({
         height: '69%',
@@ -722,43 +727,162 @@ const VideoHeader = () => {
         position: 'relative',
 
       });
-      setTextSize({ fontSize: "9px" });
-    }else if (windowDimensions.width < 100) {
-      setTopT2('2%')
-       setHeight(window.innerHeight);
-       setTitleStyle({
-         marginTop: "1%",
-         left: "3%",
-         fontSize: "9px",
-         fontWeight: "18%",
-       });
-       setSubTitleStyle({
-         marginTop: "15%",
-         marginLeft: "3%",
-         fontSize: "9px",
-         fontWeight: "10%",
-       });
-       setButtonStyle({
-         marginTop: "24%",
-       });
-       setStyleFrontImg1({
-         height: '69%',
-         width: '25%',
-         top: '31%',
-         left: '10000000000000000000000000000000%',
-         position: 'absolute',
-         zIndex: '11',
-       });
-       setStyleFrontImg2({
-         height: '80%',
-         width: '30%',
-         top: '20%',
-         left: '10000000000000000000000000000000%',
-         position: 'relative',
+      setTextSize({ fontSize: "7px" });
+    }
+    else if (windowDimensions.width >= 290 && windowDimensions.width < 350) {
+      setHeight(window.innerHeight);
+
+      setTitleStyle({
+        marginTop: "-65%",
+        left: "0%",
+        fontSize: "10px",
+        fontWeight: "18%",
+      });
+      setSubTitleStyle({
+        marginTop: "-50%",
+        marginLeft: "0%",
+        fontSize: "8px",
+        fontWeight: "10%",
+      });
+      setButtonStyle({
+        marginTop: "-37%",
+        marginLeft: "8%",
+        fontSize: "7px",
+        fontWeight: "600",
+      });
+      setStyleFrontImg1({
+        height: '69%',
+        width: '25%',
+        top: '31%',
+        left: '10000000000000000000000000000000%',
+        position: 'absolute',
+        zIndex: '11',
+      });
+      setStyleFrontImg2({
+        height: '80%',
+        width: '30%',
+        top: '20%',
+        left: '10000000000000000000000000000000%',
+        position: 'relative',
+
+      });
+      setTextSize({ fontSize: "7px" });
+    }
+    else if (windowDimensions.width  < 290 && windowDimensions.width > 236) {
+      setHeight(window.innerHeight);
+
+      setTitleStyle({
+        marginTop: "-75%",
+        left: "0%",
+        fontSize: "8.2px",
+        fontWeight: "18%",
+      });
+      setSubTitleStyle({
+        marginTop: "-60%",
+        marginLeft: "0%",
+        fontSize: "6.7px",
+        fontWeight: "10%",
+      });
+      setButtonStyle({
+        marginTop: "-47%",
+        marginLeft: "8.2%",
+        fontSize: "7px",
+        fontWeight: "600",
+      });
+      setStyleFrontImg1({
+        height: '69%',
+        width: '25%',
+        top: '31%',
+        left: '10000000000000000000000000000000%',
+        position: 'absolute',
+        zIndex: '11',
+      });
+      setStyleFrontImg2({
+        height: '80%',
+        width: '30%',
+        top: '20%',
+        left: '10000000000000000000000000000000%',
+        position: 'relative',
+
+      });
+      setTextSize({ fontSize: "7px" });
+    }
+    else if (windowDimensions.width <236) {
+      setHeight(window.innerHeight);
+
+      setTitleStyle({
+        marginTop: "-150%",
+        left: "0%",
+        fontSize: "6px",
+        fontWeight: "18%",
+      });
+      setSubTitleStyle({
+        marginTop: "-140%",
+        marginLeft: "0%",
+        fontSize: "6px",
+        fontWeight: "10%",
+        width:'100%'
+      });
+      setButtonStyle({
+        marginTop: "-130%",
+        marginLeft: "0%",
+        fontSize: "8px",
+        fontWeight: "600",
+      });
+      setStyleFrontImg1({
+        height: '69%',
+        width: '25%',
+        top: '31%',
+        left: '10000000000000000000000000000000%',
+        position: 'absolute',
+        zIndex: '11',
+      });
+      setStyleFrontImg2({
+        height: '80%',
+        width: '30%',
+        top: '20%',
+        left: '10000000000000000000000000000000%',
+        position: 'relative',
+
+      });
+      setTextSize({ fontSize: "7px" });
+    }
+    // else if (windowDimensions.width < 100) {
+    //   setTopT2('2%')
+    //    setHeight(window.innerHeight);
+    //    setTitleStyle({
+    //      marginTop: "1%",
+    //      left: "3%",
+    //      fontSize: "9px",
+    //      fontWeight: "18%",
+    //    });
+    //    setSubTitleStyle({
+    //      marginTop: "15%",
+    //      marginLeft: "3%",
+    //      fontSize: "9px",
+    //      fontWeight: "10%",
+    //    });
+    //    setButtonStyle({
+    //      marginTop: "24%",
+    //    });
+    //    setStyleFrontImg1({
+    //      height: '69%',
+    //      width: '25%',
+    //      top: '31%',
+    //      left: '10000000000000000000000000000000%',
+    //      position: 'absolute',
+    //      zIndex: '11',
+    //    });
+    //    setStyleFrontImg2({
+    //      height: '80%',
+    //      width: '30%',
+    //      top: '20%',
+    //      left: '10000000000000000000000000000000%',
+    //      position: 'relative',
  
-       });
-       setTextSize({ fontSize: "9px" });
-     }
+    //    });
+    //    setTextSize({ fontSize: "9px" });
+    //  }
     console.log(height);
   }, [windowDimensions.width,]);
   const [textSize, setTextSize] = useState({ fontSize: "26px" });
@@ -769,7 +893,7 @@ const VideoHeader = () => {
         class="slider1"
         style={{ height: `${height}px` }}
       >
-        <div class="tp-banner-container content ">
+        <div class="tp-banner-container content " >
           <div >
             <div class="tp-banner" style={{ width: "100%", height: height+"px", background: ' rgb(52, 152, 219,0.5)', top: '0', left: '0' }} >
               <img src={img1} class="img" style={styleFrontImg1} />

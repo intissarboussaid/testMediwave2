@@ -16,6 +16,7 @@ function AboutUs() {
     //    marginLeft:'50%',
     //    marginTop: "-25%",
     });
+    const [fontSizeP, setFontSizeP] = useState('16px');
     const [imgStyle, setImgStyle] = useState({
         marginLeft:'0%',
     //    marginTop:'-7%'
@@ -44,7 +45,7 @@ function AboutUs() {
           height:'230%',
           marginTop:'-20%'
         });
-
+        setFontSizeP('16px');
     } else if (windowDimensions.width > 2100 && windowDimensions.width < 2200) {
   setTitleStyle({
             marginTop: "-6%",
@@ -66,7 +67,8 @@ function AboutUs() {
             marginLeft:'180%', 
             marginTop:'-40%', 
             position:'relative'
-        })
+        });
+        setFontSizeP('16px');
     }  else if (windowDimensions.width > 2000 && windowDimensions.width < 2100) {
   setTitleStyle({
             marginTop: "-6%",
@@ -80,15 +82,7 @@ function AboutUs() {
           width:'230%',
           height:'230%',
         });
-        setImg2Style({
-            width:'70%',
-            height:'100%',         
-            border:' 5px solid white',
-            boxShadow:' 0 5px 10px #505050',  
-            marginLeft:'180%', 
-            marginTop:'-40%', 
-            position:'relative'
-        })
+        setFontSizeP('16px');
     } else if (windowDimensions.width > 1900 && windowDimensions.width < 2000) {
   setTitleStyle({
             marginTop: "-6%",
@@ -102,15 +96,7 @@ function AboutUs() {
           width:'230%',
           height:'230%',
         });
-        setImg2Style({
-            width:'70%',
-            height:'100%',         
-            border:' 5px solid white',
-            boxShadow:' 0 5px 10px #505050', 
-            marginLeft:'180%', 
-            marginTop:'-40%', 
-            position:'relative'
-        })
+        setFontSizeP('16px');
     }  else if (windowDimensions.width > 1800 && windowDimensions.width < 1900) {
   setTitleStyle({
             marginTop: "-6%",
@@ -124,15 +110,7 @@ function AboutUs() {
           width:'230%',
           height:'230%',
         });
-        setImg2Style({
-            width:'70%',
-            height:'100%',         
-            border:' 5px solid white',
-            boxShadow:' 0 5px 10px #505050', 
-            marginLeft:'180%', 
-            marginTop:'-40%', 
-            position:'relative'
-        })
+        setFontSizeP('16px');
     }  else if (windowDimensions.width > 1700 && windowDimensions.width < 1800) {
   setTitleStyle({
             marginTop: "-6%",
@@ -145,16 +123,7 @@ function AboutUs() {
         setImgStyle({
           width:'230%',
           height:'230%',
-        });
-        setImg2Style({
-            width:'70%',
-            height:'100%',         
-            border:' 5px solid white',
-            boxShadow:' 0 5px 10px #505050', 
-            marginLeft:'180%', 
-            marginTop:'-40%', 
-            position:'relative'
-        })
+        });setFontSizeP('16px');
     }  else if (windowDimensions.width > 1600 && windowDimensions.width < 1700) {
   setTitleStyle({
             marginTop: "-6%",
@@ -168,15 +137,7 @@ function AboutUs() {
           width:'230%',
           height:'230%',
         });
-        setImg2Style({
-            width:'70%',
-            height:'100%',         
-            border:' 5px solid white',
-            boxShadow:' 0 5px 10px #505050', 
-            marginLeft:'180%', 
-            marginTop:'-40%', 
-            position:'relative'
-        })
+        setFontSizeP('16px');
     }  else if (windowDimensions.width > 1500 && windowDimensions.width < 1600) {
         setTitleStyle({
             marginTop: "-8%",
@@ -191,15 +152,7 @@ function AboutUs() {
           height:'230%',
           marginTop: "-15%",
         });
-        setImg2Style({
-            width:'70%',
-            height:'100%',         
-            border:' 5px solid white',
-            boxShadow:' 0 5px 10px #505050', 
-            marginLeft:'180%', 
-            marginTop:'-40%', 
-            position:'relative'
-        })
+        setFontSizeP('16px');
     }  else if (windowDimensions.width > 1400 && windowDimensions.width < 1500) {
         setTitleStyle({
             marginTop: "-8%",
@@ -214,15 +167,7 @@ function AboutUs() {
           height:'230%',
           marginTop: "-15%",
         });
-        setImg2Style({
-            width:'70%',
-            height:'100%',         
-            border:' 5px solid white',
-            boxShadow:' 0 5px 10px #505050', 
-            marginLeft:'180%', 
-            marginTop:'-40%', 
-            position:'relative'
-        })
+        setFontSizeP('16px');
     } if ((windowDimensions.width > 1300 && windowDimensions.width < 1400)) {
         setTitleStyle({
             marginTop: "-8%",
@@ -237,15 +182,7 @@ function AboutUs() {
           height:'230%',
           marginTop: "-15%",
         });
-        setImg2Style({
-            width:'70%',
-            height:'100%',         
-            border:' 5px solid white',
-            boxShadow:' 0 5px 10px #505050', 
-            marginLeft:'180%', 
-            marginTop:'-40%', 
-            position:'relative'
-        })
+        setFontSizeP('16px');
     } else if (windowDimensions.width > 1200 && windowDimensions.width < 1300) {
         setTitleStyle({
             marginTop: "-6%",
@@ -259,15 +196,7 @@ function AboutUs() {
           width:'230%',
           height:'230%',
         });
-        setImg2Style({
-            width:'70%',
-            height:'70%',        
-            border:' 5px solid white',
-            boxShadow:' 0 5px 10px #505050', 
-            marginLeft:'180%', 
-            marginTop:'-40%', 
-            position:'relative'
-        });
+        setFontSizeP('16px');
 
       } else if (windowDimensions.width > 1100 && windowDimensions.width < 1200) {
         setTitleStyle({
@@ -282,16 +211,7 @@ function AboutUs() {
           width:'230%',
           height:'230%',
         });
-        setImg2Style({
-            width:'70%',
-            height:'70%',        
-            border:' 5px solid white',
-            boxShadow:' 0 5px 10px #505050', 
-            marginLeft:'180%', 
-            marginTop:'-40%', 
-            position:'relative'
-        })
-
+        setFontSizeP('16px');
       } else if (windowDimensions.width > 1000 && windowDimensions.width < 1100) {
         setTitleStyle({
             marginTop: "-6%",
@@ -304,17 +224,8 @@ function AboutUs() {
         setImgStyle({
           width:'230%',
           height:'230%',
-        })
-;
-        setImg2Style({
-            width:'70%',
-            height:'70%',        
-            border:' 5px solid white',
-            boxShadow:' 0 5px 10px #505050', 
-            marginLeft:'180%', 
-            marginTop:'-40%', 
-            position:'relative'
-        })
+        });
+        setFontSizeP('16px');
       }
     
       else if (windowDimensions.width >= 992 && windowDimensions.width <= 999) {
@@ -330,17 +241,8 @@ function AboutUs() {
         setImgStyle({
           width:'300%',
           height:'100%',
-        })
-;
-        setImg2Style({
-            width:'70%',
-            height:'70%',        
-            border:' 5px solid white',
-            boxShadow:' 0 5px 10px #505050', 
-            marginLeft:'180%', 
-            marginTop:'-40%', 
-            position:'relative'
-        })
+        });
+        setFontSizeP('16px');
       }
       else if (windowDimensions.width > 900 && windowDimensions.width <= 991) {
         setTitleStyle({
@@ -355,17 +257,8 @@ function AboutUs() {
         setImgStyle({
           width:'50%',
           height:'100%',
-        })
-;
-        setImg2Style({
-            width:'70%',
-            height:'70%',        
-            border:' 5px solid white',
-            boxShadow:' 0 5px 10px #505050', 
-            marginLeft:'180%', 
-            marginTop:'-40%', 
-            position:'relative'
-        })
+        });
+setFontSizeP('16px');
       }
        else if (windowDimensions.width > 700 && windowDimensions.width < 900) {
         setTitleStyle({
@@ -382,19 +275,11 @@ function AboutUs() {
           height:'70%',
           marginLeft:'15%',
         });
-        setImg2Style({
-            width:'25%',
-            height:'25%',        
-            border:' 5px solid white',
-            boxShadow:' 0 5px 10px #505050', 
-            marginLeft:'70%', 
-            marginTop:'-15%', 
-            position:'relative'
-        })
+        setFontSizeP('16px');
       } else if (windowDimensions.width > 500 && windowDimensions.width < 700) {
         setTitleStyle({
             marginTop: "-6%",
-            fontSize: '35px'
+            fontSize: '30px'
         });
         setTextStyle({
             marginLeft:'38%',
@@ -407,21 +292,13 @@ function AboutUs() {
           height:'70%',
           marginLeft:'15%',
         })
-        setImg2Style({
-            width:'25%',
-            height:'25%',        
-            border:' 5px solid white',
-            boxShadow:' 0 5px 10px #505050', 
-            marginLeft:'70%', 
-            marginTop:'-15%', 
-            position:'relative'
-        })
+        setFontSizeP('14px');
 
 
       } else if (windowDimensions.width > 300 && windowDimensions.width < 500) {
         setTitleStyle({
             marginTop: "-6%",
-            fontSize: '30px'
+            fontSize: '20px'
         });
         setTextStyle({
             marginLeft:'38%',
@@ -434,15 +311,8 @@ function AboutUs() {
           height:'100%',
           marginLeft:'0%',
         });
-        setImg2Style({
-            width:'25%',
-            height:'25%',        
-            border:' 5px solid white',
-            boxShadow: ' 0 5px 10px #505050',
-            marginLeft:'70%', 
-            marginTop:'-15%', 
-            position:'relative'
-        })
+        setFontSizeP('12px');
+
 
       } else if (windowDimensions.width > 100 && windowDimensions.width < 300) {
         setTitleStyle({
@@ -469,7 +339,9 @@ function AboutUs() {
             marginLeft:'70%', 
             marginTop:'-15%', 
             position:'relative'
-        })
+        });
+        setFontSizeP('11px');
+
 
       }
 
@@ -487,9 +359,9 @@ function AboutUs() {
     }, [windowDimensions.width,])
     const { t } = useTranslation();
     return (
-        <section class="about-section" style={titleStyle}>
+        <section class="about-section" >
             <div class="container">
-                <div class="title-section">                
+                <div class="title-section" style={{marginTop:'-15%'}}>                
                     <h1 style={titleStyle}>{t("about")}
                     <a style={{color:'rgb(52, 152, 219)', textDecoration:'none'}}> {t("us")}</a>
                    </h1>              
@@ -505,7 +377,7 @@ function AboutUs() {
                     animate={{ opacity: 1 }}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.8}}
-                    style={{ textAlign: "justify", marginTop: "7%" }}
+                    style={{ textAlign: "justify", marginTop: "7%",fontSize:fontSizeP }}
                 >
                        <a style={{color:'rgb(52, 152, 219)', textDecoration:'none', fontSize:'25px'}}> Mediwave</a>{t("about-us-text1")}<br />
                     {t("about-us-text2")}<br />

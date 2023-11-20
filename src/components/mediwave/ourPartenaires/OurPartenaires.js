@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import './OurPartenaire.css'
 import enis from "../../../assets/images/enis.png";
 import threedwave from "../../../assets/images/3dwave.png";
@@ -7,49 +7,81 @@ import actia from "../../../assets/images/ACTIA.png";
 import cims from "../../../assets/images/CIMS.png";
 import fmm from "../../../assets/images/FMM.jpg";
 import tim from "../../../assets/images/TIM.png";
+import MS from "../../../assets/images/MS.png"
+import CTMBH from "../../../assets/images/CTMBH.jpg"
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
+import useResizeScreen from "../../../utils/useResizeScreen";
 import bgPartner from "../../../assets/images/bgpartenaire.jpg";
-const slideWidth = 30;
+
 
 const _items = [
   {
     player: {
+      image: CTMBH,
+      height: '40%',
+      color:'white'
+    }
+  },
+  {
+    player: {
       image: enis,
-      height: '40%'
+      height: '40%',
+      color:'white'
     }
   },
   {
     player: {
       image: threedwave,
-      height: '40%'
+      height: '40%',
+      color:'white'
+
     }
   },
   {
     player: {
       image: fms,
-      height: '40%'
+      height: '41%',
+      color:'white'
     }
   },
   {
     player: {
       image: fmm,
-      height: '40%'
+      height: '40%',
+      color:'white'
     }
   },
   {
     player: {
       image: actia,
-      height: '20%', top: '10%'
+      height: '30%', top: '10%',
+      color:'white'
     }
   },
-
+  {
+    player: {
+      image: MS,
+      height: '50%', top: '-15%',
+      color:'white'
+    }
+  },
   {
     player: {
       image: tim,
-      height: '40%'
+      height: '40%',
+      color:'white'
     }
   },
+  {
+    player: {
+      image: cims,
+      height: '40%',
+      width:'140%',
+      color:'white'
+    }
+  },
+ 
 ];
 const length = _items.length;
 _items.push(..._items);
@@ -58,12 +90,14 @@ const sleep = (ms = 0) => {
   return new Promise((resolve) => setTimeout(resolve, ms));
 };
 
+const keys = Array.from(Array(_items.length).keys());
+const OurPartenaires = () => { 
+  const [slideWidth, setSlideWidth ] = useState(20);
 const createItem = (position, idx) => {
   const item = {
     styles: {
       transform: `translateX(${position * slideWidth}rem)`,
       marginTop: '0%',
-      // background:'white'
     },
     player: _items[idx].player,
   };
@@ -85,21 +119,21 @@ const createItem = (position, idx) => {
 const CarouselSlideItem = ({ pos, idx, activeIdx }) => {
   const item = createItem(pos, idx, activeIdx);
   return (
-
-
     <li className="carousel__slide-item" style={item.styles}>
       <div className="carousel__slide-item-img-link">
-        <img src={item.player.image} alt={item.player.title} style={{ height: item.player.height, marginTop: item.player.top }} />
+        <img src={item.player.image} alt={item.player.title} style={{ height: item.player.height, marginTop: item.player.top, backgroundColor:item.player.color, width: item.player.width}} />
       </div>
     </li>
   );
-};
-const keys = Array.from(Array(_items.length).keys());
-const OurPartenaires = () => {
+}; 
   const [items, setItems] = React.useState(keys);
   const [isTicking, setIsTicking] = React.useState(false);
   const [activeIdx, setActiveIdx] = React.useState(0);
   const bigLength = items.length;
+  const [titleStyle, setTitleStyle] = useState({
+    fontSize: '50px',
+    textTransform: 'uppercase',
+});
 
   const prevClick = (jump = 1) => {
     if (!isTicking) {
@@ -133,7 +167,49 @@ const OurPartenaires = () => {
     backgroundPosition: 'center',
     height:'70vh'
   };
+ 
   const { t } = useTranslation();
+  const windowDimensions = useResizeScreen();
+  useEffect(() => {
+    if(windowDimensions.width > 1000){  
+        setTitleStyle({
+          textTransform: 'uppercase',
+        fontSize: '45px'
+    });
+    setSlideWidth(20);
+
+}    if (windowDimensions.width < 1000 && windowDimensions.width > 700 ) {
+  setTitleStyle({
+      fontSize: '45px',
+      textTransform: 'uppercase',
+  });
+  setSlideWidth(20);
+}
+if (windowDimensions.width < 700 && windowDimensions.width > 500 ) {
+  setTitleStyle({
+      fontSize: '30px',
+      textTransform: 'uppercase',
+  });
+  setSlideWidth(20);
+}
+if (windowDimensions.width < 500 &&  windowDimensions.width > 290) {
+  setTitleStyle({
+      fontSize: '20px',
+      textTransform: 'uppercase',
+  });
+  setSlideWidth(20);
+
+}  
+if (windowDimensions.width < 290) {
+  setTitleStyle({
+      fontSize: '20px',
+      textTransform: 'uppercase',
+  });
+  setSlideWidth(1.9);
+
+} 
+
+}, [windowDimensions.width,])
   return (
 
     <div id="Partenaires">
@@ -141,7 +217,7 @@ const OurPartenaires = () => {
         <div class="row" style={{ marginTop: "2%" }}>
 
           <div class="title-section">
-            <h1>{t("our")}<a style={{ color: 'rgb(52, 152, 219)', textDecoration: 'none' }}> Partenaires</a></h1>
+            <h1 style={titleStyle} >{t("our")}<a style={{ color: 'rgb(52, 152, 219)', textDecoration: 'none' }}> Partenaires</a></h1>
           </div>
           <div className="col-lg-12 col-md-12 col-ls-12 " 
           style={bgPartenaire}

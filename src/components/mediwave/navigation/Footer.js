@@ -9,7 +9,7 @@ const Footer = () => {
 
       <footer className="footerMediwave" >
         <div class="container-fluid">
-          <div class="row">            
+          <div class="row">
             <div className="col-lg-12 col-md-12 col-s-12">
               <div className="col-lg-4 col-md-4 col-s-12">
                 <ul class="social-icons" style={{ marginLeft: '12%', marginTop: '12%' }}>
@@ -31,19 +31,19 @@ const Footer = () => {
                 </ul>
               </div>
               <div className=" col-lg-4 col-md-4 col-s-12 ourServices">
-              <h2>{t("t-Our")}</h2>
-              <div className="nosService">
-              <div className=" projets" >
-               <ul><a href="/Medilink">MediLink</a></ul> 
-               <ul><a href="/Steriwave">Steriwave</a></ul>  
-                <ul><a href="/VRme">VRme</a></ul> 
+                <h2 className="title">{t("t-Our")}</h2>
+                <div className="nosService">
+                  <div className="first projets" >
+                    <ul><a href="/Medilink">MediLink</a></ul>
+                    <ul><a href="/Steriwave">Steriwave</a></ul>
+                    <ul><a href="/VRme">VRme</a></ul>
+                  </div>
+                  <div className="second projets">
+                    <ul><a href="#ResearchAndDevelopment"> Heart Artificial</a></ul>
+                    <ul> <a href="#ResearchAndDevelopment"> Ventilateur</a></ul>
+                    <ul><a href="#ResearchAndDevelopment"> diagnose me</a></ul>
+                  </div>
                 </div>
-                <div className="col-lg-8 col-md-8 col-s-12 projets">
-                 <ul><a href="#ResearchAndDevelopment"> Heart Artificial</a></ul>  
-                  <ul> <a href="#ResearchAndDevelopment"> Ventilateur</a></ul>
-                  <ul><a href="#ResearchAndDevelopment"> diagnose me</a></ul>              
-              </div>
-              </div>
               </div>
             </div>
 

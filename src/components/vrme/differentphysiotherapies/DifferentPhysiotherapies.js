@@ -33,7 +33,7 @@ function DifferentPhysiotherapies(props) {
       <p>{content}</p>
       <p>{content1}</p>
       <p>{content2}</p>
-      <div>{button}</div>
+      {/* <div>{button}</div> */}
   
       <Modal
         open={open}
@@ -193,7 +193,7 @@ function DifferentPhysiotherapies(props) {
                       content={i.text1}
                       content1={i.text2}
                       content2={i.text3}
-                      button={i.button}
+                      // button={i.button}
                     subContent={i.img}
                     subContent2={i.name}
                     subContent3={i.text1}

@@ -64,7 +64,7 @@ const DifferentTherapies = (props) => {
       <p>{content1}</p>
       <p>{content2}</p>
       <p>
-      <button
+      {/* <button
                           type="button"
                           class="btn btn-primary"
                           data-toggle="modal"
@@ -77,7 +77,7 @@ const DifferentTherapies = (props) => {
                           }}
                         >
                           {t('Buy_Now')}
-                        </button>
+                        </button> */}
                         {/* Modal */}
      
       </p>
@@ -504,7 +504,7 @@ const DifferentTherapies = (props) => {
             </div>
             <div className='col-lg-12 col-md-12 col-sm-12 col-xs-12  contenttt'>
               <Carousell>
-                {data1.map((i) => (
+                {data.map((i) => (
                   <>
                     <Card
                       src={i.imgUrl}
@@ -519,7 +519,7 @@ const DifferentTherapies = (props) => {
                       subText3={i.subText3}
 
                     />
-                   <div
+                   {/* <div
         class="modal fade"
         id="exampleModalCenter"
         tabindex="-1"
@@ -554,7 +554,7 @@ const DifferentTherapies = (props) => {
             </section>
           </div>
         </div>
-      </div>
+      </div> */}
 
 
                   </>

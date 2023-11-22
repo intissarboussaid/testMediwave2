@@ -275,7 +275,7 @@ function Informations() {
     return (
         <>
             <div id='DiscoverOurSolution'>
-                <section class="about-section" style={{ marginTop: "-13%" }}>
+                <section class="about-section" style={{ marginTop: "-7%" }}>
                     <div class="container">
                         <div class="title-section">
                             <h1>{t("t-Solution")} <a style={{ color: 'rgb(52, 152, 219)', textDecoration: 'none' }}>SteriWave</a></h1>

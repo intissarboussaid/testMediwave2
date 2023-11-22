@@ -95,7 +95,7 @@ const Video = () => {
 
     return (
         <div id = 'DiscoverOurSolution' >
-            <section class="about-section" style={{ marginTop: "-4%" }}>
+            <section class="about-section" style={{ marginTop: "5%" }}>
                 <div class="container">
                     <div class="title-section">
                         <h1>{t("t-video1")} <a style={{ color: 'rgb(52, 152, 219)', textDecoration: 'none' }}>{t("t-video2")} </a></h1>

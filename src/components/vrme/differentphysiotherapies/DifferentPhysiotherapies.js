@@ -2,22 +2,63 @@
 import React, { useRef, useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
-import { Carousel } from 'react-responsive-carousel';
-import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import ninjaCandy from "../../../assets/images/NinjaVR.jpg";
+import KineCOu from "../../../assets/images/KneCou.jpg";
+import KineSoignies from "../../../assets/images/KineSoignies.jpg";
+import kineSpear from "../../../assets/images/kineSpear.jpg";
+import KineSquat from "../../../assets/images/kineSquat.jpg";
+import AppleOfEden from "../../../assets/images/AppleOfEden.jpg";
+import Carousell from '../carouselStyle/Carousell.js';
 import { motion } from "framer-motion";
-import vid from "../../../assets/video/vid-mediwave.mp4";
 import { useTranslation } from "react-i18next";
-import "./PhysioTherapist.css";
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
-import candyNinja from '../../../assets/images/CandyNinja.jpg';
-import physiotherapy5 from '../../../assets/images/physiotherapy5.jpg';
-import cou from '../../../assets/images/kineCou.jpg';
+
+
+
+
+
 function DifferentPhysiotherapies(props) {
   const { t } = useTranslation();
   const slideRef = useRef(null);
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+  const Card = ({ src, title, content, content1, content2, button, subContent1, subContent2, subContent3, subContent4,subContent5 }) => (
+    <div className='card'>
+      <div>{src}</div>
+      <h2>{title}</h2>
+      <p>{content}</p>
+      <p>{content1}</p>
+      <p>{content2}</p>
+      {/* <div>{button}</div> */}
+  
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box className="itemm">
+          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+            {(
+              <>
+                <div>{subContent1}</div>
+                <div>{subContent2}</div>
+                <div>{subContent3}</div>
+                <div>{subContent4}</div>
+                <div>{subContent5}</div>
+              </>
+            )}
+          </Typography>
+          <button onClose={handleClose}> x</button>
+        </Box>
+      </Modal>
+  
+    </div>
+  );
   const [loadingProgress, setLoadingProgress] = useState(0);
   const { imgUrl, setImgUrl } = useState('');
   const handleClickNext = () => {
@@ -29,6 +70,8 @@ function DifferentPhysiotherapies(props) {
     slideRef.current.prepend(items[items.length - 1]);
   };
   const [show, setShow] = useState(false);
+
+  // const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const style = {
     width:
@@ -47,7 +90,7 @@ function DifferentPhysiotherapies(props) {
   const data = [
     {
       id: 1,
-      imgUrl: <img src={candyNinja} style={{width:'50%'}}/>,
+      imgUrl: <img src={ninjaCandy} style={{width:'100%'}}/>,
       text1: t("CANDY_NINJA_TEXT1"),
       text2: "",
       text3: "  ",
@@ -55,54 +98,43 @@ function DifferentPhysiotherapies(props) {
     },
     {
       id: 2,
-      imgUrl: <img src={cou} style={{width:'50%'}}/>  ,
+      imgUrl: <img src={KineCOu} style={{width:'100%'}}/>,
       text1: t("Brick_Breaker_text1"),
-      //  
       text2: " ",
       text3: "  ",
       name: t("Brick_Breaker"),
     },
     {
       id: 3,
-      imgUrl:<img src={physiotherapy5} style={{width:'50%'}} /> ,
-      text1: t("Shot_Put_text1"),
-      // 
+      imgUrl: <img src={KineSoignies} style={{width:'100%'}}/>,
+      text1:t("Shot_Put_text1"),
       text2: t("Shot_Put_text2"),
-      //  
       text3: "  ",
       name: t("Shot_Put"),
     },
-    // "/static/media/kineSide.508582e1dc74690aba37.jpg"
 
     {
       id: 4,
-      imgUrl: "/static/media/kineSide.508582e1dc74690aba37.jpg",
+      imgUrl: <img src={kineSpear} style={{width:'100%'}}/>,
       text1: t("Spear_text1"),
-      // 
       text2: t("Spear_text2"),
-      // 
       text3: "  ",
       name: t("Spear "),
     },
     {
       id: 5,
-      imgUrl: "/static/media/SquatVr.28fd62ed0550d472e1ba.jpg"
-      ,
+      imgUrl: <img src={KineSquat} style={{width:'100%'}}/>,
       text1:t("kineSquat_text1"),
-      //  
       text2:t("kineSquat_text2"), 
-      // 
       text3: "  ",
       name: t("kineSquat"),
     },
 
     {
       id: 7,
-      imgUrl:"/static/media/SquatVr.28fd62ed0550d472e1ba.jpg",
-      text1:t("APPLE_EDEN_text1"), 
-      // 
-      text2:t("APPLE_EDEN_text2"),
-      // 
+      imgUrl:  <img src={AppleOfEden} style={{width:'100%'}}/>,
+      text1:t("APPLE_EDEN_text1"),  
+      text2:t("APPLE_EDEN_text2"),   
       text3: "  ",
       name: t("APPLE_EDEN"),
     },
@@ -121,15 +153,16 @@ function DifferentPhysiotherapies(props) {
     boxShadow: 24,
     p: 4,
   };
-  const [open, setOpen] = React.useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+
   return (
     <>
       <div
         class="container-fluid"
-        style={{ marginLeft: "5%", marginTop: "-10%", marginBottom: "5%" }}
+        style={{ marginLeft: "5%", marginTop: "5%", marginBottom: "5%" }}
         id="physiotherapies-section">
+
+
+
         <section class="about-section" style={{ marginTop: "5%" }}>
           <div class="container-fluid">
             <div class="title-section">
@@ -147,8 +180,32 @@ function DifferentPhysiotherapies(props) {
                 {t("PHYSIOTHERAPY_text_2")}
               </motion.p>
             </div>
-            <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 all1">
-              {/* <div className="container containerSlide" style={style.width}>
+
+
+
+            <div className='col-lg-12 col-md-12 col-sm-12 col-xs-12  contenttt'>
+              <Carousell>
+                {data.map((i) => (
+                  <>
+                    <Card
+                      src={i.imgUrl}
+                      title={i.name}
+                      content={i.text1}
+                      content1={i.text2}
+                      content2={i.text3}
+                      // button={i.button}
+                    subContent={i.img}
+                    subContent2={i.name}
+                    subContent3={i.text1}
+                    subContent4={i.text2}
+                    subContent5={i.text3}
+/>
+                  </>
+                ))}
+              </Carousell>
+            </div>
+            {/* <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 all1">
+              <div className="container containerSlide" style={style.width}>
                 <div className="loadbar" style={{ width: `${loadingProgress}%` }}></div>
                 <div id="slide" ref={slideRef}>
                   {data.map((item) => (
@@ -159,12 +216,12 @@ function DifferentPhysiotherapies(props) {
                       >
                       <div className="content">
                         <div className="name">{item.name}</div>
-                     
+                         model 
                         <Button onClick={handleOpen} style={{borderRadius: 'none', backgroundColor: 'none',width:'100%', marginLeft:'-30%', fontSize:'16px',color:'white'}}
                          >     
                           {t("Our-Solution")}
                           </Button>
-                        <Modal
+                       <Modal
                           open={open}
                           onClose={handleClose}
                           aria-labelledby="modal-modal-title"
@@ -175,19 +232,10 @@ function DifferentPhysiotherapies(props) {
                               {t("Our-Solution")} :
                             </Typography>
                             <Typography id="modal-modal-description" sx={{ mt: -2 }}>
-                              <video
-                                autoPlay
-                                loop
-                                muted
-                                playsInline
-                                class="videoStyle"
-                                style={{ width: "100%", position: "absolute", right:'0%',marginTop:'-20%'}}
-                              >
-                                <source src={vid} type="video/mp4" />
-                              </video>
+                              
                             </Typography>
                           </Box>
-                        </Modal>
+                        </Modal> 
                       </div>
                     </div>
                   ))}
@@ -200,56 +248,12 @@ function DifferentPhysiotherapies(props) {
                   <FontAwesomeIcon icon={faAngleRight} />
                 </button>
               </div>
-              </div> */}
-               <Carousel autoPlay>
-              {data.map((item) => (
-                <div key={item.id}>
-                  <div className="col-md-12">
-                    <div>
-                    {item.imgUrl} 
-                    </div>
-                    <div style={{width:'50%' , marginLeft:'25%'}} >
-                      <div style={{ color: '#333333', fontSize: '250%' }}>
-                        {item.name}
-                      </div>
-                      <div >
-                        <div className="des" style={{ zIndex: '50', background: 'none' }}>{item.text1}</div>
-                        <div className="des" style={{ zIndex: '50', background: 'none' }}>{item.text2}</div>
-                        <div className="des" style={{ zIndex: '50', background: 'none' }}>{item.text3}</div>
-                        <Modal
-                          open={open}
-                          onClose={handleClose}
-                          aria-labelledby="modal-modal-title"
-                          aria-describedby="modal-modal-description"
-                        >
-                          <Box sx={style1}>
-                            <Typography id="modal-modal-description" sx={{ mt: 20 }}>
-                            
-
-                 </Typography>
-                          </Box>
-                        </Modal>
-                      </div>
-                    </div>
-                    <Button onClick={handleOpen}
-                      className=" Solution" style={{ background: 'none' }}>
-                      <div class="center-button">
-                        <a href="#doctor-section" class="button-one" >
-                          {t("Our-Solution")}
-                        </a>
-                      </div>
-                    </Button>
-
-
-                  </div>
-                </div>
-              ))}
-            </Carousel>
+              </div>
               <div>
 
               </div>
 
-            </div>
+            </div> */}
 
           </div>
         </section>

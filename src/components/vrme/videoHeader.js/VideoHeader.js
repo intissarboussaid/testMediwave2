@@ -198,7 +198,7 @@ const VideoHeader = () => {
       });
       setTextSize({ fontSize: "23px" });
     } else if (windowDimensions.width > 1400 && windowDimensions.width < 1500) {
-      // setHeight(window.innerHeight);
+    
       setTitleStyle({
         marginTop: "-25%",
         left: "55%",
@@ -396,13 +396,13 @@ const VideoHeader = () => {
         fontWeight: "18%",
       });
       setSubTitleStyle({
-        marginTop: "-17%",
+        marginTop: "-14%",
         marginLeft: "10%",
         fontSize: "7px",
         fontWeight: "10%",
       });
       setButtonStyle({
-        marginTop: "-24%",
+        marginTop: "-14%",
         marginLeft: "50%",
         fontSize: "7px",
         fontWeight: "600",
@@ -421,7 +421,7 @@ const VideoHeader = () => {
         class="slider1"
       >
         <div class="tp-banner-container">
-          <div class="tp-banner"  style={{ height: viewportHeight+"px" }}>
+          <div class="tp-banner"  >
             <video
               autoPlay
               loop
@@ -456,13 +456,15 @@ const VideoHeader = () => {
                   style={buttonStyle}
                 >
                   <div class="center-button">
-                    <a
+                    <div class="vrme">
+                    <a              
                       href="#doctor-section"
-                      class="button-one"
+                      class="vrme button-one"
                       style={textSize}
                     >
                       {t("Find")}{" "}
                     </a>
+                    </div>
                   </div>
                   {/* <button type="btn">Trouver un thérapeute</button> */}
                 </div>

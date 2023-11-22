@@ -1,125 +1,43 @@
-import React, { useState } from 'react';
-import { motion } from "framer-motion";
-
+import React from 'react';
 import { useTranslation } from "react-i18next";
-import doc1 from "../../../assets/images/docs/RAPPORT1.pdf";
-import Img1 from "../../../assets/images/docs/ImgRapport1.png";
-import doc2 from "../../../assets/images/docs/RAPPORT2.pdf";
-import img2 from "../../../assets/images/docs/ImgRapport2.png";
-import doc3 from "../../../assets/images/docs/CHUF-apres-Bionettoyage.pdf";
-import img3 from "../../../assets/images/docs/imgApresbionettoyageCHUF.png";
-import doc4 from "../../../assets/images/docs/AvantBionettoyage.pdf";
-import img4 from "../../../assets/images/docs/ImgAvantBionettoyage.png";
-import doc5 from "../../../assets/images/docs/ApresBionettoyageEcouvillon.pdf";
-import img5 from "../../../assets/images/docs/ImgEcouvillonaux.png";
-import doc6 from "../../../assets/images/docs/AvantDesinfection.pdf";
-import img6 from "../../../assets/images/docs/ImgAvantdesinfection.png";
-import doc7 from "../../../assets/images/docs/ApresDesinfection.pdf";
-import img7 from "../../../assets/images/docs/imgApresDesinfection.png";
+import DocumentViewer from './DocumentViewer';
+import docs1 from '../../../assets/images/docs/AnalyseEcouvillon.pdf';
+import img from '../../../assets/images/pdf.png';
+import docs2 from '../../../assets/images/docs/ApresBionettoyage.pdf';
+import docs3 from '../../../assets/images/docs/AvantBionettoyage.pdf';
+import docs4 from '../../../assets/images/docs/ApresDesinfection.pdf';
+import docs5 from '../../../assets/images/docs/AvantDesinfection.pdf';
+import docs6 from '../../../assets/images/docs/RapportViroteck2.pdf';
+import docs7 from '../../../assets/images/docs/RapportViroteck1.pdf';
 
 
 const Docs = () => {
-  
-  const { t } = useTranslation();
-const [imgStyle,setImgStyle]=useState({
-  width:'70%'
-});
-  const documents = [
-    {
-      fileUrm: doc1,
-      fileName: "",
-      imgUrl: Img1
-    },
-    {
-      fileUrm: doc2,
-      fileName: "",
-      imgUrl: img2
-    },
-    {
-      fileUrm: doc3,
-      fileName: "",
-      imgUrl: img3
-    },
-    {
-      fileUrm: doc4,
-      fileName: "",
-      imgUrl: img4
-    },
-    {
-      fileUrm: doc5,
-      fileName: "",
-      imgUrl: img5
-    },
-    {
-      fileUrm: doc6,
-      fileName: "",
-      imgUrl: img6
-    },
-    {
-      fileUrm: doc7,
-      fileName: "",
-      imgUrl: img7
-    }
-  ]
-  const handleDownload = (documentUrl) => {
-    window.open(documentUrl, '_blank');
-  };
-  return (
-    <div id='DiscoverOurSolution'>
-      <section class="about-section" style={{ marginTop: "-5%" }}>
-        <div class="container">
-        <div class="title-section">
-                        <h1>{t("t1-docs")} <a style={{ color: 'rgb(52, 152, 219)', textDecoration: 'none' }}>{t("t2-docs")} </a></h1>
-                    
-                       
+    const { t } = useTranslation();
+    const documents = [
+        { name: 'Document 1', url: docs1, img: img , title:t("Swab")},
+        { name: 'Document 2', url: docs2, img: img ,title:t("A-After-Cleaning")},
+        { name: 'Document 3', url: docs3, img: img ,title:t("A-before-Cleaning")},
+        { name: 'Document 4', url: docs4, img: img ,title:t("A-After-Disinfection")},
+        { name: 'Document 5', url: docs5, img: img ,title:t("A-before-Disinfection")},
+        { name: 'Document 6', url: docs6, img: img,title:t("t-Rapport") },
+        { name: 'Document 7', url: docs7, img: img ,title:t("t-Rapport") },
+    ];
+
+    return (
+        <div id='DiscoverOurSolution'>
+            <section class="about-section" style={{ marginTop: "-7%" }}>
+                <div class="container">
+                    <div class="title-section">
+                        <h1>{t("t-Analyses1")} <a style={{ color: 'rgb(52, 152, 219)', textDecoration: 'none' }}>{t("t-Analyses2")} </a></h1>
                     </div>
-          {/* <ul>
-            {documents.map((document, index) => (
-              <li key={index}>
-                {document.fileName}
-                <img
-                style={imgStyle}
-                  src={document.imgUrl}
-                  alt="Image"
-                  onClick={() => handleDownload(document.fileUrm)}
-                />
-              </li>
-            ))}
-          </ul> */}
-
-          <div class="row" style={{ marginTop: "2%" }}>
-          {documents.map((document, index) => (
-        <motion.div 
-              whileHover={{ y: -6 }}
-              transition={{ duration: 0.2 }}
-              class="blog-post"
-            >
-        <div class="col-md-4 col-xs-12">
-      
-              <div key={index}>
-                {document.fileName}
-                <img
-                style={imgStyle}
-                  src={document.imgUrl}
-                  alt="Image"
-                  onClick={() => handleDownload(document.fileUrm)}
-                />
-              </div>
-         
+                    <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 all2 " style={{ background: 'white' }}>
+                        <div className="container " >
+                            <DocumentViewer documents={documents} />
+                        </div>
+                    </div></div>
+            </section>
         </div>
-        </motion.div>
-           ))}
-      </div>
-
-
-        </div>
-      </section>
-    </div>
-  );
+    );
 };
 
 export default Docs;
-
-
-
-

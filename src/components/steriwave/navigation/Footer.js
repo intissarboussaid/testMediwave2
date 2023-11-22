@@ -52,16 +52,16 @@ const Footer = () => {
   }, [windowDimensions.width,]);
 
   return (
-    <div id="footer" style={{ marginTop: '5%',  backgroundImage: `url(${img})`, backgroundSize:'cover'}}>
+    <div id="footer" style={{  backgroundImage: `url(${img})`, backgroundSize:'cover'}}>
       
       <footer className="footerSteriwave ">
         <div class="container-fluid">
           <div class="row">
           
-            {/* <div class="col-md-6 col-sm-6 col-md-offset-3 ">
+            <div class="col-md-6 col-sm-6 col-md-offset-3 ">
               <h1 style={{color:'white'}}>{t("f_1")}</h1>
               <p>{t("Scenarios")}</p>
-            </div> */}
+            </div>
           </div>
           <p class="copyright">Copyright © 2023 3dwave</p>         
         </div>

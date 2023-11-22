@@ -117,9 +117,7 @@ tr a.open-search:before {
 }
 
 .navbar-nav>li>a {
-  /* color: #666 !important; */
   color: white !important;
-  /* color: black !important; */
   font-size: 14px;
   font-family: "Montserrat", sans-serif;
   font-weight: 900;
@@ -129,13 +127,17 @@ tr a.open-search:before {
   -webkit-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
   padding: 30px 15px;
-  position: relative;
+    position: relative; 
+}
+header nav .container ul li  select {
+  background: transparent;
+  border: none;
 }
 
 .navbar-nav>li>a:before {
   content: "";
   position: absolute;
-  bottom: 0px;
+  bottom: 25px;
   left: 10px;
   right: 10px;
   height: 3px;
@@ -182,6 +184,7 @@ header.active .navbar {
 header.active .navbarMedi{
   background:rgba(130, 188, 228, 0.9);
   border-bottom: 1px solid rgba(130, 188, 228, 0.9);
+
 }
 header.active .navbarsteriwave{
   background:rgba(114, 192, 238, 0.8);
@@ -410,10 +413,10 @@ h2 {
   border-radius: 2px;
 }
 
-#home-section a.button-one:hover {
+/* #home-section a.button-one:hover {
   background: #3498db;
   border-color: #3498db;
-}
+} */
 
 /*-------------------------------------------------*/
 /* =  About section
@@ -1183,7 +1186,7 @@ section#blog-section .blog-box .blog-post span {
   padding-top: 20px;
 }
 
-.center-button a {
+.center-button .vrme a {
   display: inline-block;
   text-decoration: none;
   transition: all 0.2s ease-in-out;
@@ -1195,18 +1198,45 @@ section#blog-section .blog-box .blog-post span {
   font-weight: 600;
   padding: 10px 35px;
   text-transform: uppercase;
-  border: 1px solid #3498db;
+  border: 3px solid white;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   -o-border-radius: 4px;
   border-radius: 4px;  
-  color: #3498db !important;
-  background: #ffffff !important;
+  color: white!important;
+  background: transparent !important;
   
 }
+.center-button  a {
+  display: inline-block;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  font-size: 12px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  padding: 10px 35px;
+  text-transform: uppercase;
+  border: 2px solid #3498db;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;  
+  color: #3498db!important;
+  background: transparent !important;
+  
+}
+.center-button .vrme a:hover {
+  background: white !important;
+color: #3498db !important;
+border: 3px solid white;
+}
 .center-button a:hover {
-  background: #3498db !important;
+  background: #3498db!important;
 color: white !important;
+border: 3px solid white;
 }
 .center-button-mediwave {
   text-align: center;
@@ -1253,31 +1283,6 @@ color: white !important;
   border-radius: 4px;
 } */
 
-.center-button-steriwave {
-  text-align: center;
-  padding-top: 20px;
-}
-.center-button-steriwave a {
-  display: inline-block;
-  text-decoration: none;
-  transition: all 0.2s ease-in-out;
-  -moz-transition: all 0.2s ease-in-out;
-  -webkit-transition: all 0.2s ease-in-out;
-  -o-transition: all 0.2s ease-in-out;
-  font-size: 12px;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 600;
-  padding: 10px 35px;
-  text-transform: uppercase;
-  border: 1px solid rgb(0, 155, 244,0.1);
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  -o-border-radius: 4px;
-  border-radius: 4px;
-  background:rgb(219, 219, 219);
-  color:rgb(0, 155, 244);
-}
-
 
 .center-button-steriwave a:hover{
   color: white;
@@ -1285,9 +1290,9 @@ color: white !important;
   border: 1px solid rgb(0, 155, 244);
 }
 .center-button-mediwave a:hover {
-  color: rgb(0, 155, 244);
+  color:  rgb(0, 155, 244);
   background: white;
-  border: 2px solid white;
+  border: 1px solid white;
 
 }
 /* .center-button-mediwave a:hover {
@@ -2122,16 +2127,14 @@ section#blog-section.blog-page .blog-box iframe {
   backdrop-filter: blur(10px);
 }
 .footerSteriwave {
-  text-align: center;
-  padding-top: 5px;
-  /* background: rgba(195, 145, 202, 0.8); */
-  background: rgba(114, 192, 238, 0.4);
-  backdrop-filter: blur(10px);
+  /* text-align: center; */
+  /* padding-top: 5px; */
+  background: rgba(130, 188, 228);
 }
 .footerMediwave {
   text-align: center;
   padding-top: 5px;
-  background: rgb(52, 152, 219,0.5);
+  background: rgb(130, 188, 228);
   backdrop-filter: blur(10px);
 }
 footer .title-section .media-title {
@@ -2252,7 +2255,6 @@ footer ul .row li i:hover {
 .social-icons li a:hover {
   color: rgb(219, 219, 219);
   background: #3498db;
- 
   cursor: pointer;
 }
  .social-icons li .facebook .fab .fa-facebook {
@@ -2265,6 +2267,7 @@ footer p.copyright {
   margin: 0 0 20px;
   line-height: auto;
   padding: 20px 15px;
+  border-top: 3px solid #dfe0e0;
   margin-bottom: 14px;
   padding-bottom: 0;
   color: rgba(240, 240, 238, 255);
@@ -2391,7 +2394,7 @@ footer  .barr {
 /* navbar Mediwave */
 
   header .navbarMedi{
-    height: 70px; 
+    max-height: 70px; 
     background:rgba(130, 188, 228, 0.9)!important; 
    }
   header.active .navbarMedi{

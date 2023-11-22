@@ -18,7 +18,6 @@ function SteriwaveHome() {
       <Video/>
       <Docs/>
       <Tarification />
-   
       <Contact />
       {/* <Avis/> */}
       <Footer />

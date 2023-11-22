@@ -1,15 +1,12 @@
 
 import React, { useRef, useEffect, useState } from "react";
-import { Carousel } from 'react-responsive-carousel';
-import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
+import Carousell from '../carouselStyle/Carousell.js';
 import "../differentTherapies/DifferentTherapies.css";
 import claustrophobie from "../../../assets/images/claustrophobie.jpg";
 import assenseur from "../../../assets/images/assenseur.jpg";
 import acrophobiee from '../../../assets/images/acrophobia.jpg';
 import acrophobieSolution from "../../../assets/images/achroSolution.png";
-import arachrophobie from "../../../assets/images/aracrophobie1.jpg";
+import arachrophobie from "../../../assets/images/aracrophobie.jpg";
 import arachrophobieSolution from "../../../assets/images/arach.jpg";
 import agora from "../../../assets/images/agoraphobie.jpg";
 import agoraSol from "../../../assets/images/agora.jpg";
@@ -17,161 +14,408 @@ import social from "../../../assets/images/social.jpg";
 import glossophobie from "../../../assets/images/glossophobie.jpg";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
-import vid from "../../../assets/video/vid.mp4";
 import useResizeScreen from "../../../utils/useResizeScreen";
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
-import Modal from '@mui/material/Modal';
-import Slider from 'react-slick';
+import ReactDOM from 'https://esm.sh/react-dom@18.2.0'
+import Modal from "https://cdn.skypack.dev/react-modal@3.16.1";
+
+
+
 
 
 const DifferentTherapies = (props) => {
-  const [modalShow, setModalShow] = useState(false);
+  const CARDS = 10;
   const { t } = useTranslation();
-  const slideRef = useRef(null);
-  const windowDimensions = useResizeScreen();
-  const [loadingProgress, setLoadingProgress] = useState(0);
-  const { imgUrl, setImgUrl } = useState('');
-
-
-  const handleClickNext = () => {
-    let items = slideRef.current.querySelectorAll(".item0");
-    slideRef.current.appendChild(items[0]);
-  };
-  const [imageStyle, setImageStyle] = useState({
-    width: '50%',
-    height: '100%',
-  });
-  const [imgSolution, setImgSolution] = useState({
-    width: '0%',
-    height: '40%',
-
-  });
-
-  const [textStyle, setTextStyle] = useState({
-    fontSize: '2vh',
-    width: '50%',
-    marginLeft: '25%',
-    marginTop: '-3%',
-    background: 'rgba(255, 255, 255, 0.24)',
-    backdropFilter: 'blur(20px)'
-  })
-
-  const style = {
-    width:
-    {
-      width: '50%',
-      height: '100vh',
-      marginLeft: '0px',
-    },
-  }
-  const style1 = {
-    position: 'absolute',
-    width: '50%',
-    border: '2px solid #000',
-    boxShadow: 24,
-    alignItems: 'center',
-    p: 4,
-  };
-  const [showModal, setShowModal] = useState(false);
-
-  const toggleModal = () => {
-    setShowModal(!showModal);
-  };
+  const [openModal, setOpenModal] = useState(false);
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-  const handleClickPrev = () => {
-    let items = slideRef.current.querySelectorAll(".item0");
-    slideRef.current.prepend(items[items.length - 1]);
-  };
+  const customStyles = {
+    content: {
+      top: '50%',
+      left: '50%',
+      right: 'auto',
+      bottom: 'auto',
+      width: '80%',
+      marginRight: '-50%',
+      transform: 'translate(-50%, -50%)',
+      boxShadow: '1px 2px #888888',
+    },
+  }
 
+
+  let subtitle;
+  const [modalIsOpen, setIsOpen] = React.useState(false);
+
+  function openModal1() {
+    setIsOpen(true);
+  }
+
+  function closeModal1() {
+    setIsOpen(false);
+  }
+  const Card = ({ src, title, content, content1, content2, subName, SubImg,
+    subText1,
+    subText2,
+    subText3 }) => (
+    <div className='card'>
+      <div>{src}</div>
+      <h2>{title}</h2>
+      <p>{content}</p>
+      <p>{content1}</p>
+      <p>{content2}</p>
+      <p>
+      {/* <button
+                          type="button"
+                          class="btn btn-primary"
+                          data-toggle="modal"
+                          data-target="#exampleModalCenter"
+                          style={{
+                            marginTop: "2%",
+                            alignItems: "end",
+                            width:'40%',
+                            right:'30%'
+                          }}
+                        >
+                          {t('Buy_Now')}
+                        </button> */}
+                        {/* Modal */}
+     
+      </p>
+  
+    </div>
+  );
+  const slideRef = useRef(null);
+  const windowDimensions = useResizeScreen();
+  const [imageStyle1, setImageStyle1] = useState({
+    width: '110%',
+    height: '40%',
+    marginTop: '0%',
+    marginLeft: '-5%'
+  });
+  const [imgSolution, setImgSolution] = useState({
+    width: '50%',
+    height: '40%',
+  });
   const data = [
     {
       id: 1,
-      imgUrl: <img src={claustrophobie} style={imageStyle} />,
+      imgUrl: <img src={claustrophobie} style={imageStyle1}></img>,
       text1: t("CLAUSTROPHOBIA_1"),
       text2: "",
       text3: t("CLAUSTROPHOBIA_2"),
       name: t("CLAUSTROPHOBIA"),
-
-      img: <img src={assenseur} style={imgSolution}></img>,
-      textt1: t("APPLICATIONS_1"),
-      textt2: " ",
-      textt3: "  ",
-      namet: t("soll"),
-
+      // solution1: {
+      //   img: <img src={assenseur} style={imgSolution}></img>,
+      //   textt1: t("APPLICATIONS_1"),
+      //   textt2: " ",
+      //   textt3: "  ",
+      //   namet: t("soll"),
+      // },
     },
     {
       id: 3,
-      imgUrl: <img src={acrophobiee} style={imageStyle} />,
+      imgUrl: <img src={acrophobiee} style={imageStyle1}></img>,
       text1: t("ACROPHOBIA_1"),
       // ,
       text2: t("ACROPHOBIA_2"),
       // ,
       text3: "  ",
       name: t("AGORAPHOBIA"),
-
-      img: <img src={acrophobieSolution} style={imgSolution}></img>,
-      text1: t("APPLICATIONS_2"),
-      textt2: "  ",
-      textt3: "  ",
-      namet: t("soll")
-
+      // solution1:
+      // {
+      //   id: 4,
+      //   img: <img src={acrophobieSolution} style={imgSolution}></img>,
+      //   text1: t("APPLICATIONS_2"),
+      //   textt2: "  ",
+      //   textt3: "  ",
+      //   namet: t("soll")
+      //   ,
+      // },
     },
     {
       id: 5,
-      imgUrl: <img src={arachrophobie} style={imageStyle} />,
+      imgUrl: <img src={arachrophobie} style={imageStyle1}></img>,
       text1: t("ARACHNOPHOBIA_1"),
       text2: t("ARACHNOPHOBIA_2"),
       text3: "  ",
       name: t("ARACHNOPHOBIA"),
-
-      img: <img src={arachrophobieSolution} style={imgSolution}></img>,
-      textt1: t("APPLICATIONS_3"),
-      textt2: "",
-      textt3: "  ",
-      namet: t("soll"),
-
+      // solution1: {
+      //   img: <img src={arachrophobieSolution} style={imgSolution}></img>,
+      //   textt1: t("APPLICATIONS_3"),
+      //   textt2: "",
+      //   textt3: "  ",
+      //   namet: t("soll"),
+      // },
     },
     {
       id: 7,
-      imgUrl: <img src={agora} style={imageStyle} />,
+      imgUrl: <img src={agora} style={imageStyle1}></img>,
       text1: t("AGORAPHOBIA_1"),
       // ,
       text2: t("AGORAPHOBIA_2"),
       //  
       text3: "  ",
       name: t("AGORAPHOBIA"),
-      img: <img src={agoraSol} style={imgSolution}></img>,
-      textt1: t("APPLICATIONS_4_1"),
-      textt2: t("APPLICATIONS_4_2"),
-      textt3: "  ",
-      name: t("soll")
+
+      // solution1: {
+      //   id: 8,
+      //   img: <img src={agoraSol} style={imgSolution}></img>,
+      //   textt1: t("APPLICATIONS_4_1"),
+      //   textt2: t("APPLICATIONS_4_2"),
+      //   textt3: "  ",
+      //   name: t("soll")
+      // },
 
     },
     {
       id: 9,
-      imgUrl: <img src={social} style={imageStyle} />,
+      imgUrl: <img src={social} style={imageStyle1}></img>,
       text1: t("SOCIAL_PHOBIA_1"),
       text2: t("SOCIAL_PHOBIA_2"),
       text3: "  ",
       name: t("SOCIAL_PHOBIA"),
-      img: <img src={glossophobie} style={imgSolution}></img>,
-      textt1: t('SOCIAL_PHOBIA_Soll_1'),
-      textt2: t('SOCIAL_PHOBIA_Soll_2'),
-      textt3: t('SOCIAL_PHOBIA_Soll_3'),
-      namet: t("soll")
+      // solution1:
+
+      // {
+      //   id: 10,
+      //   img: <img src={glossophobie} style={imgSolution}></img>,
+      //   textt1: t('SOCIAL_PHOBIA_Soll_1'),
+      //   textt2: t('SOCIAL_PHOBIA_Soll_2'),
+      //   textt3: t('SOCIAL_PHOBIA_Soll_3'),
+      //   namet: t("soll")
+      // },
+
+    },
+  ];
+
+  const data1 = [
+    {
+      id: 1,
+      imgUrl: <img src={claustrophobie} style={imageStyle1} />,
+      text1: t("CLAUSTROPHOBIA_1"),
+      text2: "",
+      text3: t("CLAUSTROPHOBIA_2"),
+      name: t("CLAUSTROPHOBIA"),
+      SubImg: <img src={assenseur} style={{ width: '20%' }} />,
+      subText1: t("APPLICATIONS_1"),
+      subText2: " ",
+      subText3: "  ",
+      SubName: t("soll"),
+      button: <button onClick={openModal1} >
+        <div class="center-button">
+          <a class="button-one">
+            {t("Our-Solution")}
+          </a>
+        </div>
+      </button>,
+    },
+    {
+      id: 2,
+      imgUrl: <img src={acrophobiee} style={imageStyle1} />,
+      text1: t("ACROPHOBIA_1"),
+      text2: t("ACROPHOBIA_2"),
+      text3: "  ",
+      name: t("AGORAPHOBIA"),
+      button: <button onClick={openModal1} >
+        <div class="center-button">
+          <a class="button-one">
+            {t("Our-Solution")}
+          </a>
+        </div>
+      </button>,
+      subImg: <img src={acrophobieSolution} style={{ width: '20%' }} />,
+      subText1: t("APPLICATIONS_2"),
+      subText2: "  ",
+      subText3: "  ",
+      subName: t("soll"),
+
+      // modal: <div>
+      //   {openModal && <div className="modalBackground" >
+      //     <div className="modalContainer">
+      //       <div className="titleCloseBtn">
+      //         <button
+      //           onClick={() => {
+      //             setOpenModal(false);
+      //           }}
+      //         >
+      //           X
+      //         </button>
+      //       </div>
+
+
+      //       <div className="title">
+      //         <img src={acrophobieSolution} style={{ width: '20%' }} />
+      //       </div>
+      //       <div className="body">
+      //         {t("soll")}
+      //         {t("APPLICATIONS_2")}
+
+      //       </div>
+
+      //       <div className="footer">
+      //         <button
+      //           onClick={() => {
+      //             setOpenModal(false);
+      //           }}
+      //           id="cancelBtn"
+      //         >
+      //           Cancel
+      //         </button>
+      //         <button>Continue</button>
+      //       </div>
+      //     </div>
+      //   </div>
+      //   }
+      // </div>
+
+
+    },
+    {
+      id: 3,
+      imgUrl: <img src={arachrophobie} style={imageStyle1} />,
+      text1: t("ARACHNOPHOBIA_1"),
+      text2: t("ARACHNOPHOBIA_2"),
+      text3: "  ",
+      name: t("ARACHNOPHOBIA"),
+      button: <button onClick={openModal1} >
+        <div class="center-button">
+          <a class="button-one">
+            {t("Our-Solution")}
+          </a>
+        </div>
+      </button>,
+      subImg: <img src={arachrophobieSolution} style={{ width: '20%' }} />,
+      subText1: t("APPLICATIONS_3"),
+      subText2: "",
+      subText3: "  ",
+      subName: t("soll"),
+
+      // modal: <div>
+      //   {openModal && <div className="modalBackground" >
+      //     <div className="modalContainer">
+      //       <div className="titleCloseBtn">
+      //         <button
+      //           onClick={() => {
+      //             setOpenModal(false);
+      //           }}
+      //         >
+      //           X
+      //         </button>
+      //       </div>
+      //       <div className="title">
+      //         <img src={arachrophobieSolution} style={{ width: '20%' }} />
+      //       </div>
+      //       <div className="body">
+
+      //         {t("APPLICATIONS_3")}
+      //         {t("soll")}
+      //       </div>
+      //       <div className="footer">
+      //         <button
+      //           onClick={() => {
+      //             setOpenModal(false);
+      //           }}
+      //           id="cancelBtn"
+      //         >
+      //           Cancel
+      //         </button>
+      //         <button>Continue</button>
+      //       </div>
+      //     </div>
+      //   </div>
+      //   }
+      // </div>
+
+    },
+    {
+      id: 4,
+      imgUrl: <img src={agora} style={imageStyle1} />,
+      text1: t("AGORAPHOBIA_1"),
+      text2: t("AGORAPHOBIA_2"),
+      text3: "  ",
+      name: t("AGORAPHOBIA"),
+      button: <button onClick={openModal1} >
+        <div class="center-button">
+          <a class="button-one">
+            {t("Our-Solution")}
+          </a>
+        </div>
+      </button>,
+
+      subImg: <img src={agoraSol} style={{ width: '20%' }} />,
+      subText1: t("APPLICATIONS_4_1"),
+      subText2: t("APPLICATIONS_4_2"),
+      subText3: "  ",
+      subName: t("soll"),
+      // modal: <div>
+      //   {openModal && <div className="modalBackground" >
+      //     <div className="modalContainer">
+      //       <div className="titleCloseBtn">
+      //         <button
+      //           onClick={() => {
+      //             setOpenModal(false);
+      //           }}
+      //         >
+      //           X
+      //         </button>
+      //       </div>
+      //       <div className="title">
+      //         <img src={agoraSol} style={{ width: '20%' }} />
+      //       </div>
+      //       <div className="body">
+
+      //         {t("APPLICATIONS_4_1")},
+      //         {t("APPLICATIONS_4_2")},
+
+      //         {t("soll")},
+      //       </div>
+      //       <div className="footer">
+      //         <button
+      //           onClick={() => {
+      //             setOpenModal(false);
+      //           }}
+      //           id="cancelBtn"
+      //         >
+      //           Cancel
+      //         </button>
+      //         <button>Continue</button>
+      //       </div>
+      //     </div>
+      //   </div>
+      //   }
+      // </div>
+
+
+    },
+    {
+      id: 5,
+      imgUrl: <img src={social} style={imageStyle1} />,
+      text1: t("SOCIAL_PHOBIA_1"),
+      text2: t("SOCIAL_PHOBIA_2"),
+      text3: "  ",
+      name: t("SOCIAL_PHOBIA"),
+      button: <button onClick={openModal1} >
+        <div class="center-button">
+          <a class="button-one">
+            {t("Our-Solution")}
+          </a>
+        </div>
+      </button>,
+      subImg: <img src={glossophobie} style={{ width: '20%' }} />,
+      subText1: t('SOCIAL_PHOBIA_Soll_1'),
+      subText2: t('SOCIAL_PHOBIA_Soll_2'),
+      subText3: t('SOCIAL_PHOBIA_Soll_3'),
 
 
     },
   ];
+  const [selectedData, setSelectedData] = useState(null);
+
   const dataSolutions = [
 
     {
       id: 2,
-      imgUrl: <img src={assenseur} style={imgSolution}></img>,
+      imgUrl: <img src={assenseur} style={imgSolution} />,
       text1: t("APPLICATIONS_1"),
       text2: " ",
       text3: "  ",
@@ -180,7 +424,7 @@ const DifferentTherapies = (props) => {
 
     {
       id: 4,
-      img: <img src={acrophobieSolution} style={imgSolution}></img>,
+      img: <img src={acrophobieSolution} style={imgSolution} />,
       text1: t("APPLICATIONS_2"),
       textt2: "  ",
       textt3: "  ",
@@ -190,7 +434,7 @@ const DifferentTherapies = (props) => {
 
     {
       id: '6',
-      img: <img src={arachrophobieSolution} style={imgSolution}></img>,
+      img: <img src={arachrophobieSolution} style={imgSolution} />,
       textt1: t("APPLICATIONS_3"),
       textt2: "",
       textt3: "  ",
@@ -199,7 +443,7 @@ const DifferentTherapies = (props) => {
 
     {
       id: 8,
-      img: <img src={agoraSol} style={imgSolution}></img>,
+      img: <img src={agoraSol} style={imgSolution} />,
       textt1: t("APPLICATIONS_4_1"),
       textt2: t("APPLICATIONS_4_2"),
       textt3: "  ",
@@ -207,25 +451,33 @@ const DifferentTherapies = (props) => {
     },
     {
       id: 10,
-      img: <img src={glossophobie} style={imgSolution}></img>,
+      img: <img src={glossophobie} style={imgSolution} />,
       textt1: t('SOCIAL_PHOBIA_Soll_1'),
       textt2: t('SOCIAL_PHOBIA_Soll_2'),
       textt3: t('SOCIAL_PHOBIA_Soll_3'),
       namet: t("soll")
     },
   ];
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-  };
-  useEffect(() => {
-
-
-
-  }, [windowDimensions.width,]);
+  // useEffect(() => {
+  //   if (windowDimensions.width < 1225) {
+  //     setImageStyle1({
+  //       width: '100%',
+  //       marginLeft: '-33.4%',
+  //       marginTop: '-80%',
+  //     })
+  //   }
+  //   if (windowDimensions.width < 770) {
+  //     setImageStyle1({
+  //       width: '100%',
+  //       marginLeft: '-60%',
+  //       marginTop: '-80%',
+  //     });
+  //     setContentCarousel({
+  //       marginTop: '170%',
+  //       marginLeft: '-30%'
+  //     })
+  //   }
+  // }, [windowDimensions.width,]);
 
   return (
     <>
@@ -250,101 +502,72 @@ const DifferentTherapies = (props) => {
                 {t("THERAPY_text_2")}
               </motion.p>
             </div>
-            {/* <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12  all0">
-              <div className="container-fluid containerslide" style={style.width}>
-                <div className="loadbar" style={{ width: `${loadingProgress}%` }}></div>
-                <div id="slidee" ref={slideRef}>
-                  {data.map((item) => (
-                    <div key={item.id} className="item0" >
-                      <div className="contentt" >
-                        <div className="imgSlide"  >
-                          {item.imgUrl}
-                        </div>
-                      </div>
-                      <div className="contentCarousel" style={contentCarousel}>
-                        <div className="name" style={{ zIndex: '50', marginLeft: '10%',background:'none' }}>{item.name}</div>
-                        <div className="des" style={{ zIndex: '50' ,background:'none'}}>{item.text1}</div>
-                        <div className="des" style={{ zIndex: '50',background:'none' }}>{item.text2}</div>
-                        <div className="des" style={{ zIndex: '50',background:'none' }}>{item.text3}</div>
-                      </div>
-                      <Button onClick={handleOpen}
-                        className=" Solution" style={{ background: 'none' }}>
-                        <div class="center-button">
-                          <a href="#doctor-section" class="button-one" >
-                            {t("Our-Solution")}
-                          </a>
-                        </div>
+            <div className='col-lg-12 col-md-12 col-sm-12 col-xs-12  contenttt'>
+              <Carousell>
+                {data.map((i) => (
+                  <>
+                    <Card
+                      src={i.imgUrl}
+                      title={i.name}
+                      content={i.text1}
+                      content1={i.text2}
+                      content2={i.text3}
+                      subName={i.subName}
+                      SubImg={i.SubImg}
+                      subText1={i.subText1}
+                      subText2={i.subText2}
+                      subText3={i.subText3}
 
-                      </Button>
-
-                    </div>
-                  ))}
-                </div>
-                <div>
-                  <div className="button0">
-                    <button id="prev" onClick={handleClickPrev}>
-                      <FontAwesomeIcon icon={faAngleLeft} />
-
-                    </button>
-                    <button id="next" onClick={handleClickNext}>
-
-                      <FontAwesomeIcon icon={faAngleRight} />
-                    </button>
+                    />
+                   {/* <div
+        class="modal fade"
+        id="exampleModalCenter"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <h5 class="modal-title" id="exampleModalLongTitle">
+              test
+              </h5>
+              <p>test</p>
+            </div>
+            <section className="">
+              <div class="">
+                <div class="row" style={{marginLeft:"2%",marginRight:"2%"}}>
+                  <div class="col-md-12 col-sm-8">
+                    test
                   </div>
                 </div>
               </div>
-              <div>
-              </div>
-            </div> */}
-
-            <Carousel autoPlay>
-              {data.map((item) => (
-                <div key={item.id}>
-                  <div className="col-md-12">
-                    <div>
-                      {item.imgUrl}
-                    </div>
-                    <div style={textStyle}>
-                      <div style={{ color: '#333333', fontSize: '250%' }}>
-                        {item.name}
-                      </div>
-                      <div >
-                        <div className="des" style={{ zIndex: '50', background: 'none' }}>{item.text1}</div>
-                        <div className="des" style={{ zIndex: '50', background: 'none' }}>{item.text2}</div>
-                        <div className="des" style={{ zIndex: '50', background: 'none' }}>{item.text3}</div>
-                        <Modal
-                          open={open}
-                          onClose={handleClose}
-                          aria-labelledby="modal-modal-title"
-                          aria-describedby="modal-modal-description"
-                        >
-                          <Box sx={style1}>
-                            <Typography id="modal-modal-description" sx={{ mt: 20 }}>
-                            {item.textt2}
-
-                 </Typography>
-                          </Box>
-                        </Modal>
-                      </div>
-                    </div>
-                    <Button onClick={handleOpen}
-                      className=" Solution" style={{ background: 'none' }}>
-                      <div class="center-button">
-                        <a href="#doctor-section" class="button-one" >
-                          {t("Our-Solution")}
-                        </a>
-                      </div>
-                    </Button>
+            </section>
+          </div>
+        </div>
+      </div> */}
 
 
-                  </div>
-                </div>
-              ))}
-            </Carousel>
+                  </>
+                ))}
+              </Carousell>
+
+            </div>
           </div>
         </section>
-
       </div>
+
+
+
 
       {/* <div class="about-box">
             <div class="row" style={{ marginTop: "5%" }}>
@@ -696,6 +919,8 @@ const DifferentTherapies = (props) => {
               </div>
             </div>
           </div>  */}
+
+
 
 
     </>

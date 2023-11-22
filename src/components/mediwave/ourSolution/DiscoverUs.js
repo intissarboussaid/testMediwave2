@@ -16,14 +16,16 @@ import { motion } from "framer-motion";
 function DiscoverUs() {
     const windowDimensions = useResizeScreen();
     const { t } = useTranslation();
-
-
+    const [fontSizeP, setFontSizeP] = useState('16px');
     const [ContanierRight, setContanierRight] = useState({
         background: 'white',
         height: '200%',
-        marginTop: '15%'
+        marginTop: '30%'
     });
-
+    const [titleStyle, setTitleStyle] = useState({
+        fontSize: '50px',
+        textTransform: 'uppercase',
+    });
 
     const [teftText, setLeftTextt] = useState({
         marginLeft: '20%',
@@ -36,7 +38,6 @@ function DiscoverUs() {
         textAlign: 'justify'
     });
     const [SubLeftImg, setSubLeftImg] = useState({
-
         width: '40%',
         height: '40%',
         border: ' 5px solid white',
@@ -59,11 +60,6 @@ function DiscoverUs() {
         position: 'relative'
     });
     const [top, setTop] = useState('');
-
-
-
-
-
     const [RightImg, setRightImg] = useState({
         width: '100%',
         height: '100%',
@@ -78,7 +74,6 @@ function DiscoverUs() {
         marginTop: '-20%',
         position: 'relative'
     });
-
     const [kineImg, setkineImg] = useState({
         width: '100%',
         height: '100%',
@@ -86,7 +81,7 @@ function DiscoverUs() {
     const [buttonStyle, setButtonStyle] = useState({
         marginTop: '-10%',
     });
-    const [ButtonLeftStyle,setButtonLeftStyle] =useState({
+    const [ButtonLeftStyle, setButtonLeftStyle] = useState({
         marginTop: '-10%',
     });
 
@@ -98,28 +93,14 @@ function DiscoverUs() {
                 border: ' 5px solid white',
                 boxShadow: ' 0 5px 10px #505050',
                 marginLeft: '80%',
-                marginTop: '-20%',
-                position: 'relative'
-            })         
-            
-            setSubkineImg({
-                marginLeft: '170%',
-                width: '40%',
-                height: '40%',
-                border: ' 5px solid white',
-                boxShadow: ' 0 5px 10px #505050',
-                marginTop: '-20%',
-                position: 'relative'
-            });
-            setkineImg({
-                marginLeft: '190%',
-                width: '100%',
-                height: '100%',
-            });
+                marginTop: '-30%',
+                position: 'relative',
+            })
             setRightImg({
-                marginLeft: '190%',
+                marginLeft: '200%',
                 width: '100%',
                 height: '100%',
+                marginTop: '-30%'
             });
             setSubRightImg({
                 marginLeft: '170%',
@@ -133,25 +114,36 @@ function DiscoverUs() {
             setLeftTextt({
                 marginLeft: '-70%',
                 width: '100%',
-                textAlign: 'justify'
+                textAlign: 'justify',
+                marginTop: '-20%',
             });
-            setRightText({ 
+            setRightText({
                 marginLeft: '20%',
                 width: '100%',
-                textAlign: 'justify'
+                textAlign: 'justify',
+                marginTop: '-37%'
             })
             setButtonLeftStyle({
-                marginLeft:'65%',
-                width:'50%'
+                marginLeft: '65%',
+                width: '50%'
             });
             setButtonStyle({
-                marginLeft:'-190%',
-                width:'50%'
-            })
-
+                marginLeft: '-190%',
+                width: '50%'
+            });
+            setleftimgStyle({
+                marginTop: '-70%',
+                width: '100%',
+                height: '100%',
+            });
+            setTitleStyle({
+                fontSize: '45px',
+                textTransform: 'uppercase',
+            });
+            setFontSizeP('16px')
         }
 
-        if (windowDimensions.width < 992) {
+        else if (windowDimensions.width < 992) {
             setSubkineImg({
                 marginLeft: '170%',
                 width: '40%',
@@ -182,71 +174,95 @@ function DiscoverUs() {
             });
             setLeftTextt({
                 width: '100%',
-    marginLeft: '0%',
+                marginLeft: '0%',
             });
             setRightText({
                 width: '100%',
                 marginLeft: '0%',
             });
             setButtonLeftStyle({
-                // marginLeft:'65%',
-                alignItem:'center',
-                width:'50%'
+                alignItem: 'center',
+                width: '50%'
             });
             setButtonStyle({
-                alignItem:'center',
-                width:'50%'
+                alignItem: 'center',
+                width: '50%'
             });
-            setTop('5%')
+            setTop('5%');
+        }
+         if (windowDimensions.width < 992 && windowDimensions.width > 700 ) {
+            setTitleStyle({
+                fontSize: '45px',
+                textTransform: 'uppercase',
+            });
+            setFontSizeP('16px')
 
         }
+      if (windowDimensions.width < 700 && windowDimensions.width > 500 ) {
+            setTitleStyle({
+                fontSize: '30px',
+                textTransform: 'uppercase',
+            });
+            setFontSizeP('14px')
+        }
+         if (windowDimensions.width < 500) {
+            setTitleStyle({
+                fontSize: '20px',
+                textTransform: 'uppercase',
+            });
 
+        }
+        if (windowDimensions.width < 500 && windowDimensions.width > 400 ) {
+            setFontSizeP('14px')
+
+        }
         // Presponsive Button
-        if (windowDimensions.width < 400 && windowDimensions.width > 225) {
+        else if (windowDimensions.width < 400 && windowDimensions.width > 225) {
             setButtonLeftStyle({
-                alignItem:'center',
-                width:'100%',
+                alignItem: 'center',
+                width: '100%',
             });
             setButtonStyle({
-                alignItem:'center',
-                width:'100%',
+                alignItem: 'center',
+                width: '100%',
             });
-            setTop('5%')
+            setTop('5%');
+            setFontSizeP('12px')
 
         }
-        if (windowDimensions.width <  225) {
+        else if (windowDimensions.width < 225) {
             setButtonLeftStyle({
-                alignItem:'center',
-                width:'100%',
-                marginLeft:'-10%',
-                display:'none'
+                width: '100%',
+                marginLeft: '-10%',
+                marginLeft:'-20%'
+
             });
             setButtonStyle({
-                alignItem:'center',
-                width:'100%',
-                marginLeft:'0%',
-                display:'none'
+                width: '100%',
+                marginLeft: '-10%',
+                marginLeft:'-20%'
             });
-            setTop('5%')
+            setTop('5%');
+            setFontSizeP('10px')
 
         }
     }, [windowDimensions.width,]);
 
 
     return (
-        <div id='DiscoverOurSolution'>
-            <section class="about-section" style={{ marginTop: "-4%" }}>
+        <div id='DiscoverOurSolution' >
+            <section class="about-section" style={{ marginTop: "-5%" }}>
                 <div class="container">
                     <div class="title-section" >
-                        <h1>{t("t-Solution")} <a style={{ color: 'rgb(52, 152, 219)', textDecoration: 'none' }}>{t("t-Our")}</a></h1>
+                        <h1 style={titleStyle} >{t("t-Solution")} <a style={{ color: 'rgb(52, 152, 219)', textDecoration: 'none' }}>{t("t-Our")}</a></h1>
                     </div>
                     <div>
-                        <div className='col-lg-12 col-md-12 col-ms-12 col-s-12 ' style={{ background: 'white', height: '200%', marginTop: '1%' }}>
+                        <div className='col-lg-12 col-md-12 col-ms-12 col-s-12 ' style={{ background: 'white', height: '200%', marginTop: '17%' }}>
                             <div className='col-lg-4 col-md-4 col-ms-4 col-s-4 '>
                                 <img src={solPhobia} style={leftimgStyle} />
                                 <img src={phobia} style={SubLeftImg} />
                             </div>
-                            <div className='col-lg-6 col-md-7 col-ms-8 col-s-12 ' style={{marginTop:top}}>
+                            <div className='col-lg-6 col-md-7 col-ms-8 col-s-12 ' style={{ marginTop: top }}>
                                 <motion.p
                                     initial={{ opacity: 0 }}
                                     animate={{ opacity: 1 }}
@@ -254,26 +270,27 @@ function DiscoverUs() {
                                     whileTap={{ scale: 0.8 }}
                                     style={rightText}
                                 >
-                                    <p><a style={{ fontSize: '25px', color: 'rgb(52, 152, 219)', textDecoration: 'none' }}>  {t("h_2")}</a> ,{t("t-phobia_1")}<br />{t("t-phobia_2")}</p>
+                                    <p style={{fontSize:fontSizeP}}><a style={{ fontSize: '25px', color: 'rgb(52, 152, 219)', textDecoration: 'none' }}>  {t("h_2")}</a> ,{t("t-phobia_1")}<br />{t("t-phobia_2")}</p>
                                 </motion.p>
 
                                 <div class="center-button">
                                     <a
-                                        href="/VRme"
+                                        href="/VRme#therapies-section"
                                         class="button-one"
                                         style={ButtonLeftStyle}
                                     >
-                                        {t("t-Solution")}{t("t-Our")}
+                                        {t("Learn")}
                                     </a>
                                 </div>
                             </div>
                         </div>
-                        <div className='col-lg-12 col-md-12 col-ms-12 col-s-12 ' style={ContanierRight}>
-                            <div className='col-lg-4 col-md-4 col-ms-4 col-s-4'>
+                        <div className='col-lg-12 col-md-12 col-ms-12 col-s-12 ' style={{ marginTop: '15%' }}>
+                            <div className='col-lg-4 col-md-4 col-ms-4 col-s-4' >
                                 <img src={solKine} style={RightImg} />
                                 <img src={kine} style={SubRightImg} />
                             </div>
-                            <div className='col-lg-6 col-md-8 col-ms-8 col-s-12 ' style={{marginTop:top}} >
+
+                            <div className='col-lg-6 col-md-6 col-ms-6 col-s-6 ' style={{ marginTop: top }}>
                                 <motion.p
                                     initial={{ opacity: 0 }}
                                     animate={{ opacity: 1 }}
@@ -281,27 +298,27 @@ function DiscoverUs() {
                                     whileTap={{ scale: 0.8 }}
                                     style={teftText}
                                 >
-                                    <p>  <a style={{ fontSize: '25px', color: 'rgb(52, 152, 219)', textDecoration: 'none' }}> {t("h_5")}</a>,{t("t-kine-vr-1")}<br />{t("t-kine-vr-2")}</p>
+                                    <p style={{fontSize:fontSizeP}}>  <a style={{ fontSize: '25px', color: 'rgb(52, 152, 219)', textDecoration: 'none' }}> {t("h_5")}</a>,{t("t-kine-vr-1")}<br />{t("t-kine-vr-2")} </p>
                                 </motion.p>
                                 <div class="center-button">
                                     <a
-                                        href="/VRme"
+                                        href="/VRme#physiotherapies-section"
                                         class="button-one"
                                         style={buttonStyle}
                                     >
-                                        {t("t-Solution")}{t("t-Our")}
+                                        {t("Learn")}
                                     </a>
                                 </div>
+
                             </div>
 
-
                         </div>
-                        <div className='col-lg-12 col-md-12 col-ms-12 col-s-12 ' style={{ background: 'white', height: '200%', marginTop: '15%' }}>
+                        <div className='col-lg-12 col-md-12 col-ms-12 col-s-12 ' style={{ background: 'white', height: '200%', marginTop: '30%' }}>
                             <div className='col-lg-4 col-md-4 col-ms-4 col-s-4 '>
                                 <img src={Steriwave} style={leftimgStyle} />
                                 <img src={desinfect} style={SubLeftImg} />
                             </div>
-                            <div className='col-lg-6 col-md-7 col-ms-8 col-s-12 ' style={{marginTop:top}}>
+                            <div className='col-lg-6 col-md-7 col-ms-8 col-s-12 ' style={{ marginTop: top }}>
                                 <motion.p
                                     initial={{ opacity: 0 }}
                                     animate={{ opacity: 1 }}
@@ -309,7 +326,7 @@ function DiscoverUs() {
                                     whileTap={{ scale: 0.8 }}
                                     style={rightText}
                                 >
-                                    <p > <a style={{ fontSize: '25px', color: 'rgb(52, 152, 219)', textDecoration: 'none' }}> Steriwave</a>,{t("t-Steriwave1")} <br />{t("t-Steriwave2")} </p>
+                                    <p style={{fontSize:fontSizeP}}> <a style={{ fontSize: '25px', color: 'rgb(52, 152, 219)', textDecoration: 'none' }}> Steriwave</a>,{t("t-Steriwave1")} <br />{t("t-Steriwave2")} </p>
                                 </motion.p>
                                 <div class="center-button">
                                     <a
@@ -317,19 +334,19 @@ function DiscoverUs() {
                                         class="button-one"
                                         style={ButtonLeftStyle}
                                     >
-                                        {t("t-Solution")}{t("t-Our")}
+                                        {t("Learn")}
                                     </a>
                                 </div>
                             </div>
 
                         </div>
-                        <div className='col-lg-12 col-md-12 col-ms-12 col-s-12 ' style={ContanierRight}>
+                        <div className='col-lg-12 col-md-12 col-ms-12 col-s-12 ' style={{ marginTop: '15%' }}>
                             <div className='col-lg-4 col-md-4 col-ms-4 col-s-4' >
                                 <img src={Medilink} style={RightImg} />
                                 <img src={medilinkProb} style={SubRightImg} />
                             </div>
 
-                            <div className='col-lg-6 col-md-6 col-ms-6 col-s-6 ' style={{marginTop:top}}>
+                            <div className='col-lg-6 col-md-6 col-ms-6 col-s-6 ' style={{ marginTop: top }}>
                                 <motion.p
                                     initial={{ opacity: 0 }}
                                     animate={{ opacity: 1 }}
@@ -337,7 +354,7 @@ function DiscoverUs() {
                                     whileTap={{ scale: 0.8 }}
                                     style={teftText}
                                 >
-                                    <p>  <a style={{ fontSize: '25px', color: 'rgb(52, 152, 219)', textDecoration: 'none' }}> Medilink</a>,{t("t-Medilink1")} <br />{t("t-Medilink2")} </p>
+                                    <p style={{fontSize:fontSizeP}}>  <a style={{ fontSize: '25px', color: 'rgb(52, 152, 219)', textDecoration: 'none' }}> Medilink</a>,{t("t-Medilink1")} <br />{t("t-Medilink2")} </p>
                                 </motion.p>
                                 <div class="center-button">
                                     <a
@@ -346,7 +363,7 @@ function DiscoverUs() {
                                         style={buttonStyle}
 
                                     >
-                                        {t("t-Solution")}{t("t-Our")}
+                                        {t("Learn")}
                                     </a>
                                 </div>
 

@@ -5,20 +5,20 @@ import { useTranslation } from "react-i18next";
 import i18next from "i18next";
 import cookies from "js-cookie";
 import "./Navbar.css";
+import flagFR from "../../../assets/images/flagFR.png";
+import flagUS from "../../../assets/images/flagUS.png";
 
 const Header = () => {
-  const [selectedItem, setSelectedItem] = useState(null);
+  const [isDropdownVisible, setIsDropdownVisible] = useState(false);
+  const [ccurrentLanguageCode, setCcurrentLanguageCode] = useState(cookies.get("i18next"));
+  const handleLanguageChange = (code) => {
+    setCcurrentLanguageCode(cookies.get("i18next"));
+    i18next.changeLanguage(code);
+  }
   const [selectedOption, setSelectedOption] = useState('');
 
 
-  const handleDropdownChange = (onClick) => {
-    if (onClick.DropDownMenu.Ic_fr) {
-      setSelectedOption('FR');
-    } else if (onClick.DropDownMenu.Ic_gb) {
-      setSelectedOption('En');
-    } else { setSelectedOption(''); }
-    console.log('selectedOption', selectedOption);
-  }
+
 
   const { width, height } = useResizeScreen();
   const [widthImage, setWidthImage] = useState(150);
@@ -30,7 +30,8 @@ const Header = () => {
   const [styleImage, setStyleImage] = useState({ margin: "7%" });
  
   const IconlanguageStyle = {
-
+    fontSize: '22px',
+    color: 'white',
     cursor: 'pointer',
     background: 'transparent',
 
@@ -58,9 +59,10 @@ const Header = () => {
 
   ];
 
-  const Ic_fr = () => <a style={StyleFrEn}>FR</a>;
+  const Ic_fr = () => <a style={{ color: 'white', textDecoration: 'none', cursor: 'pointer' }}> <img src={flagFR} style={{ width: '20px' }} /> FR</a>;
 
-  const Ic_gb = () => <a style={StyleFrEn}>EN</a>;
+  const Ic_gb = () => <a style={{ color: 'white', textDecoration: 'none', cursor: 'pointer' }} > <img src={flagUS} style={{ width: '20px' }} /> US</a>;
+
 
   const currentLanguageCode = cookies.get("i18next");
   const { t } = useTranslation();
@@ -210,30 +212,31 @@ const Header = () => {
 
                   </li>
                   <li >
-                    <a style={IconlanguageStyle} data-toggle=
-                    "dropdown" onChange={handleDropdownChange} >
-                      {/* <i class="fa fa-globe"></i> */}
-                      EN/FR
+                    <a style={{ cursor: 'pointer' }} onClick={() => setIsDropdownVisible(!isDropdownVisible)}>
+                    {currentLanguageCode === "en" ? <Ic_gb /> : <Ic_fr />}  &#x2193;
+
                     </a>
-                    <div className="dropdown-menu" style={dropDown}   >
-
-                      {languages.map(({ code, name, country_code }) => (
-                        <tr
-                          disabled={code === currentLanguageCode}
-                          key={country_code}
-                          onClick={() => i18next.changeLanguage(code)}
-                          class="navItemStyle"
-                          style={{
-                            opacity: code === currentLanguageCode ? 0.3 : 1,
-                          }}
-                        >
-                          {country_code === "fr" ? <Ic_fr /> : <Ic_gb />}
-
-                        </tr>
-                      ))}
-                      <div>
+                    {isDropdownVisible && (
+                      <div style={{ marginLeft: '20%' }}>
+                        {languages.map(({ code, name, country_code }) => (
+                          <div
+                            disabled={code === currentLanguageCode}
+                            key={country_code}
+                            onClick={() => {
+                              handleLanguageChange(code);
+                              setIsDropdownVisible(false);
+                            }}
+                            class="navItemStyle"
+                            style={{
+                              opacity: code === currentLanguageCode ? 0.3 : 1,
+                            }}
+                          >
+                            {country_code === "fr" ? <Ic_fr /> : <Ic_gb />}
+                          </div>
+                        ))}
                       </div>
-                    </div>
+                    )}
+
                   </li>
                 </ul>
               </div>

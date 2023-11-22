@@ -34,9 +34,11 @@ const Tarification = () => {
           class="container"
           style={{ paddingRight: "0px", paddingLeft: "0px" }}
         >
-          <div class="title-section">
-            <h1> {t('PRICING1')} <a style={{ color: 'rgb(52, 152, 219)', textDecoration: 'none' }}> {t('PRICING2')} </a></h1>
-          </div>
+           <div class="title-section">
+
+                    <h1 > {t('PRICING1')}
+                    <a style={{color:'rgb(52, 152, 219)', textDecoration:'none'}}>  {t('PRICING2')}</a>
+                   </h1>                   </div>
           <div class="services-box">
             <div class="row">
               <div class="col-lg-7">
@@ -48,7 +50,7 @@ const Tarification = () => {
               </div>
               <div class="col-md-5">
                 <div class="inner-services-box">
-
+                 
                   <div class="services-items">
                     <div class="row">
                       <div class="col-sm-12">
@@ -99,8 +101,8 @@ const Tarification = () => {
                           style={{
                             marginTop: "2%",
                             alignItems: "end",
-                            width: '40%',
-                            right: '30%'
+                            width:'40%',
+                            right:'30%'
                           }}
                         >
                           {t('Buy_Now')}
@@ -141,7 +143,7 @@ const Tarification = () => {
             </div>
             <section className="contact-section">
               <div class="contact-box">
-                <div class="row" style={{ marginLeft: "2%", marginRight: "2%" }}>
+                <div class="row" style={{marginLeft:"2%",marginRight:"2%"}}>
                   <div class="col-md-12 col-sm-8">
                     <form ref={form} onSubmit={sendEmail} id="contact-form">
                       <div class="row">
@@ -151,7 +153,7 @@ const Tarification = () => {
                             id="name"
                             type="text"
                             placeholder="Name*"
-                          // value={formValue}
+                            // value={formValue}
                           />
                         </div>
                         <div class="col-md-6">
@@ -160,7 +162,7 @@ const Tarification = () => {
                             id="mail"
                             type="text"
                             placeholder="Email*"
-                          // value={formValue}
+                            // value={formValue}
                           />
                         </div>
                         <div class="col-md-12">
@@ -169,7 +171,7 @@ const Tarification = () => {
                             id="subject"
                             type="text"
                             placeholder="phone*"
-                          // value={formValue}
+                            // value={formValue}
                           />
                         </div>
                       </div>

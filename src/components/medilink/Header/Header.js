@@ -403,7 +403,7 @@ const VideoHeader = () => {
         marginLeft: "25%",
         fontSize: "10px",
         fontWeight: "600",
-        
+
       });
       setTextSize({ fontSize: "12px" });
     }
@@ -472,7 +472,7 @@ const VideoHeader = () => {
         marginLeft: "15%",
         fontSize: "10px",
         fontWeight: "600",
-        display:'none'
+        display: 'none'
       });
       setTextSize({ fontSize: "10px" });
     }
@@ -488,7 +488,7 @@ const VideoHeader = () => {
         style={{ height: `100%` }}
       >
         <div class="tp-banner-container " style={{ backgroundImage: `url(${img})`, backgroundSize: 'cover' }}>
-          <div class="tp-banner " style={{ width: "100%", height: height+"px", top: '0', left: '0', background: ' rgb(52, 152, 219,0.3)' }}>
+          <div class="tp-banner " style={{ width: "100%", height: height + "px", top: '0', left: '0', background: ' rgb(52, 152, 219,0.3)' }}>
 
 
             <div class="">
@@ -498,38 +498,40 @@ const VideoHeader = () => {
                   style={titleStyle}
                 >
                   MEDILINK:
+                </div>
+                <div class="tp-caption small_text subTitleHeader" style={subTitleStyle} >
+                  <div >
+                    {t("Title-medilink")}
                   </div>
-                  <div class="tp-caption small_text subTitleHeader" style={subTitleStyle} >
-                    <div >
-                      {t("Title-medilink")}
-                    </div>
-                    <div className="subTitle" style={{ marginTop: top }}>
+                  <div className="subTitle" style={{ marginTop: top }}>
                     {t("subTitle-medilink")}
-                    </div>
+                  </div>
                   <div className="subTitle2" >
-                    <div  style={{ marginTop: top }}>
-                    {t("subTitle1-medilink")}
-                    <div  style={{ marginTop: '2%' }}>
-                    {t("subTitle2-medilink")}
+                    <div style={{ marginTop: top }}>
+                      {t("subTitle1-medilink")}
+                      <div style={{ marginTop: '2%' }}>
+                        {t("subTitle2-medilink")}
+                      </div>
                     </div>
-                    </div>
-                   
-                    </div>
-                  
-                  
+
+                  </div>
+
+
                 </div>
                 <div
                   class="tp-caption small_text buttonHeader"
                   style={buttonStyle}
                 >
-                  <div class="center-button-steriwave">
-                    <a
-                      href="#about-medilink"
-                      class="button-one"
-                      style={textSize}
-                    >
-                      {t("t-Solution")}
-                    </a>
+                  <div class="center-button">
+                    <div class="vrme">
+                      <a
+                        href="#about-medilink"
+                        class="button-one"
+                        style={textSize}
+                      >
+                        {t("t-Solution")}
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>

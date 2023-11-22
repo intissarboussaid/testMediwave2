@@ -3,7 +3,7 @@
   "VIRTUAL_REALITY": "THÉRAPIE PAR EXPOSITION À LA RÉALITÉ VIRTUELLE",
   "Overcome": "Réalité Virtuelle pour les soins de santé mentale.",
   "Learn": "En savoir plus",
-  "PHYSIOTHERAPY":"THÉRAPIES OFFERTES PAR DES KINÉSITHÉRAPEUTES ",
+  "PHYSIOTHERAPY":"OFFRES POUR LES KINÉSITHÉRAPEUTES",
   "PHYSIOTHERAPY_text":"Il existe plusieurs types de problèmes physiques peuvent nécessiter l'intervention d'un kinésithérapeute. ",
   "PHYSIOTHERAPY_text_2":"La kinésithérapie s'avère efficace contre les douleurs musculaires et les limitations de mouvement, qui peuvent avoir un impact significatif sur la qualité de vie. Une approche innovante offerte par les kinésithérapeutes est l'utilisation de la réalité virtuelle (VR). Les patients portent un casque VR et participent à des exercices ludiques et interactifs dans un environnement virtuel. Cette méthode stimulante permet aux patients de progresser tout en surmontant leurs défis physiques, faisant de la thérapie un processus engageant et motivant.",
   "THERAPY": "THÉRAPIES OFFERTES",
@@ -45,7 +45,7 @@
   "THERAPISTS_1": "Nos clients sont des psychiatres, neurologues, psychothérapeutes, psychologues, thérapeutes, conseillers, médecins de famille",
   "THERAPISTS_2": "L’application aidera le clinicien à réaliser l’exposition avec succès et à adapter les interventions aux besoins de chaque patient, quel que soit le diagnostic.",
   "PRICING1": "DEVENIR ",
-  "PRICING2": " PARTENAIRE",
+  "PRICING2": "PARTENAIRE",
   "Including": "Incluant",
   "prix": "à déterminer",
   "Applications": "Applications",
@@ -80,8 +80,6 @@
   "h_2": "Phobie VR",
   "h_3": "Thérapeutes",
   "h_5": "Kiné VR",
-  "h_6": "Projets ",
-  "h-6-1":"à venir",
   "Send_Message": "Envoyer message",
   "Find": "Trouver un thérapeute",
   "filter": "Filtre avec",
@@ -136,6 +134,7 @@
   "t-Solution":"Découvrez ",
   "about":"À PROPRS",
   "us":" DE NOUS",
+  "our":"Nos",
   "about-us-text1":" se distingue par son rôle d'innovateur dans le domaine des solutions médicales. Notre offre comprend trois solutions phares : ",
   "about-us-text2":"VRme, une thérapie par exposition à la réalité virtuelle dédiée à la santé ",
   "about-us-text3":"Medilink, une application révolutionnaire pour une gestion simplifiée des analyses médicales, permettant aux patients de consulter leurs résultats en ligne",
@@ -164,8 +163,8 @@
   "steri-Step4":"4 - Ouvrez votre navigateur et saisissez 192.168.4.1.",
   "steri-Step5":"5 - Appuyez sur On/Off.",
   "SteriWave-operation":"Fonctionnement de SteriWave:",
-  "t-video1":"Essai ",
-  "t-video2":" clinique",
+  "t-video1":"Parcours à",
+  "t-video2":" l'hôpital",
   "Avis":"Avis ",
   "review":"client",
   "Title-medilink":" Simplifiez votre suivi médical avec Medilink",
@@ -176,13 +175,20 @@
   "about-medilink-text2":"Cette plateforme innovante offre aux patients la possibilité de recevoir leurs résultats d'analyses directement sur leur smartphone, éliminant ainsi la nécessité de se rendre physiquement dans un laboratoire.",
   "about-medilink-text3":"De plus, les médecins peuvent accéder facilement aux analyses de leurs patients tout en obtenant des informations cruciales sur les procédures d'analyse.",
   "about-medilink-text4":"Nous mettons à votre disposition un outil puissant pour simplifier votre expérience médicale, en offrant un accès rapide et transparent à vos données de santé. Avec Medilink, vous avez un partenaire de confiance pour une gestion médicale plus efficace et pratique.",
-  "t1-docs":"Analyses ",
-"t2-docs":" Hospitalières",
-"Partners1":"Nos",
-"Partners2":" partenaires "
-
-
-
+  "Syringe_Pump":"Pompe à seringue",
+  "t_Syringe_Pump":" Définissant la perfusion médicale, notre pousse-seringue de pointe assure une administration précise des médicaments. Une solution innovante pour une prise en charge médicale sûre et efficace.",
+  "Heart_Artificial":"Coeur artificiel",
+  "t_Heart_Artificial":" L'avenir de la santé cardiaque est en cours de création! Notre solution révolutionnaire est là pour offrir une assistance cardiovasculaire inégalée. Redécouvrez la vitalité avec une technologie qui promet de redéfinir votre bien-être et votre style de vie.",
+ "Ventilator":"Ventilateur",
+  "t_Ventilator":"Un souffle d'innovation dans le domaine de la climatisation. Notre ventilateur promet une expérience utilisateur révolutionnaire, alliant efficacité, intelligence et design sophistiqué pour transformer votre environnement de vie.",
+  "t-Analyses1":"Analyses ",
+  "t-Analyses2":"Approfondies",
+  "Swab":"Analyse d'écouvillonnage",
+  "A-After-Cleaning":"Analyse Après Bionettoyage",
+  "A-before-Cleaning":"Analyse Avant Bionettoyage",
+  "A-After-Disinfection":"Analyse Après Désinfection",
+  "A-before-Disinfection":"Analyse Avant Désinfection",
+  "t-Rapport":"Étude de la cinétique d'inactivation bactérienne"
 
 
 

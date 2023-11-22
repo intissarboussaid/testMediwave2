@@ -428,7 +428,7 @@ const Contact = () => {
   }, [windowDimensions.width,]);
 
   return (
-    <div id="contact" >
+    <div id="contact" style={{marginTop:'-2%'}}>
       <Toast ref={toast} />
 
       <section id="contact-section">

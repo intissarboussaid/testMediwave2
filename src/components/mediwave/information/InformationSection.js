@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next";
 const InformationSection = (props) => {
   const { t } = useTranslation();
   return (
-    <div style={{marginTop:'0%'}}>
+    <div style={{marginTop:'5%'}}>
       <section class="statistic-section">
         <div class="container">
           <div class="col-md-12" style={{marginTop:'5%'}}>

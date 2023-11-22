@@ -515,14 +515,16 @@ const VideoHeader = () => {
                   class="tp-caption small_text buttonHeader"
                   style={buttonStyle}
                 >
-                  <div class="center-button-steriwave">
+                  <div class="center-button">
+                    <div class="vrme">
                     <a
                       href="#DiscoverOurSolution"
                       class="button-one"
                       style={textSize}
-                    >
+                    >                    
                          {t("t-Solution")}
                     </a>
+                    </div>
                   </div>
                 </div>
               </div>

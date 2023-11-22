@@ -238,7 +238,7 @@ const PhysiotherapistLocalisation = () => {
     <>
       <div
         class="container-fluid"
-        style={{ marginLeft: "5%", marginTop: "-20%", marginBottom: "5%" }}
+        style={{ marginLeft: "5%", marginTop: "5%", marginBottom: "5%" }}
         id="physiotherapist-section"
       >
         <div class="container">

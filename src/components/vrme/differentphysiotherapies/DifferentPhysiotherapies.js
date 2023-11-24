@@ -186,7 +186,7 @@ function DifferentPhysiotherapies(props) {
             <div className='col-lg-12 col-md-12 col-sm-12 col-xs-12  contenttt'>
               <Carousell>
                 {data.map((i) => (
-                  <>
+                  <div key={i.id}>
                     <Card
                       src={i.imgUrl}
                       title={i.name}
@@ -200,7 +200,7 @@ function DifferentPhysiotherapies(props) {
                     subContent4={i.text2}
                     subContent5={i.text3}
 />
-                  </>
+                  </div>
                 ))}
               </Carousell>
             </div>

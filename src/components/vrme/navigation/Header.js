@@ -180,7 +180,7 @@ const Header = () => {
     if (width < 1200 && width > 1000) {
       console.log("i am between 1200 and 1000");
       setWidthImage(100);
-      setStyleImage({ margin: "15%" });
+      setStyleImage({ margin: "10%" });
     } else if (width > 1200) {
       setWidthImage(150);
       setStyleImage({ margin: "7%" });
@@ -445,6 +445,7 @@ const Header = () => {
                             className="dropdowsStyleVRME"
                             style={{
                               opacity: code === currentLanguageCode ? 0.3 : 1,
+                              marginLeft:'-220%'
                             }}
                           >
                             {country_code === "fr" ? <Ic_fr /> : <Ic_gb />}

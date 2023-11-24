@@ -26,6 +26,7 @@ const Carousell = ({children}) => {
           'pointerEvents': active === i ? 'auto' : 'none',
           'opacity': Math.abs(active - i) >= MAX_VISIBILITY ? '0' : '1',
           'display': Math.abs(active - i) > MAX_VISIBILITY ? 'none' : 'block',
+         
         
          
         }}>

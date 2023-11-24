@@ -113,19 +113,19 @@ function DiscoverUs() {
                 marginTop: '-20%',
                 position: 'relative'
             });
-            // setLeftTextt({
-            //     marginLeft: '-70%',
-            //     width: '100%',
-            //     textAlign: 'justify',
-            //     marginTop: '-20%',
-            // });
-            // setRightText({
-            //     marginLeft: '20%',
-            //     width: '100%',
-            //     textAlign: 'justify',
-            //     marginTop: '-37%',
-            //     fontSize:'16px'
-            // });
+            setLeftTextt({
+                marginLeft: '-80%',
+                width: '80%',
+                textAlign: 'justify',
+                marginTop: '-30%',
+            });
+            setRightText({
+                marginLeft: '40%',
+                width: '80%',
+                textAlign: 'justify',
+                marginTop: '-47%',
+                fontSize:'16px'
+            });
             setButtonLeftStyle({
                 marginLeft: '65%',
                 width: '50%'

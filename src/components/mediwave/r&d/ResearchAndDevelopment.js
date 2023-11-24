@@ -96,7 +96,7 @@ useEffect(() => {
             position: 'relative',
         })
         setRightImg({
-            marginLeft: '200%',
+            marginLeft: '150%',
             width: '100%',
             height: '100%',
             marginTop: '-30%'
@@ -110,19 +110,19 @@ useEffect(() => {
             marginTop: '-20%',
             position: 'relative'
         });
-        // setLeftTextt({
-        //     marginLeft: '-70%',
-        //     width: '100%',
-        //     textAlign: 'justify',
-        //     marginTop: '-20%',
-        // });
-        // setRightText({
-        //     marginLeft: '20%',
-        //     width: '100%',
-        //     textAlign: 'justify',
-        //     marginTop: '-37%',
-        //     fontSize:'16px'
-        // });
+        setLeftTextt({
+            marginLeft: '-85%',
+            width: '80%',
+            textAlign: 'justify',
+            marginTop: '-40%',
+        });
+        setRightText({
+            marginLeft: '30%',
+            width: '80%',
+            textAlign: 'justify',
+            marginTop: '-50%',
+            fontSize:'16px'
+        });
         setButtonLeftStyle({
             marginLeft: '65%',
             width: '50%'

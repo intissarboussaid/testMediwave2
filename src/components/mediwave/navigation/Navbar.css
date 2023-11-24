@@ -2,6 +2,9 @@
   .navItemStyle {
     font-size: 12px !important;
   }
+  .dropdowsStyleVRME {
+    margin-left: -250%;
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -65,7 +68,7 @@
   }
 }
 .dropdowsStyleVRME {
-  margin-left: 0%;
+  margin-left: -5%;
 }
 .dropdowsStyleMedilink {
   margin-left: -100%;

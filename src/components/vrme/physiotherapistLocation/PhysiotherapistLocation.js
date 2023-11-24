@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo, useState, ReactElement } from "react";
 import { Card } from "primereact/card";
+import useResizeScreen from "../../../utils/useResizeScreen";
 import { Avatar } from "primereact/avatar";
 import PhysiotherapistImage1 from "../../../assets/images/physiotherapy1.jpg";
 import PhysiotherapistImage2 from "../../../assets/images/physiotherapy2.jpg";
@@ -14,7 +15,7 @@ const PhysiotherapistLocalisation = () => {
   const [loading, setLoading] = useState("");
   const [physiotherapist, setPhysiotherapist] = useState({});
   const [mapAdjust, setMapAdjust] = useState(
-    "col-lg-8 col-md-8 col-sm-6 col-xs-12"
+    "col-lg-6 col-md-7 col-sm-6 col-xs-12"
   );
   const [showPhysiotherapist, setShowPhysiotherapist] = useState(false);
   const [selectedMap, setSelectedMap] = useState({
@@ -233,12 +234,47 @@ const PhysiotherapistLocalisation = () => {
       )
     );
   }, [data, filter]);
+  const { width, height } = useResizeScreen();
+  const [leftCard, setLeftCard] = useState('0%');
+  const [styleLeft, setStyleLeft]=useState('0%');
+  const [styleHeight, setStyleHeight]=useState(500);
+  useEffect(() => {
+    if (width > 1200) {
+     setStyleLeft('0%');
+     setLeftCard('-1%')
+   }
+
+   else if (width < 1200 && width > 992 ) { 
+    setStyleLeft('20%');
+    setLeftCard('0%')
+  }
+   if (width < 992 && width > 768 ) {
+    setStyleLeft('40%');
+    setLeftCard('0%');   
+  }
+  if (width < 768 && width > 600  ) {
+    setStyleLeft('-10%');
+    setLeftCard('0%')
+  }
+  if (width < 600  ) {
+    setStyleLeft('-10%');
+    setLeftCard('20%')
+  }
+  
+  if (width > 770  ) {
+    setStyleHeight(500)
+  }
+  if (width < 770  ) {
+    setStyleHeight(650)
+  }
+ }, [width]);
+
 
   return (
     <>
       <div
         className="container-fluid"
-        style={{ marginLeft: "5%", marginTop: "5%", marginBottom: "5%" }}
+        style={{ marginLeft: "5%", marginTop: "-5%", marginBottom: "5%" }}
         id="physiotherapist-section"
       >
         <div className="container">
@@ -248,7 +284,7 @@ const PhysiotherapistLocalisation = () => {
           </div>
         </div>
         <div className="row">
-          <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+          <div className="col-lg-3 col-md-3 col-sm-4 col-xs-5">
             <div className="card flex justify-content-center">
               <Card
                 title={t("All_Physiotherapists")}
@@ -259,11 +295,10 @@ const PhysiotherapistLocalisation = () => {
                   height: 500,
                   marginRight: "10%",
                   overflowY: "scroll",
-                  // overflow: "hidden",
+                  marginLeft:leftCard,
                   marginTop: "2%",
                 }}
-              >
-               
+              >               
                 <div>
                   <div
                     className="p-card-subtitle"
@@ -295,7 +330,7 @@ const PhysiotherapistLocalisation = () => {
                                   map6: false,
                                 });
                                 setMapAdjust(
-                                  "col-lg-5 col-md-4 col-sm-6 col-xs-12"
+                                  "col-lg-5 col-md-5 col-sm-6 col-xs-12"
                                 );
                                 setShowPhysiotherapist(true);
                               } else if (i === 1) {
@@ -308,7 +343,7 @@ const PhysiotherapistLocalisation = () => {
                                   map6: false,
                                 });
                                 setMapAdjust(
-                                  "col-lg-5 col-md-4 col-sm-6 col-xs-12"
+                                  "col-lg-5 col-md-5 col-sm-6 col-xs-12"
                                 );
                                 setShowPhysiotherapist(true);
                               } else if (i === 2) {
@@ -321,7 +356,7 @@ const PhysiotherapistLocalisation = () => {
                                   map6: false,
                                 });
                                 setMapAdjust(
-                                  "col-lg-5 col-md-4 col-sm-6 col-xs-12"
+                                  "col-lg-5 col-md-5 col-sm-6 col-xs-12"
                                 );
                                 setShowPhysiotherapist(true);
                               } else if (i === 3) {
@@ -334,7 +369,7 @@ const PhysiotherapistLocalisation = () => {
                                   map6: false,
                                 });
                                 setMapAdjust(
-                                  "col-lg-5 col-md-4 col-sm-6 col-xs-12"
+                                  "col-lg-5 col-md-5 col-sm-6 col-xs-12"
                                 );
                                 setShowPhysiotherapist(true);
                               } else if (i === 4) {
@@ -347,7 +382,7 @@ const PhysiotherapistLocalisation = () => {
                                   map6: false,
                                 });
                                 setMapAdjust(
-                                  "col-lg-5 col-md-4 col-sm-6 col-xs-12"
+                                  "col-lg-5 col-md-5 col-sm-6 col-xs-12"
                                 );
                                 setShowPhysiotherapist(true);
                               } else if (i === 5) {
@@ -360,7 +395,7 @@ const PhysiotherapistLocalisation = () => {
                                   map6: true,
                                 });
                                 setMapAdjust(
-                                  "col-lg-5 col-md-4 col-sm-6 col-xs-12"
+                                  "col-lg-5 col-md-5 col-sm-6 col-xs-12"
                                 );
                                 setShowPhysiotherapist(true);
                               }
@@ -395,7 +430,8 @@ const PhysiotherapistLocalisation = () => {
                 style={{
                   height: 500,
                   width: "100%",
-                  marginTop: "2%",
+                  marginTop: "12%",
+                  marginLeft:styleLeft
                 }}
                 src="https://maps.google.com/maps?width=993&amp;height=638&amp;hl=en&amp;q=34.72745080533784, 10.782006011443983&amp;t=p&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
                 aria-label="56-34 Waldronnnqsdzedezdezezdfnnn St Flushing, NY 11368, USA"
@@ -410,7 +446,8 @@ const PhysiotherapistLocalisation = () => {
                 style={{
                   height: 500,
                   width: "100%",
-                  marginTop: "2%",
+                  marginTop: "16%",
+                  marginLeft:styleLeft
                 }}
                 src="https://maps.google.com/maps?width=993&amp;height=638&amp;hl=en&amp;q=35.82773884566303, 10.63877166558366&amp;t=p&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
                 aria-label="56-34 Waldronnnqsdzedezdezezdfnnn St Flushing, NY 11368, USA"
@@ -425,7 +462,8 @@ const PhysiotherapistLocalisation = () => {
                 style={{
                   height: 500,
                   width: "100%",
-                  marginTop: "2%",
+                  marginTop: "16%",
+                  marginLeft:styleLeft
                 }}
                 src="https://maps.google.com/maps?width=993&amp;height=638&amp;hl=en&amp;q=36.02739528911792, 10.516575958078903&amp;t=p&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
                 aria-label="56-34 Waldronnnqsdzedezdezezdfnnn St Flushing, NY 11368, USA"
@@ -440,7 +478,8 @@ const PhysiotherapistLocalisation = () => {
                 style={{
                   height: 500,
                   width: "100%",
-                  marginTop: "2%",
+                  marginTop: "16%",
+                  marginLeft:styleLeft
                 }}
                 src="https://maps.google.com/maps?width=993&amp;height=638&amp;hl=en&amp;q=34.744994555298184, 10.762687401023049&amp;t=p&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
                 aria-label="56-34 Waldronnnqsdzedezdezezdfnnn St Flushing, NY 11368, USA"
@@ -455,7 +494,8 @@ const PhysiotherapistLocalisation = () => {
                 style={{
                   height: 500,
                   width: "100%",
-                  marginTop: "2%",
+                  marginTop: "16%",
+                  marginLeft:styleLeft
                 }}
                 src="https://maps.google.com/maps?width=993&amp;height=638&amp;hl=en&amp;q=35.76690598514113, 10.84111483143234&amp;t=p&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
                 aria-label="56-34 Waldronnnqsdzedezdezezdfnnn St Flushing, NY 11368, USA"
@@ -471,7 +511,8 @@ const PhysiotherapistLocalisation = () => {
                   height: 500,
                   height: "400",
                   width: "100%",
-                  marginTop: "2%",
+                  marginTop: "16%",
+                  marginLeft:styleLeft
                 }}
                 src="https://maps.google.com/maps?width=993&amp;height=638&amp;hl=en&amp;q=34.72745080533784, 10.78200601144398&amp;t=p&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
                 aria-label="56-34 Waldronnnqsdzedezdezezdfnnn St Flushing, NY 11368, USA"
@@ -481,7 +522,7 @@ const PhysiotherapistLocalisation = () => {
             </div>
           ) : null}
           {showPhysiotherapist ? (
-            <div className="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+            <div className="col-lg-3 col-md-3 col-sm-5 col-xs-6">
               <div className="card">
                 <Card
                   title={`${physiotherapist.name} ${physiotherapist.prename}`}
@@ -490,9 +531,10 @@ const PhysiotherapistLocalisation = () => {
                   header={physiotherapist.img}
                   className="md:w-25rem"
                   style={{
-                    height: 500,
+                    height: styleHeight,
                     marginRight: "10%",
-                    marginTop: "2%",
+                    marginTop: "0%",
+                    marginLeft:styleLeft
                   }}
                 >
                   {/* <p className="m-0">{physiotherapist.name}</p> */}

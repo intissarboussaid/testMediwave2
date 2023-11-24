@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useState, ReactElement } from "react";
 import { Link } from "react-router-dom";
 // import useFetch from "./hooks/useFetch";
+import useResizeScreen from "../../../utils/useResizeScreen";
 import { GoogleMap, Marker } from "@react-google-maps/api";
 import { Wrapper, Status } from "@googlemaps/react-wrapper";
 import { Card } from "primereact/card";
@@ -17,13 +18,16 @@ import { useTranslation } from "react-i18next";
 
 const DoctorLocalisation = () => {
   const { t } = useTranslation();
+  const { width, height } = useResizeScreen();
+  const [styleLeft, setStyleLeft]=useState('0%');
   //   const { data, loading, error } = useFetch("/medecins");
   const [loading, setLoading] = useState("");
   const [doctor, setDoctor] = useState({});
   const [mapAdjust, setMapAdjust] = useState(
-    "col-lg-8 col-md-8 col-sm-6 col-xs-12"
+    "col-lg-6 col-md-7 col-sm-9 col-xs-12"
   );
   const [showDoctor, setShowDoctor] = useState(false);
+  const [cardHeight, setCardHeight] = useState(500)
   const [selectedMap, setSelectedMap] = useState({
     map1: true,
     map2: false,
@@ -32,9 +36,56 @@ const DoctorLocalisation = () => {
     map5: false,
     map6: false,
   });
+  const [leftShowDoctor,setLeftShowDoctor] = useState('0%');
+  const [topShowDoctor,setTopShowDoctor] = useState('0%')
+  const [widthShowDoctor,setWidthShowDoctor] = useState('110%');
+  const [leftCard, setLeftCard] = useState('0%');
   useEffect(() => {
     console.log(doctor);
   }, [doctor]);
+  useEffect(() => {
+    if (width > 1200) {
+     setStyleLeft('0%');
+     setLeftShowDoctor('0%');
+     setWidthShowDoctor('90%');
+     setTopShowDoctor('20%')
+     setCardHeight(500);
+     setLeftCard('-1%')
+   }
+
+   else if (width < 1200 && width > 992 ) { 
+    setStyleLeft('20%');
+    setLeftShowDoctor('120%');
+    setWidthShowDoctor('100%');
+    setTopShowDoctor('38%') ;
+    setCardHeight(500)  
+  }
+   if (width < 992 && width > 768 ) {
+    setStyleLeft('40%');
+    setLeftShowDoctor('70%');
+    setWidthShowDoctor('110%');
+    setTopShowDoctor('38%');
+    setCardHeight(500)
+   
+  }
+  if (width < 768 && width > 600  ) {
+    setStyleLeft('-10%');
+    setLeftShowDoctor('-210%');
+    setWidthShowDoctor('150%');
+    setTopShowDoctor('38%');
+    setCardHeight(500)
+   
+  }
+  if (width < 600  ) {
+    setStyleLeft('-10%');
+    setLeftShowDoctor('-110%');
+    setWidthShowDoctor('550%');
+    setTopShowDoctor('38%');
+    setCardHeight(500);
+    setLeftCard('20%')
+   
+  }
+ }, [width]);
 
   const [data, setData] = useState([
     {
@@ -209,7 +260,7 @@ const DoctorLocalisation = () => {
     <>
       <div
         className="container-fluid"
-        style={{ marginLeft: "5%", marginTop: "5%", marginBottom: "5%" }}
+        style={{ marginLeft: "5%", marginTop: "-60%", marginBottom: "5%" }}
         id="doctor-section"
       >
         <div className="container">
@@ -218,7 +269,7 @@ const DoctorLocalisation = () => {
           </div>
         </div>
         <div className="row">
-          <div className="col-lg-4 col-md-5 col-sm-6 col-xs-6">
+          <div className="col-lg-3 col-md-3 col-sm-2 col-xs-4" >
             <div className="card flex justify-content-center">
               <Card
                 title={t("All_Doctors")}
@@ -227,10 +278,12 @@ const DoctorLocalisation = () => {
                 //   header={header}
                 className="md:w-38rem"
                 style={{
-                  height: 500,
+                  height: cardHeight,
                   marginRight: "10%",
                   overflowY: "scroll",
                   // overflow: "hidden",
+                  marginLeft:leftCard,
+                  width:'110%',
                   marginTop: "2%",
                 }}
               >
@@ -238,7 +291,7 @@ const DoctorLocalisation = () => {
                 <div>
                   <div
                     className="p-card-subtitle"
-                    style={{ marginRight: "7%", marginLeft: "7%" }}
+                    style={{ marginRight: "7%", marginLeft: "20%" }}
                   >
                     <div className="card">
                       {data.map((item, i) => {
@@ -266,7 +319,7 @@ const DoctorLocalisation = () => {
                                   map6: false,
                                 });
                                 setMapAdjust(
-                                  "col-lg-5 col-md-4 col-sm-6 col-xs-12"
+                                  "col-lg-5 col-md-9 col-sm-7 col-xs-12"
                                 );
                                 setShowDoctor(true);
                               } else if (i === 1) {
@@ -279,7 +332,7 @@ const DoctorLocalisation = () => {
                                   map6: false,
                                 });
                                 setMapAdjust(
-                                  "col-lg-5 col-md-4 col-sm-6 col-xs-12"
+                                  "col-lg-5 col-md-9 col-sm-7 col-xs-12"
                                 );
                                 setShowDoctor(true);
                               } else if (i === 2) {
@@ -292,7 +345,7 @@ const DoctorLocalisation = () => {
                                   map6: false,
                                 });
                                 setMapAdjust(
-                                  "col-lg-5 col-md-4 col-sm-6 col-xs-12"
+                                   "col-lg-5 col-md-9 col-sm-7 col-xs-12"
                                 );
                                 setShowDoctor(true);
                               } else if (i === 3) {
@@ -305,7 +358,7 @@ const DoctorLocalisation = () => {
                                   map6: false,
                                 });
                                 setMapAdjust(
-                                  "col-lg-5 col-md-4 col-sm-6 col-xs-12"
+                                   "col-lg-5 col-md-9 col-sm-7 col-xs-12"
                                 );
                                 setShowDoctor(true);
                               } else if (i === 4) {
@@ -318,7 +371,7 @@ const DoctorLocalisation = () => {
                                   map6: false,
                                 });
                                 setMapAdjust(
-                                  "col-lg-5 col-md-4 col-sm-6 col-xs-12"
+                                   "col-lg-5 col-md-9 col-sm-7 col-xs-12"
                                 );
                                 setShowDoctor(true);
                               } else if (i === 5) {
@@ -331,7 +384,7 @@ const DoctorLocalisation = () => {
                                   map6: true,
                                 });
                                 setMapAdjust(
-                                  "col-lg-5 col-md-4 col-sm-6 col-xs-12"
+                                  "col-lg-5 col-md-9 col-sm-7 col-xs-12"
                                 );
                                 setShowDoctor(true);
                               }
@@ -359,15 +412,17 @@ const DoctorLocalisation = () => {
               </Card>
             </div>
           </div>
-          <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        
+          <div className="col-lg-6 col-md-4 col-sm-5 col-xs-12">
           {selectedMap.map1 ? (
             <div className={`${mapAdjust}`}>
               <iframe
                 className="sc_googlemap"
                 style={{
-                  height: 500,
-                  width: "100%",
-                  marginTop: "2%",
+                  height: cardHeight,
+                  width: "220%",
+                  marginTop: "35%",
+                  marginLeft:styleLeft
                 }}
                 src="https://maps.google.com/maps?width=993&amp;height=638&amp;hl=en&amp;q=34.72745080533784, 10.782006011443983&amp;t=p&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
                 aria-label="56-34 Waldronnnqsdzedezdezezdfnnn St Flushing, NY 11368, USA"
@@ -380,9 +435,10 @@ const DoctorLocalisation = () => {
               <iframe
                 className="sc_googlemap"
                 style={{
-                  height: 500,
-                  width: "100%",
-                  marginTop: "2%",
+                  height: cardHeight,
+                  width: "220%",
+                  marginTop: "35%",
+                  marginLeft:styleLeft
                 }}
                 src="https://maps.google.com/maps?width=993&amp;height=638&amp;hl=en&amp;q=35.82773884566303, 10.63877166558366&amp;t=p&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
                 aria-label="56-34 Waldronnnqsdzedezdezezdfnnn St Flushing, NY 11368, USA"
@@ -395,9 +451,10 @@ const DoctorLocalisation = () => {
               <iframe
                 className="sc_googlemap"
                 style={{
-                  height: 500,
-                  width: "100%",
-                  marginTop: "2%",
+                  height: cardHeight,
+                  width: "220%",
+                  marginTop: "35%",
+                  marginLeft:styleLeft
                 }}
                 src="https://maps.google.com/maps?width=993&amp;height=638&amp;hl=en&amp;q=36.02739528911792, 10.516575958078903&amp;t=p&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
                 aria-label="56-34 Waldronnnqsdzedezdezezdfnnn St Flushing, NY 11368, USA"
@@ -410,9 +467,10 @@ const DoctorLocalisation = () => {
               <iframe
                 className="sc_googlemap"
                 style={{
-                  height: 500,
-                  width: "100%",
-                  marginTop: "2%",
+                  height: cardHeight,
+                  width: "220%",
+                  marginTop: "35%",
+                  marginLeft:styleLeft
                 }}
                 src="https://maps.google.com/maps?width=993&amp;height=638&amp;hl=en&amp;q=34.744994555298184, 10.762687401023049&amp;t=p&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
                 aria-label="56-34 Waldronnnqsdzedezdezezdfnnn St Flushing, NY 11368, USA"
@@ -425,9 +483,10 @@ const DoctorLocalisation = () => {
               <iframe
                 className="sc_googlemap"
                 style={{
-                  height: 500,
-                  width: "100%",
-                  marginTop: "2%",
+                  height: cardHeight,
+                  width: "220%",
+                  marginTop: "35%",
+                  marginLeft:styleLeft
                 }}
                 src="https://maps.google.com/maps?width=993&amp;height=638&amp;hl=en&amp;q=35.76690598514113, 10.84111483143234&amp;t=p&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
                 aria-label="56-34 Waldronnnqsdzedezdezezdfnnn St Flushing, NY 11368, USA"
@@ -440,10 +499,10 @@ const DoctorLocalisation = () => {
               <iframe
                 className="sc_googlemap"
                 style={{
-                  height: 500,
-                  height: "400",
-                  width: "100%",
-                  marginTop: "2%",
+                  height: cardHeight,
+                  width: "220%",
+                  marginTop: "35%",
+                  marginLeft:styleLeft
                 }}
                 src="https://maps.google.com/maps?width=993&amp;height=638&amp;hl=en&amp;q=34.72745080533784, 10.78200601144398&amp;t=p&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
                 aria-label="56-34 Waldronnnqsdzedezdezezdfnnn St Flushing, NY 11368, USA"
@@ -453,23 +512,22 @@ const DoctorLocalisation = () => {
             </div>
           ) : null}
 </div>
-
-          {showDoctor ? (
-            <div className="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-              <div className="card">
+{showDoctor ? (
+            <div className="col-lg-3 col-md-2 col-sm-2 col-xs-2">
+              <div className="card" style={{marginLeft:leftShowDoctor, marginTop:topShowDoctor}}>
                 <Card
                   title={`${doctor.name} ${doctor.prename}`}
                   subTitle={`${doctor.specialty}`}
-                  // footer={footer}
                   header={doctor.img}
                   className="md:w-25rem"
                   style={{
-                    height: 500,
+                    height: cardHeight,
                     marginRight: "10%",
-                    marginTop: "2%",
+                    marginTop: "0%",
+                    width:widthShowDoctor,
+                    // marginLeft:leftShowDoctor,
                   }}
                 >
-                  {/* <p className="m-0">{doctor.name}</p> */}
                   <div
                     style={{
                       overflow: "hidden",
@@ -545,7 +603,9 @@ const DoctorLocalisation = () => {
               </div>
             </div>
           ) : null}
+         
         </div>
+        
       </div>
     </>
   );
